@@ -17,6 +17,13 @@ Explore operational best practices from mastering troubleshooting techniques and
 The requirements to follow the exercises in this repository are...
 
   * You need to have a GitHub user. If you don't have one so far, please sign-up on GitHub before going through the exercises
+  * Additional configuration on your SAP TECHED 2025 Client laptop
+    
+  kubectl plugins | install [jq](https://jqlang.org/download/) | [Kyma CLI for SAP BTP, Kyma Runtime](https://tools.hana.ondemand.com/#cloud) |
+  -- | -- | -- |
+  install [krew.exe](https://github.com/kubernetes-sigs/krew/releases/download/v0.4.5/krew.exe) | install jq with `winget install jqlang.jq` | install [kyma cli](https://github.com/kyma-project/cli/releases/download/3.0.1/kyma_Windows_x86_64.zip) 
+  installing the oidc-login plugin | |
+  install view-serviceaccount-kubeconfig plugin | |
 
 ## Exercises
 
