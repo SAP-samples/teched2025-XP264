@@ -15,6 +15,20 @@
         kubectl get nodes
         kubectl get pod -A
         kubectl get -n kyma-system kymas default -o json | jq '.spec.modules[] '
+
+        echo "Installing kyma cli..."
+        curl -sSL "https://github.com/kyma-project/cli/releases/download/3.0.1/kyma_Linux_x86_64.tar.gz" |  tar -xzv kyma
+        ./kyma alpha --help
+
+        echo "List of modules"
+        ./kyma alpha module list
+
+        ./kyma alpha kubeconfig generate --serviceaccount kyma-cli-sa --clusterrole cluster-admin --namespace default --permanent > kyma-cli-sa.yaml
+
+        echo "List of modules with  kyma-cli-sa"
+        ./kyma alpha module list --kubeconfig ./kyma-cli-sa.yaml
+
+
 "name": "btp-runtime-dbe7346b-88da-430a-8777-4f6aa3e22b5e"
 "on":
   "workflow_dispatch": null
