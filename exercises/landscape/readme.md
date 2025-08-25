@@ -2,6 +2,8 @@ BTP XP264 master landscape
 =============
 
 
+TODO: Add the pictture of the master btp landscape...  
+
 
 
 
@@ -13,6 +15,13 @@ BTP XP264 master landscape
 <img width="1216" height="1028" alt="image" src="https://github.com/user-attachments/assets/b442c666-8bb5-4ad5-a193-7eb98c1daafa" />
 
 ### Rehearse the destination definition  
+
+In order to be able to rehearse subaccount level destinations without writing any code all we need is managed SAP Approuter in the context of the subacount.  
+
+The managed SAP Approuter is brought into the context of a subaccount with the SAP Workzone (Launchpad) service plans free or standard.  
+
+SAP Workzone subacription requires the OIDC subaccount trust be established.  This means, you will need a user with the OIDC provider the subaccount has been trusted with.
+
 
   * https://btp-bootstrap-quovadis-fe2eef75.launchpad.cfapps.eu10.hana.ondemand.com/dynamic_dest/destination-service/destinations/QUOVADIS_HE4  
 <img width="1195" height="455" alt="image" src="https://github.com/user-attachments/assets/641e42b8-887f-4235-81e3-695ce80413f8" />
