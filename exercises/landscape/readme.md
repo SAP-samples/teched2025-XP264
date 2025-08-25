@@ -73,3 +73,78 @@ BTP XP264 master landscape
 ### Run the destination against the target on premise system
 
   * https://btp-bootstrap-quovadis-fe2eef75.launchpad.cfapps.eu10.hana.ondemand.com/dynamic_dest/QUOVADIS_HE4/  
+  * https://btp-bootstrap-quovadis-fe2eef75.launchpad.cfapps.eu10.hana.ondemand.com/dynamic_dest/QUOVADIS_HE4/?$format=json
+
+  ```
+  {
+  "d": {
+    "EntitySets": [
+      "A_AddressEmailAddress",
+      "A_AddressFaxNumber",
+      "A_AddressHomePageURL",
+      "A_AddressPhoneNumber",
+      "A_BPAddrDepdntIntlLocNumber",
+      "A_BPContactToAddress",
+      "A_BPContactToFuncAndDept",
+      "A_BPCreditWorthiness",
+      "A_BPDataController",
+      "A_BPEmployment",
+      "A_BPFinancialServicesExtn",
+      "A_BPFinancialServicesReporting",
+      "A_BPFiscalYearInformation",
+      "A_BPIntlAddressVersion",
+      "A_BPRelationship",
+      "A_BPTaxCompliance",
+      "A_BuPaAddressUsage",
+      "A_BuPaIdentification",
+      "A_BuPaIndustry",
+      "A_BusinessPartner",
+      "A_BusinessPartnerAddress",
+      "A_BusinessPartnerAlias",
+      "A_BusinessPartnerBank",
+      "A_BusinessPartnerContact",
+      "A_BusinessPartnerIsBank",
+      "A_BusinessPartnerPaymentCard",
+      "A_BusinessPartnerRating",
+      "A_BusinessPartnerRole",
+      "A_BusinessPartnerTaxNumber",
+      "A_BusPartAddrDepdntTaxNmbr",
+      "A_CustAddrDepdntExtIdentifier",
+      "A_CustAddrDepdntInformation",
+      "A_Customer",
+      "A_CustomerCompany",
+      "A_CustomerCompanyText",
+      "A_CustomerDunning",
+      "A_CustomerSalesArea",
+      "A_CustomerSalesAreaTax",
+      "A_CustomerSalesAreaText",
+      "A_CustomerTaxGrouping",
+      "A_CustomerText",
+      "A_CustomerUnloadingPoint",
+      "A_CustomerWithHoldingTax",
+      "A_CustSalesPartnerFunc",
+      "A_CustSlsAreaAddrDepdntInfo",
+      "A_CustSlsAreaAddrDepdntTaxInfo",
+      "A_CustUnldgPtAddrDepdntInfo",
+      "A_Supplier",
+      "A_SupplierCompany",
+      "A_SupplierCompanyText",
+      "A_SupplierDunning",
+      "A_SupplierPartnerFunc",
+      "A_SupplierPurchasingOrg",
+      "A_SupplierPurchasingOrgText",
+      "A_SupplierText",
+      "A_SupplierWithHoldingTax"
+    ]
+  }
+}
+  ```
+
+
+## Next steps  
+
+
+### Prepare nodejs function code to run this destination via CloudSDK from kyma cluster side  
+
+
+
