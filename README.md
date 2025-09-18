@@ -21,7 +21,7 @@ The requirements to follow the exercises in this repository are...
     
   kubectl plugins | install [jq](https://jqlang.org/download/) | [Kyma CLI for SAP BTP, Kyma Runtime](https://tools.hana.ondemand.com/#cloud) |
   -- | -- | -- |
-  install [krew.exe](https://github.com/kubernetes-sigs/krew/releases/download/v0.4.5/krew.exe) | install jq with `winget install jqlang.jq` | install [kyma cli](https://github.com/kyma-project/cli/releases/download/3.0.1/kyma_Windows_x86_64.zip) 
+  install [krew.exe](https://github.com/kubernetes-sigs/krew/releases/download/v0.4.5/krew.exe) | install jq with `winget install jqlang.jq` | install [kyma cli](https://github.com/kyma-project/cli/releases/download/3.1.0/kyma_Windows_x86_64.zip) 
   installing the oidc-login plugin | |
   install view-serviceaccount-kubeconfig plugin | |
 
