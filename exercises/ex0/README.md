@@ -45,10 +45,11 @@ Finally you will login to for this session prepared BTP account.
 | btp-argocd                |  Session Master  | with a shared ArgoCD instance (with SSO for all participants)             |
 | btp-bootstrap             |  Session Master  | XP264 session bootstrap context for the terraform automation. |
 | btp-provider              |  Session Master  | with shared SAP HANA Cloud and Cloud Logging (SAML SSO) services instances.|
-| btp-runtime               |  Reference Kyma Pod  | reference runtime context with the master kyma environment           |
-| xp264-***                 |  Session Student Pod | Students runtime contexts with the dedcicated kyma environments.       |
+| btp-runtime               |  US EAST region  | Students runtime context with kyma environment in the us east region         |
+| uk-south                  |  UK SOUTH region | Students runtime contexts with kyma environment in the uk south region         |
+| japan-east                |  JAPAN EAST region | Students runtime contexts with kyma environment in the japan east region         |
 
-Each student's pod has SAP Cloud Connector, for instance:
+Each student's runtime context has a preconfigured SAP Cloud Connector attached, for instance:
 
 <img width="1661" height="733" alt="image" src="https://github.com/user-attachments/assets/5e92690b-41ad-4cf4-993a-f8486d0bb32d" />
 
