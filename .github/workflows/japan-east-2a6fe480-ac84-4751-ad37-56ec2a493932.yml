@@ -50,7 +50,7 @@
         kubectl delete all -l app.kubernetes.io/name=httpbin-app
         ./kyma app push --name httpbin-app --image kennethreitz/httpbin --istio-inject true --expose --container-port 80
         kubectl delete all -l app.kubernetes.io/name=httpbin-app -n xp264-000
-        ./kyma app push --name httpbin-app --image kennethreitz/httpbin --istio-inject true --expose --container-port 80 --namespace xp264-000
+        ./kyma app push --name httpbin-xp264-000 --image kennethreitz/httpbin --istio-inject true --expose --container-port 80 --namespace xp264-000
     - "name": "Community Modules Support"
       "run": |
         echo "discover/add available community-driven modules..."
