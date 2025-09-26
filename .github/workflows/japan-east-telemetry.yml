@@ -16,7 +16,7 @@
         echo "Simulate some traffic to the HTTPBIN APP"
         for f in {1..10}; do curl https://${HTTPBIN_HOST}/headers; done
         echo "You can now check the logs, metrics and traces in SAP Cloud Logging"
-"name": "japan-east-2a6fe480-ac84-4751-ad37-56ec2a493932"
+"name": "japan-east-telemetry"
 "on":
   "workflow_dispatch": null
 "permissions":
