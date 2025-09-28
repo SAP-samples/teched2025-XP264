@@ -1,0 +1,37 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+
+  name: jupyterhub
+  namespace: jupyter
+
+spec:
+  gateways:
+    - kyma-system/kyma-gateway
+  hosts:
+    - jupyterhub.c-99567a9.kyma.ondemand.com
+  http:
+    - headers:
+        request:
+          set:
+            x-forwarded-host: jupyterhub.c-99567a9.kyma.ondemand.com
+        response:
+          remove:
+            - Access-Control-Allow-Origin
+            - Access-Control-Expose-Headers
+            - Access-Control-Allow-Headers
+            - Access-Control-Allow-Credentials
+            - Access-Control-Allow-Methods
+            - Access-Control-Max-Age
+      match:
+        - method:
+            regex: ^(GET|POST|PUT|DELETE|PATCH|HEAD|OPTIONS)$
+          uri:
+            prefix: /
+      route:
+        - destination:
+            host: proxy-public.jupyter.svc.cluster.local
+            port:
+              number: 80
+          weight: 100
+      timeout: 300s
