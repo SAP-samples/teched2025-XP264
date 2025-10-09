@@ -15,8 +15,11 @@ jobs:
     # https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#example-using-a-public-action-in-a-subdirectory
     # https://stackoverflow.com/questions/75733616/github-actions-how-to-call-a-reusable-workflow-as-a-step    
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       # https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows#calling-a-reusable-workflow
-      - uses: ./.github/workflows/test-reuse.yml
+      # - uses: ./.github/workflows/test-reuse.yml
+      - uses: ./.github/actions
         with:
           NAMESPACE: ${{ matrix.namespace }}
       #secrets: inherit
