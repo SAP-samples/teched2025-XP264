@@ -14,7 +14,8 @@ jobs:
     strategy:
       matrix:
         namespace: [xp264-001, xp264-002]
-    uses: ./.github/workflows/reuse.yml
-    with:
-      NAMESPACE: ${{ matrix.namespace }}
-    #secrets: inherit
+    reuse:
+      uses: ./.github/workflows/reuse.yml
+      with:
+        NAMESPACE: ${{ matrix.namespace }}
+      #secrets: inherit
