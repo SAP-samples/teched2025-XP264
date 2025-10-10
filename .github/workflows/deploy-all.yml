@@ -18,7 +18,7 @@ jobs:
       matrix:
         namespace: [xp264-001, xp264-002, xp264-003, xp264-004, xp264-005, xp264-006, xp264-007, xp264-008, xp264-009, xp264-010, xp264-011, xp264-012 ]
         cluster: [ 622af3fe-a2f5-4fdd-a05f-73e343aec2a5 ]
-    uses: ./.github/workflows/reuse.yml
+    uses: ./.github/workflows/_xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5-xp264.yml
     with:
       NAMESPACE: ${{ matrix.namespace }}
       CLUSTER_GUID: ${{ matrix.cluster }}
