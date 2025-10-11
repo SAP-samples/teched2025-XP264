@@ -104,15 +104,12 @@ Easy navigation with the session landscape site:
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href="https://url.sap/3kf0ol"><img class="aligncenter" src="../ex0/images/site_navigation.png" alt="" /></a></h1>
+<h1><a href="https://url.sap/3kf0ol"><img class="aligncenter" src="../ex0/images/site_navigation.png" alt="" height="400"/></a></h1>
 </div>
 </td>
 </tr>
 </tbody>
 </table>   
-
-
-[![Easy navigation with the session landscape site](../ex0/images/site_navigation.png)](https://url.sap/3kf0ol) 
 
 
 ## Summary
