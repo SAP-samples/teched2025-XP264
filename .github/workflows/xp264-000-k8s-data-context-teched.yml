@@ -52,6 +52,7 @@ env:
   ## Additional env variables
   # TF_LOG: DEBUG ## Helpful for troubleshooting
   # TF_MAX_TIMEOUT: "30m" ## If you wish to override the default "1h"
+##        githubJwt=$(curl -s -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" -H "Accept: application/json; api-version=2.0" -H "Content-Type: application/json" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://${{ github.event.inputs.IDP }}" | jq -r '.value')
 
 
 "jobs":
@@ -64,7 +65,7 @@ env:
     - name: Get short-lived GitHub-issued JWT
       id: get-github-jwt
       run: |
-        githubJwt=$(curl -s -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" -H "Accept: application/json; api-version=2.0" -H "Content-Type: application/json" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://${{ github.event.inputs.IDP }}" | jq -r '.value')
+        githubJwt=$(curl -s -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" -H "Accept: application/json; api-version=2.0" -H "Content-Type: application/json" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=gh-teched-7a69075f-7faf-4604-a62e-806648791dba" | jq -r '.value')
         echo $githubJwt | jq -R 'split(".") | .[0],.[1] | @base64d | fromjson'
         echo "githubJwt=$githubJwt" >> $GITHUB_OUTPUT
     - "name": "Install Helm"
