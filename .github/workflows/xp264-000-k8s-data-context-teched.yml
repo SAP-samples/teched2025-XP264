@@ -157,7 +157,7 @@ env:
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output
 
         kubeconfig_sa=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -raw kubeconfig-sa)
-        kyma_provisioning_info=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output kyma_provisioning_info)
+        kyma_provisioning_info=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json kyma_provisioning_info | jq)
         echo $kyma_provisioning_info
 
         echo "kubeconfig_sa=$kubeconfig_sa" >> $GITHUB_OUTPUT
