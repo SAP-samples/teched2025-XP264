@@ -77,6 +77,13 @@
 
          DEEPLINK=$(./kyma alpha diagnose -f json | jq -r '.metadata | { deeplink: ("https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/" + .globalAccountID + "/subaccount/" + .subaccountID) } | .deeplink' )
          echo $DEEPLINK
+
+         DEEPLINK2=$(./kyma alpha diagnose -f json | jq -r '.metadata | { deeplink: ("https://emea.cockpit.btp.cloud.sap/cockpit?sap_idp=sap.custom#/globalaccount/" + .globalAccountID + "/subaccount/" + .subaccountID) } | .deeplink' )
+         echo $DEEPLINK2
+
+         DEEPLINK3=$(./kyma alpha diagnose -f json | jq -r '.metadata | { deeplink: ("https://emea.cockpit.btp.cloud.sap/cockpit?sap_idp=sap.default#/globalaccount/" + .globalAccountID + "/subaccount/" + .subaccountID) } | .deeplink' )
+         echo $DEEPLINK3
+         
     - "name": "Community Modules Support"
       "run": |
         echo "discover/add available community-driven modules..."
