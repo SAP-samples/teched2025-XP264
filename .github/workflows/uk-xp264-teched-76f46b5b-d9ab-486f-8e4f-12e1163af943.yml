@@ -74,6 +74,9 @@
 
         ./kyma alpha diagnose -f json | jq -r '.metadata'
         ./kyma alpha diagnose -f json | jq -r '.nodes'
+
+         DEEPLINK=$(./kyma alpha diagnose -f json | jq -r '.metadata | { deeplink: ("https://emea.cockpit.btp.cloud.sap/cockpit/#/globalaccount/" + .globalAccountID + "/subaccount/" + .subaccountID) } | .deeplink' )
+         echo $DEEPLINK
     - "name": "Community Modules Support"
       "run": |
         echo "discover/add available community-driven modules..."
