@@ -126,7 +126,7 @@ env:
         kubectl config get-clusters
         cp $KUBECONFIG ./uk-xp264.yaml
 
-        export KUBECONFIG=./:$(find . -type f -name "*.yaml" | tr '\n' ':')
+        export KUBECONFIG=:./uk-xp264.yaml:./xp264-000.yaml
         kubectl config view --flatten > all-in-one-kubeconfig.yaml
 
         kubectl config get-clusters --kubeconfig all-in-one-kubeconfig.yaml
