@@ -186,7 +186,6 @@ env:
         export BTP_GLOBAL_ACCOUNT=${{steps.cluster_info.outputs.GLOBALACCOUNT}}
 
         export TF_VAR_runtime_context_workspace=${{ env.RUNTIME_CONTEXT_WORKSPACE }}
-        ##-var BTP_GLOBAL_ACCOUNT=${{ github.event.inputs.GLOBALACCOUNT }} \
   
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} ${{ env.RUNTIME_ACTION }} \
         -var BTP_GLOBAL_ACCOUNT=${{steps.cluster_info.outputs.GLOBALACCOUNT}} \
@@ -194,6 +193,11 @@ env:
         -var BTP_SUBACCOUNT=${{ github.event.inputs.subaccount_name }} \
         -var POSTGRES_ALLOW_ACCESS=${{ vars.POSTGRES_ALLOW_ACCESS }} \
         -auto-approve -no-color
+
+      env:
+        RUNTIME_CONTEXT_WORKSPACE: "runtime-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"
+        RUNTIME_WORKSPACE: "k8s-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"
+        PROVIDER_WORKSPACE: "provider-context-${{steps.cluster_info.outputs.GLOBALACCOUNT}}" 
 
     # https://stackoverflow.com/questions/69925970/how-to-save-terraform-output-variable-into-a-github-action-s-environment-variabl
     - name: Terraform Output # https://docs.github.com/en/actions/reference/workflows-and-actions/contexts#steps-context
@@ -211,18 +215,21 @@ env:
         kyma_provisioning_info=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json kyma_provisioning_info)
         echo $kyma_provisioning_info
 
-        #echo "kubeconfig_sa=$kubeconfig_sa" >> $GITHUB_OUTPUT
         echo "kyma_provisioning_info=$kyma_provisioning_info" >> $GITHUB_OUTPUT
+
+      env:
+        RUNTIME_CONTEXT_WORKSPACE: "runtime-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"
+        RUNTIME_WORKSPACE: "k8s-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"
+        PROVIDER_WORKSPACE: "provider-context-${{steps.cluster_info.outputs.GLOBALACCOUNT}}" 
+
 
     - name: Terraform Results
       id: terraform_results
       shell: bash
       run: |
 
-        echo "kubeconfig-sa"
-        echo ${{ steps.terraform_output.outputs.config_sa }} 
         echo "kyma_provisioning_info"
-        echo ${{ steps.terraform_output.outputs.provisioning_info }}
+        echo ${{ steps.terraform_output.outputs.kyma_provisioning_info }}
 
 "name": "xp264-000-k8s-data-context-teched"
 
