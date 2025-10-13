@@ -82,11 +82,6 @@ env:
     "runs-on":
     - "ubuntu-latest"
     "steps":
-    - "name": "install kyma cli"
-      uses: kyma-project/setup-kyma-cli@v1
-      with:
-        version: latest
-
     - "name": "Check out Git repository"
       "uses": "actions/checkout@v4"
 
@@ -117,6 +112,32 @@ env:
 
         kubectl version
         kubectl config view
+
+    - "name": "install kyma cli"
+      uses: kyma-project/setup-kyma-cli@v1
+      with:
+        version: latest
+    - "name": "use kyma cli"
+      "run": |
+         kyma -h
+         kyma alpha -h
+    - "name": "Diagnose cluster health and configuration."
+      "run": |
+        echo "Diagnose cluster health and configuration...."
+
+        ./kyma alpha diagnose -f json | jq -r '.metadata'
+        ./kyma alpha diagnose -f json | jq -r '.nodes'
+
+         DEEPLINK=$(./kyma alpha diagnose -f json | jq -r '.metadata | { deeplink: ("https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/" + .globalAccountID + "/subaccount/" + .subaccountID) } | .deeplink' )
+         echo $DEEPLINK
+
+         DEEPLINK2=$(./kyma alpha diagnose -f json | jq -r '.metadata | { deeplink: ("https://emea.cockpit.btp.cloud.sap/cockpit?sap_idp=sap.custom#/globalaccount/" + .globalAccountID + "/subaccount/" + .subaccountID) } | .deeplink' )
+         echo $DEEPLINK2
+
+         DEEPLINK3=$(./kyma alpha diagnose -f json | jq -r '.metadata | { deeplink: ("https://emea.cockpit.btp.cloud.sap/cockpit?sap_idp=sap.default#/globalaccount/" + .globalAccountID + "/subaccount/" + .subaccountID) } | .deeplink' )
+         echo $DEEPLINK3
+         
+
       
     - name: Setup Terraform
       id : setup_terraform
