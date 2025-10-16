@@ -77,7 +77,7 @@
         while [ "$(curl ${{ steps.HTTPBIN_URL.outputs.HTTPBIN_URL }}/headers)" = "no healthy upstream" ]
         do 
           echo "no healthy upstream -- wait for the APIRule resource to be ready"
-          sleep 1
+          sleep 3
         done        
         for f in {1..10}; do curl ${{ steps.HTTPBIN_URL.outputs.HTTPBIN_URL }}/headers; done
         echo -e "You can now check the logs, metrics and traces in SAP Cloud Logging:\nhttps://url.sap/rw43o5"
