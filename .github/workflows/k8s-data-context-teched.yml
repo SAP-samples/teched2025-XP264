@@ -89,6 +89,7 @@ env:
         kubectl version
         kubectl config get-clusters
         cp $KUBECONFIG ./xp264-000.yaml
+        cat ./xp264-000.yaml
 
     - "name": "Setup Kube Context - japanese-east"
       "uses": "azure/k8s-set-context@v4"
@@ -101,6 +102,7 @@ env:
         kubectl version
         kubectl config get-clusters
         cp $KUBECONFIG ./japanese-east.yaml
+        cat ./japanese-east.yaml
 
     - "name": "Setup Kube Context - us-east"
       "uses": "azure/k8s-set-context@v4"
@@ -113,6 +115,7 @@ env:
         kubectl version
         kubectl config get-clusters
         cp $KUBECONFIG ./us-east.yaml
+        cat ./us-east.yaml
 
     - "name": "Setup Kube Context - uk-south"
       "uses": "azure/k8s-set-context@v4"
@@ -125,6 +128,7 @@ env:
         kubectl version
         kubectl config get-clusters
         cp $KUBECONFIG ./uk-south.yaml
+        cat ./uk-south.yaml
 
     - "name": "Setup Kube Context - uk-xp264"
       "uses": "azure/k8s-set-context@v4"
