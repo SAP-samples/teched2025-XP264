@@ -12,8 +12,52 @@
     - "name": "Setup Kube Context"
       "uses": "azure/k8s-set-context@v4"
       "with":
-        "kubeconfig": |
-          {"apiVersion":"v1","clusters":[{"cluster":{"certificate-authority-data":"LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUQ1ekNDQWsrZ0F3SUJBZ0lSQU01WE0vSkE4bXdxY1BiUlJyc3Foamt3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdIaGNOTWpVeE1ERTFNVFEwTlRVd1doY05NelV4TURFMU1UUTBOalV3V2pBTgpNUXN3Q1FZRFZRUURFd0pqWVRDQ0FhSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnR1BBRENDQVlvQ2dnR0JBS3FhCmtXc0JGSE5JbmhMa0k5MUtMOXFWS0h6OEZiVmlUVTJiMktyMnF2UXpkOHlNSENKekczaWRFOS9ac3RNZWpOaDAKdmFPN1NTNmptTkJRYis1ZFFrcVgxMW1CSDJRZzRTSXpEMUttWWRxSStZeGJRdjdVNFJVdGdmdTR0a1ZCdTFUZgpjQnM0VkFOTjFENkJxT2t6VFppVmlrNFVHNlNxSUJNZWJxR05GOHdrdWpsbWpmV05jZGEyN3R5cnorK0ttWFVrClN5bkpXOWI5cnpCVENCK3Nhd3JpVVIwSlVsR3ZrOTFlQ0dSelBJV1FrUUQyYy9JcFlBRE0rcGt3dnBiNHpXK1MKdFY3d0cwbzFXK2crRXBiMFoxcHZyQ05CZDNOSVBkU0VnWXl3UE1SQlJxWUdWS29nZ2l0bnRCcGR3QkoxLzBxTAowa2JqbGRYYysvOFd4K3pwMnkxeDZ6STFURFdoUGRXQlI2TVRKYTBmTWdZQXl3VWhadTZrcFRVQ0dXb3JyMXJwCkJtSURTeWNGRVhPaWowOExVM21jYUQ3MFZob3pidmo5bFJxU0owdlNsNVh5THFiTC9UTWk0UmxzSktDV1M0cU8KNmtpWkhhaFBXZE5FZWc5cjA0Skx6SmV5RXRqTGEvS0d4OVBielplcjZsdmUvM1VRSXJ0R3o5Q3NnYWdrdHdJRApBUUFCbzBJd1FEQU9CZ05WSFE4QkFmOEVCQU1DQWFZd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFCkZnUVUzZzlnUUh4aWZsbFpCRU0vZ1BHVjg2SFhFRGd3RFFZSktvWklodmNOQVFFTEJRQURnZ0dCQUJTUWh3YmgKNUVYeFhXVmd6dEJmWEpCSlBSL0xKTkQxVzFZZFJMN2RabHZDTlR4WDZKTUV6aDhtakdxL1A5RDVJc056eXpIdQpYSzh5RzRyZzBSRWFwRUFvTi9hQllSUkhzelYwejNtNFhqdEdTOUp0MW1ML2JKanpNMEFnUjVtb3lpMFQwcmpWCnN6RWYvK09OR0dvaEVvMlh1VW1zT2FMcFMxL0hWcWUxcWo4RU9JaTJCZFExMnZINnJ1bXBkMWlWWms4alorOTkKYXVZakhEVmcycmdwcUdOL05ib05PN1RKWmwzUDdyQ29rRy9Va1JRQU5lU1BPOEl6U0oyRjhnOXV2VUR4Z3dTOApOTmp3MmhhVXg5Z0JGOVJhYkd0cEhzcTBCYnZhT3QwZGNleXA3UW92Sk45QkVPZjU0dUwxMG1POUluWW9tTFRhCkw3cDJSdTVuYmlkcXppODRZOXVFd2YxYmk1Y05LVE1GRVh1NURvVjZKZWlIenp1YWt5b2dORzBxbHg5QitCYVIKb1huelFSeEkwNCtVNVdQZVpNdlFxMFdBZXpna2tpZkZTWVhOYkE5YWZNeHgzSFk1ZkJpV1FxaTUxbjQ1a2tlZwpoTXNONFMvd2pXbkxlMjlQVU1TOHIzeFpneVlxZitMbkxzY0VUZGtrQUorKytjQWhYR2dPS2VjVmRnPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=","server":"https://api.b07e82e.kyma.ondemand.com"},"name":"garden-kyma--b07e82e-external"}],"contexts":[{"context":{"cluster":"garden-kyma--b07e82e-external","user":"garden-kyma--b07e82e-external"},"name":"garden-kyma--b07e82e-external"}],"current-context":"garden-kyma--b07e82e-external","kind":"Config","users":[{"name":"garden-kyma--b07e82e-external","user":{"exec":{"apiVersion":"client.authentication.k8s.io/v1","args":["-c","set -e -o pipefail\nOIDC_URL_WITH_AUDIENCE=\"$ACTIONS_ID_TOKEN_REQUEST_URL\u0026audience=gh-teched-67debbc5-8d77-41ca-acba-7443e0a413ba-${{ github.event.inputs.NAMESPACE }}\"\nIDTOKEN=$(curl -sS \\\n  -H \"Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN\" \\\n  -H \"Accept: application/json; api-version=2.0\" \\\n  \"$OIDC_URL_WITH_AUDIENCE\" | jq -r .value)\n# Print decoded token information for debugging purposes\necho ::debug:: JWT content: \"$(echo \"$IDTOKEN\" | jq -c -R 'split(\".\") | .[1] | @base64d | fromjson')\" \u003e\u00262\nEXP_TS=$(echo $IDTOKEN | jq -R 'split(\".\") | .[1] | @base64d | fromjson | .exp')\nEXP_DATE=$(date -d @$EXP_TS --iso-8601=seconds)\n# return token back to the credential plugin\ncat \u003c\u003c EOF\n{\n  \"apiVersion\": \"client.authentication.k8s.io/v1\",\n  \"kind\": \"ExecCredential\",\n  \"status\": {\n    \"token\": \"$IDTOKEN\",\n    \"expirationTimestamp\": \"$EXP_DATE\"\n  }\n}\nEOF\n"],"command":"bash","interactiveMode":"Never"}}}]}
+        "kubeconfig": |+
+          "apiVersion": "v1"
+          "clusters":
+          - "cluster":
+              "certificate-authority-data": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUQ1ekNDQWsrZ0F3SUJBZ0lSQU01WE0vSkE4bXdxY1BiUlJyc3Foamt3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdIaGNOTWpVeE1ERTFNVFEwTlRVd1doY05NelV4TURFMU1UUTBOalV3V2pBTgpNUXN3Q1FZRFZRUURFd0pqWVRDQ0FhSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnR1BBRENDQVlvQ2dnR0JBS3FhCmtXc0JGSE5JbmhMa0k5MUtMOXFWS0h6OEZiVmlUVTJiMktyMnF2UXpkOHlNSENKekczaWRFOS9ac3RNZWpOaDAKdmFPN1NTNmptTkJRYis1ZFFrcVgxMW1CSDJRZzRTSXpEMUttWWRxSStZeGJRdjdVNFJVdGdmdTR0a1ZCdTFUZgpjQnM0VkFOTjFENkJxT2t6VFppVmlrNFVHNlNxSUJNZWJxR05GOHdrdWpsbWpmV05jZGEyN3R5cnorK0ttWFVrClN5bkpXOWI5cnpCVENCK3Nhd3JpVVIwSlVsR3ZrOTFlQ0dSelBJV1FrUUQyYy9JcFlBRE0rcGt3dnBiNHpXK1MKdFY3d0cwbzFXK2crRXBiMFoxcHZyQ05CZDNOSVBkU0VnWXl3UE1SQlJxWUdWS29nZ2l0bnRCcGR3QkoxLzBxTAowa2JqbGRYYysvOFd4K3pwMnkxeDZ6STFURFdoUGRXQlI2TVRKYTBmTWdZQXl3VWhadTZrcFRVQ0dXb3JyMXJwCkJtSURTeWNGRVhPaWowOExVM21jYUQ3MFZob3pidmo5bFJxU0owdlNsNVh5THFiTC9UTWk0UmxzSktDV1M0cU8KNmtpWkhhaFBXZE5FZWc5cjA0Skx6SmV5RXRqTGEvS0d4OVBielplcjZsdmUvM1VRSXJ0R3o5Q3NnYWdrdHdJRApBUUFCbzBJd1FEQU9CZ05WSFE4QkFmOEVCQU1DQWFZd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFCkZnUVUzZzlnUUh4aWZsbFpCRU0vZ1BHVjg2SFhFRGd3RFFZSktvWklodmNOQVFFTEJRQURnZ0dCQUJTUWh3YmgKNUVYeFhXVmd6dEJmWEpCSlBSL0xKTkQxVzFZZFJMN2RabHZDTlR4WDZKTUV6aDhtakdxL1A5RDVJc056eXpIdQpYSzh5RzRyZzBSRWFwRUFvTi9hQllSUkhzelYwejNtNFhqdEdTOUp0MW1ML2JKanpNMEFnUjVtb3lpMFQwcmpWCnN6RWYvK09OR0dvaEVvMlh1VW1zT2FMcFMxL0hWcWUxcWo4RU9JaTJCZFExMnZINnJ1bXBkMWlWWms4alorOTkKYXVZakhEVmcycmdwcUdOL05ib05PN1RKWmwzUDdyQ29rRy9Va1JRQU5lU1BPOEl6U0oyRjhnOXV2VUR4Z3dTOApOTmp3MmhhVXg5Z0JGOVJhYkd0cEhzcTBCYnZhT3QwZGNleXA3UW92Sk45QkVPZjU0dUwxMG1POUluWW9tTFRhCkw3cDJSdTVuYmlkcXppODRZOXVFd2YxYmk1Y05LVE1GRVh1NURvVjZKZWlIenp1YWt5b2dORzBxbHg5QitCYVIKb1huelFSeEkwNCtVNVdQZVpNdlFxMFdBZXpna2tpZkZTWVhOYkE5YWZNeHgzSFk1ZkJpV1FxaTUxbjQ1a2tlZwpoTXNONFMvd2pXbkxlMjlQVU1TOHIzeFpneVlxZitMbkxzY0VUZGtrQUorKytjQWhYR2dPS2VjVmRnPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+              "server": "https://api.b07e82e.kyma.ondemand.com"
+            "name": "garden-kyma--b07e82e-external"
+          "contexts":
+          - "context":
+              "cluster": "garden-kyma--b07e82e-external"
+              "user": "garden-kyma--b07e82e-external"
+            "name": "garden-kyma--b07e82e-external"
+          "current-context": "garden-kyma--b07e82e-external"
+          "kind": "Config"
+          "users":
+          - "name": "garden-kyma--b07e82e-external"
+            "user":
+              "exec":
+                "apiVersion": "client.authentication.k8s.io/v1"
+                "args":
+                - "-c"
+                - |
+                  set -e -o pipefail
+                  OIDC_URL_WITH_AUDIENCE="$ACTIONS_ID_TOKEN_REQUEST_URL&audience=gh-teched-67debbc5-8d77-41ca-acba-7443e0a413ba-${{ github.event.inputs.NAMESPACE }}"
+                  IDTOKEN=$(curl -sS \
+                    -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+                    -H "Accept: application/json; api-version=2.0" \
+                    "$OIDC_URL_WITH_AUDIENCE" | jq -r .value)
+                  # Print decoded token information for debugging purposes
+                  echo ::debug:: JWT content: "$(echo "$IDTOKEN" | jq -c -R 'split(".") | .[1] | @base64d | fromjson')" >&2
+                  EXP_TS=$(echo $IDTOKEN | jq -R 'split(".") | .[1] | @base64d | fromjson | .exp')
+                  EXP_DATE=$(date -d @$EXP_TS --iso-8601=seconds)
+                  # return token back to the credential plugin
+                  cat << EOF
+                  {
+                    "apiVersion": "client.authentication.k8s.io/v1",
+                    "kind": "ExecCredential",
+                    "status": {
+                      "token": "$IDTOKEN",
+                      "expirationTimestamp": "$EXP_DATE"
+                    }
+                  }
+                  EOF
+                "command": "bash"
+                "interactiveMode": "Never"
+
         "method": "kubeconfig"
     - "name": "check permissions"
       "run": |
@@ -35,8 +79,8 @@
         kubectl api-resources -o wide -n $NAMESPACE
         kubectl get dnsentries -A  -o json | jq -n  'inputs | .items[].spec.dnsName '
         kubectl get dnsentries -A  -o json | jq -n  'inputs | .items[].spec.dnsName  | select(contains("btp-quovadis"))'
-    - "name": "kyma cli 3.2.0"
-      id: HTTPBIN_URL
+    - "id": "HTTPBIN_URL"
+      "name": "kyma cli 3.2.0"
       "run": |
         echo "Installing kyma cli..."
         curl -sSL "https://github.com/kyma-project/cli/releases/download/3.2.0/kyma_Linux_x86_64.tar.gz" |  tar -xzv kyma
@@ -65,18 +109,14 @@
         HTTPBIN_URL=$(kubectl get dnsentries -A  -o json | jq -n -r --arg namespace "$NAMESPACE" 'inputs | .items[].spec.dnsName  | select(contains("btp-quovadis")) | select(contains("kyma.dev.sap")) | split("*") | join("https://httpbin-\($namespace)")' )
         echo -e "Additionally, httpbin-$NAMESPACE app has been made available under the custom domain at:\n$HTTPBIN_URL"
         echo "HTTPBIN_URL=$HTTPBIN_URL" >> $GITHUB_OUTPUT
-
-    - "name": "Simulate load on httpbin app in a given namespace"
-      "run": |
-        while [ "$(curl -sS ${{ steps.HTTPBIN_URL.outputs.HTTPBIN_URL }}/headers)" = "no healthy upstream" ]
-        do 
-          echo "no healthy upstream -- wait for the APIRule resource to be ready"
-          sleep 6
-        done        
-        for f in {1..10}; do curl -sS ${{ steps.HTTPBIN_URL.outputs.HTTPBIN_URL }}/headers; done
-        echo -e "You can now check the logs, metrics and traces in SAP Cloud Logging:\nhttps://url.sap/rw43o5"
-
-
+    - "name": |
+        "Simulate load on httpbin app in a given namespace"
+      "run": "echo -e \"Simulate load on httpbin app in a given namespace...\"\nwhile
+        [ \"$(curl -sS ${{ steps.HTTPBIN_URL.outputs.HTTPBIN_URL }}/headers )\" =
+        \"no healthy upstream\" ]\ndo \n  echo \"no healthy upstream -- wait for the
+        APIRule resource to be ready\"\n  sleep 6\ndone        \nfor f in {1..10};
+        do curl -sS ${{ steps.HTTPBIN_URL.outputs.HTTPBIN_URL }}/headers; done\necho
+        -e \"You can now check the logs, metrics and traces in SAP Cloud Logging portal:\\nhttps://url.sap/rw43o5\"\n"
 "name": "xp264-050-67debbc5-8d77-41ca-acba-7443e0a413ba-xp264"
 "on":
   "workflow_dispatch":
