@@ -8,6 +8,10 @@ variable "BTP_SA_REGION" {
   description = "consumer tenant (subaccount) region. Must the same as the provider's region"
 }
 
+variable "BTP_CUSTOM_IDP" {
+  type        = string
+  description = "Platform Custom IAS tenant fully qualified host name (w/o the schema)"
+}
 
 variable "admin_groups" {
   type        = list(string)
