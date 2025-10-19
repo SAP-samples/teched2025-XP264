@@ -4,6 +4,7 @@ output "sapbtp" {
 }
 
 output "faas-app-xp264-049-saas" {
+  sensitive = true 
   value = module.mt_context.faas-app-xp264-049-saas
 }
 
