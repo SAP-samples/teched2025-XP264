@@ -35,13 +35,6 @@ variable "admin_groups" {
   default     = ["GitHub", "XP264_INST","XP264","CLS_admin"]
 }
 
-variable "TECHED_MT_SUBSCRIPTION" {
-  type        = string
-  description = "TECHED_MT_SUBSCRIPTION: set it to any value if you need to create a new subscription"
-  default     = "TECHED_MT_SUBSCRIPTION"  //null
-}
-
-
 variable "subaccount_id" {
   type        = string
   description = "subaccount_id"

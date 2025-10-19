@@ -85,7 +85,7 @@ resource "btp_subaccount_role_collection_assignment" "subaccount_platform_idp_gr
 resource "btp_subaccount_role_collection_assignment" "subaccount_custom_idp_groups" {
   depends_on           = [btp_subaccount_subscription.faas_xp264_mt]
 
-  for_each             = length(var.TECHED_MT_SUBSCRIPTION[*]) != 0 ? toset( "${var.admin_groups}" ) : toset([])
+  for_each             = var.subaccount_id == "" ?  toset( "${var.admin_groups}" ) : toset([])
   subaccount_id        = data.btp_subaccount.context.id
   role_collection_name = "faas-xp264-049_hc-faas"
   group_name            = each.value
@@ -163,8 +163,7 @@ output "faas-app-xp264-049-saas" {
 
 
 resource "time_sleep" "subscription_propagation" {
-  count = length(var.TECHED_MT_SUBSCRIPTION[*]) != 0 ? 1 : 0
-
+  count           = var.subaccount_id == "" ? 1 : 0
   create_duration = "20s"
 
   triggers = {
@@ -178,7 +177,7 @@ resource "time_sleep" "subscription_propagation" {
 
 
 resource "btp_subaccount_subscription" "faas_xp264_mt" {
-  count = length(var.TECHED_MT_SUBSCRIPTION[*]) != 0 ? 1 : 0
+  count         = var.subaccount_id == "" ? 1 : 0
 
   depends_on    = [btp_subaccount_trust_configuration.custom_idp]
 
@@ -194,7 +193,7 @@ resource "btp_subaccount_subscription" "faas_xp264_mt" {
 
 /*
 data "btp_subaccount_subscription" "faas_xp264_mt" {
-  count = length(var.TECHED_MT_SUBSCRIPTION[*]) != 0 ? 1 : 0
+  count         = var.subaccount_id == "" ? 1 : 0
 
   depends_on    = [btp_subaccount_subscription.faas_xp264_mt]
 

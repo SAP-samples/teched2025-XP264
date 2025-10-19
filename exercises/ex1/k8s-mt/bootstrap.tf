@@ -8,6 +8,4 @@ module "mt_context" {
   BTP_SA_REGION      = var.BTP_SA_REGION
   admin_groups       = var.admin_groups
   subaccount_id      = var.subaccount_id
-
-  TECHED_MT_SUBSCRIPTION = var.TECHED_MT_SUBSCRIPTION
 }

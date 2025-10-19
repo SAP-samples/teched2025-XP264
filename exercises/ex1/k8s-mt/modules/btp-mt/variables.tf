@@ -23,13 +23,6 @@ variable "admin_groups" {
   description = "Defines the platform IDP groups to be added to each subaccount as administrators."
 }
 
-variable "TECHED_MT_SUBSCRIPTION" {
-  type        = string
-  description = "TECHED_MT_SUBSCRIPTION"
-  //default     = null
-}
-
-
 variable "subaccount_id" {
   type        = string
   description = "subaccount_id"
