@@ -235,7 +235,7 @@ output "faas_xp264_mt_subscription_url" {
 
 locals {
 
-  consumer_tenant_url = "https://emea.cockpit.btp.cloud.sap/cockpit?idp=${var.BTP_CUSTOM_IDP}#/globalaccount/${BTP_GLOBAL_ACCOUNT}/subaccount/${data.btp_subaccount.context.id}"
+  consumer_tenant_url = "https://emea.cockpit.btp.cloud.sap/cockpit?idp=${var.BTP_CUSTOM_IDP}#/globalaccount/${var.BTP_GLOBAL_ACCOUNT}/subaccount/${data.btp_subaccount.context.id}"
   
 }
 

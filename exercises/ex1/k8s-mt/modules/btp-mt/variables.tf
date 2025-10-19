@@ -1,3 +1,8 @@
+variable "BTP_GLOBAL_ACCOUNT" {
+  type        = string
+  description = "Global account subdomain id"
+}
+
 variable "BTP_SUBACCOUNT" {
   type        = string
   description = "consumer tenant (subaccount) name prefix"

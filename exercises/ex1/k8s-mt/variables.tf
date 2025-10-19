@@ -3,7 +3,7 @@
 
 variable "BTP_GLOBAL_ACCOUNT" {
   type        = string
-  description = "Global account name"
+  description = "Global account subdomain id"
 }
 
 variable "BTP_BACKEND_URL" {
