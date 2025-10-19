@@ -111,7 +111,7 @@ resource "btp_subaccount_role_collection_assignment" "subaccount_platform_idp_gr
 # Assign users to Role Collection: subaccount emergency_admin (with sap.custom)
 #
 resource "btp_subaccount_role_collection_assignment" "subaccount_custom_idp_groups" {
-  depends_on           = [btp_subaccount_subscription.faas-xp264-mt]
+  depends_on           = [btp_subaccount_subscription.faas_xp264_mt]
 
   for_each             = length(var.TECHED_MT_SUBSCRIPTION[*]) != 0 ? toset( "${var.admin_groups}" ) : toset([])
   subaccount_id        = data.btp_subaccount.context.id
@@ -202,7 +202,7 @@ resource "time_sleep" "subscription_propagation" {
 }
 
 
-resource "btp_subaccount_subscription" "faas-xp264-mt" {
+resource "btp_subaccount_subscription" "faas_xp264_mt" {
   count = length(var.TECHED_MT_SUBSCRIPTION[*]) != 0 ? 1 : 0
 
   depends_on    = [btp_subaccount_trust_configuration.custom_idp]
@@ -218,3 +218,16 @@ resource "btp_subaccount_subscription" "faas-xp264-mt" {
 }
 
 
+data "btp_subaccount_subscription" "faas_xp264_mt" {
+  count = length(var.TECHED_MT_SUBSCRIPTION[*]) != 0 ? 1 : 0
+
+  depends_on    = [btp_subaccount_trust_configuration.faas_xp264_mt]
+
+  subaccount_id = data.btp_subaccount.context.id
+  app_name      = one(time_sleep.subscription_propagation[*].triggers["app_name"]) 
+  plan_name     = one(time_sleep.subscription_propagation[*].triggers["plan_name"]) 
+}
+
+output "faas_xp264_mt_subscription_url" {
+  value = data.btp_subaccount_subscription.faas_xp264_mt.subscription_url
+}
