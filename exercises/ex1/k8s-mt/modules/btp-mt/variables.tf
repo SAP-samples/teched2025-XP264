@@ -23,3 +23,9 @@ variable "TECHED_MT_SUBSCRIPTION" {
   description = "TECHED_MT_SUBSCRIPTION"
   //default     = null
 }
+
+
+variable "subaccount_id" {
+  type        = string
+  description = "subaccount_id"
+}

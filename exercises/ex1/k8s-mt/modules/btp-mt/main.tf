@@ -33,12 +33,13 @@ resource "random_id" "context_id" {
 
 locals {
   context_id        = random_id.context_id.hex
-  subaccount_domain = lower("${var.BTP_SUBACCOUNT}-mt-${local.context_id}")
-  subaccount_name   = lower("${var.BTP_SUBACCOUNT}-mt-${local.context_id}")
+  subaccount_domain = lower("mt-${var.BTP_SUBACCOUNT}-${local.context_id}")
+  subaccount_name   = lower("mt-${var.BTP_SUBACCOUNT}-${local.context_id}")
   region            = lower("${var.BTP_SA_REGION}")
 }
 
 resource "btp_subaccount" "create_subaccount" {
+  count       = var.subaccount_id == "" ? 1 : 0
 
   name        = local.subaccount_name
   subdomain   = local.subaccount_domain
@@ -55,7 +56,7 @@ resource "btp_subaccount" "create_subaccount" {
 }
 
 data "btp_subaccount" "context" {
-  id = btp_subaccount.create_subaccount.id
+  id = var.subaccount_id == "" ? one(btp_subaccount.create_subaccount[*].id) : var.subaccount_id
 }
 
 output "btp_subaccount_labels" {
@@ -148,6 +149,20 @@ data "btp_subaccount_trust_configuration" "custom_idp" {
 
 
 
+resource "btp_subaccount_security_settings" "sec_setting" {
+  subaccount_id                            = data.btp_subaccount.context.id
+
+  default_identity_provider                = "sap.custom"
+
+/*
+  access_token_validity                    = 3600
+  refresh_token_validity                   = 3600
+  treat_users_with_same_email_as_same_user = true
+  custom_email_domains                     = ["yourdomain.test"]
+  iframe_domains                           = "https://yourdomain.test"
+*/  
+}
+
 # look up services offerings available on sapbtp environment in a given subaccount
 data "btp_subaccount_service_offerings" "sapbtp" {
   subaccount_id = data.btp_subaccount.context.id
@@ -164,22 +179,24 @@ data "btp_subaccount_subscriptions" "all" {
   subaccount_id = data.btp_subaccount.context.id
 }
 
+locals {
+  faas-app-xp264-049-saas = [ for i, s in data.btp_subaccount_subscriptions.all.values: s if s.app_name == "faas-app-xp264-049-saas" ]
+}
 output "faas-app-xp264-049-saas" {
-  value = [ for s in data.btp_subaccount_subscriptions.all.values: s if s.app_name == "faas-app-xp264-049-saas" ]
+  value = local.faas-app-xp264-049-saas
 }
 
 
 resource "time_sleep" "subscription_propagation" {
   count = length(var.TECHED_MT_SUBSCRIPTION[*]) != 0 ? 1 : 0
 
-  create_duration = "60s"
+  create_duration = "20s"
 
   triggers = {
     # This sets up a proper dependency on the faas-app-xp264-049-saas subscription association
-    
-    //subscription = [ for service in data.btp_subaccount_service_offerings.sapbtp.values: service.catalog_name if service.catalog_name == "faas-app-xp264-049-saas" ][0]
 
-    subscription = "faas-app-xp264-049-saas"
+    app_name  = local.faas-app-xp264-049-saas[0].app_name
+    plan_name = local.faas-app-xp264-049-saas[0].plan_name
 
   }
 }
@@ -191,9 +208,9 @@ resource "btp_subaccount_subscription" "faas-xp264-mt" {
   depends_on    = [btp_subaccount_trust_configuration.custom_idp]
 
   subaccount_id = data.btp_subaccount.context.id
-  app_name      = one(time_sleep.subscription_propagation[*].triggers["subscription"]) // "faas-app-xp264-049-saas"
-  plan_name     = ""
-  //parameters    = jsonencode({})
+  app_name      = one(time_sleep.subscription_propagation[*].triggers["app_name"]) 
+  plan_name     = one(time_sleep.subscription_propagation[*].triggers["plan_name"]) 
+
   timeouts = {
     create = "25m"
     delete = "15m"

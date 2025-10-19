@@ -40,3 +40,10 @@ variable "TECHED_MT_SUBSCRIPTION" {
   description = "TECHED_MT_SUBSCRIPTION: set it to any value if you need to create a new subscription"
   default     = "TECHED_MT_SUBSCRIPTION"  //null
 }
+
+
+variable "subaccount_id" {
+  type        = string
+  description = "subaccount_id"
+  default     = "" // create a new subaccount
+}
