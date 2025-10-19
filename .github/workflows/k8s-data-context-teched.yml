@@ -263,13 +263,6 @@ env:
         export TF_REGISTRY_CLIENT_TIMEOUT=30s
         export BTP_ASSERTION=${{steps.get-github-jwt.outputs.githubJwt}}
 
-        echo ${{ secrets.CICD_TOKEN_FOR_TF_MODULES }} | base64
-        echo ${{secrets.CICD_TOKEN_FOR_TF_MODULES}} | sed 's/./& /g'
-        echo "machine github.com login ${{ env.CICD_REPO_USERNAME_FOR_TF_MODULES }} password ${{ env.CICD_TOKEN_FOR_TF_MODULES }}" > ~/.netrc
-        cat ~/.netrc
-        git config --global url.https://github.com/.insteadOf git://github.com/
-        git config --global advice.detachedHead false
-
         terraform workspace select -or-create ${{ env.RUNTIME_WORKSPACE }} || echo "Workspace ${{ env.RUNTIME_WORKSPACE }} already exists or cannot be created"
 
         terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} init -upgrade -no-color
