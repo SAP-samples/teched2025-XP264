@@ -11,10 +11,12 @@ This repository contains the material for the SAP TechEd 2025 session catalog nu
 
 This session introduces attendees to **Day-2** operation with SAP BTP, Kyma runtime - a flexible and easy way to connect and extend enterprise applications in the cloud-native world.  
 
-**Kyma** as of such, part of [Kyma project](https://github.com/kyma-project), is an opinionated set of Kubernetes-based modular building blocks (modules) that provide all the necessary capabilities to develop and run enterprise-grade cloud-native applications.
+**Kyma** as of such, part of [Kyma project](https://github.com/kyma-project), is an opinionated set of Kubernetes-based modular building blocks (modules) that provide all the necessary capabilities to develop and run enterprise-grade cloud-native applications.  
 
-  * Learn how to run applications on the Kyma runtime for SAP BTP and discover the power of smooth integration with cloud applications and on-premise systems using the advanced connectivity features.  
-  * Explore operational best practices from mastering troubleshooting techniques and intelligent root-cause analysis to event-driven autoscaling that adapts to your business needs in real time.
+### During the session you will learn:
+
+  * how to run applications on the Kyma runtime for SAP BTP and discover the power of smooth integration with cloud applications and on-premise systems using the advanced connectivity features.  
+  * to explore operational best practices from mastering troubleshooting techniques and intelligent root-cause analysis to event-driven autoscaling that adapts to your business needs in real time.
 
 ## Requirements
 
