@@ -59,7 +59,7 @@ This step is optional and you can be use instead any existing personal GitHub ac
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="https://github.com/user-attachments/assets/bb958aee-cd70-496d-b73c-0736ba01c1c1" alt="" /></a></h1>
+<h1><a href=""><img class="aligncenter" src="./ex0/images/SAPTechEd25XP264.png" alt="SAP-TechEd25-XP264" /></a></h1>
 </div>
 </td>
 </tr>
