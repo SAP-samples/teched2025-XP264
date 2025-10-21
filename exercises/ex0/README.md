@@ -48,11 +48,9 @@ This step is optional and you can be use instead any existing personal GitHub ac
 
 ## Exercise 0.2 - Discover SAP-TechEd-XP264 Business Technology Platform landscape
 
-1. Navigate to the [SAP Business Technology Platform - Cockpit](https://account.hana.ondemand.com/#/home/welcome)
-
-2. Click "Sign In" and enter the for this session provided user credentials
-
-3. After the BPT Cockpit has been loaded, you should see following account structure:
+- Navigate to the [SAP Business Technology Platform - Cockpit](https://account.hana.ondemand.com/#/home/welcome)
+- Click "Sign In" and enter the for this session provided user credentials
+- After the BPT Cockpit has been loaded, you should see following account structure:
 
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
@@ -113,9 +111,9 @@ Easy navigation with the session landscape site with your allocated student's us
 <td style="width: 71.6%; height: 193px;">
 <div>
 <h1><a href="https://url.sap/3kf0ol">
-<p float="left">
-  <img src="../ex0/images/site_navigation.png" width="500" height="800"/>
-  <img src="../ex0/images/functional_architecture.png" width="500" height="800"/> 
+<p float="center">
+  <img src="../ex0/images/site_navigation.png" width="400" height="800"/>
+  <img src="../ex0/images/functional_architecture.png" width="400" height="800"/> 
 </p>
 </a></h1>
 </div>
