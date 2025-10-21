@@ -15,6 +15,19 @@ Once completed, we would navigate to SAP Cloud Logging to explore the three pill
 - Access the SAP Cloud Logging from the Link provided
 
 - Navigate to `Discover` to acess the logs
+
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-discover-logs-0.png" alt="" height="600"/></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table> 
+
 ![access-cls](./assets/telemetry-cls-discover-logs-0.png)
 
 ### Explore Logs
