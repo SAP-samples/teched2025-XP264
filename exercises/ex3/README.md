@@ -70,17 +70,68 @@ Once completed, we would navigate to SAP Cloud Logging to explore the three pill
 
 ### Explore Metrics  
 
-There are some pre-defined dashboards available in SAP Cloud Logging. Lets explore some of them.
+There are some pre-defined dashboards available in SAP Cloud Logging. Let's explore some of them.
 
 - Select `Dashboards` from the left menu
-  ![dashboards](./assets/telemetry-cls-dashboards.png)
+
+
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-dashboards.png" alt="dashboards" height="600"/></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table>   
 
 - Check the overview dashboard. Apply the filters as shown below to narrow down details to your cluster and application
   ![overview](./assets/telemetry-cls-kyma-overview.png)
 
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-kyma-overview.png" alt="overview" height="600"/></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table>    
+
 - Similarly check `Four golden signals` and `usage` dashboards
   ![4-g-s](./assets/telemetry-cls-4-golden-signals.png)
+
+
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-4-golden-signals.png" alt="overview" height="600"/></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table>   
+
   ![usage](./assets/telemetry-cls-usage.png)
+
+
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-usage.png" alt="overview" height="600"/></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table>   
 
 - Feel free to explore further
 
