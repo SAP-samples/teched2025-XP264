@@ -102,8 +102,8 @@ The requirements to follow the exercises in this repository are...
 * #### [Exercise T3 - Use Transparent Proxy Kyma Module](exercises/exT3#exercise-t3---use-transparent-proxy-kyma-module)
 
   * [Exercise T3.1 - Run a cURL Pod Included in the Istio Service Mesh](exercises/exT3#exercise-t31-run-a-curl-pod-included-in-the-istio-service-mesh)
-  * [Exercise T3.1 - Simulate some load](exercises/ex3#exercise-30---simulate-some-load)
-  * [Exercise T3.1 - Simulate some load](exercises/ex3#exercise-30---simulate-some-load)
+  * [Exercise T3.2 -  Connect to remote systems defined as destinations using the dynamic "gateway" Destination CR](exercises/exT3#exercise-t32-connect-to-remote-systems-defined-as-destinations-using-the-dynamic-gateway-destination-cr)
+  * [Exercise T3.3 - Connect to a remote system defined as destination using the dedicated (static) "s4any" Destination CR](exercises/exT3#exercise-t33-connect-to-a-remote-system-defined-as-destination-using-the-dedicated-static-s4any-destination-cr)
 
 
 ----------------------------  
