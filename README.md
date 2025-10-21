@@ -9,7 +9,7 @@ This repository contains the material for the SAP TechEd 2025 session catalog nu
 
 ## Overview
 
-This session introduces attendees to **Day-2** operations with SAP BTP, Kyma runtime - a managed kubernetes runtime to help connect and extend enterprise applications in the cloud-native world.  
+This session introduces attendees to **Day-2** operations with SAP BTP, Kyma runtime - a managed kubernetes environment to help connect and extend enterprise applications in the cloud-native world.  
 
 In a nutshell, SAP BTP, Kyma Runtime (SKR) is a managed offering of a Kubernetes Cluster based on Gardener, extended by a set of building blocks called **Kyma modules**.  
 The idea being that each instance of SAP BTP Kyma runtime environment is a separate Kubernetes cluster with its own set of modules.  
@@ -42,7 +42,7 @@ All these clusters are managed by a central Kyma Control Plane (KCP) that orches
 The requirements to follow the exercises in this repository are...
 
   * You need to have a GitHub user. If you don't have one so far, please sign-up on GitHub before going through the exercises
-  * Additional configuration on your SAP TECHED 2025 Client laptop (that should be pre-installed)
+  * Additional software tools on your SAP TECHED 2025 Client laptop (that should be already pre-installed)
     
   kubectl plugins | install [jq](https://jqlang.org/download/) | [Kyma CLI for SAP BTP, Kyma Runtime](https://tools.hana.ondemand.com/#cloud) |
   -- | -- | -- |
