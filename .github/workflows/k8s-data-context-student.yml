@@ -15,24 +15,24 @@ on:
           - "xp264-001"
           - "uk-xp264"
 
-env:
-
-  IDP: "anuk8cmfw.accounts.ondemand.com"
-  CLUSTER_CONTEXT: |
-      "${{ inputs.subaccount_name == 'uk-xp264' && 'garden-kyma--b84edf3-external'
-      || inputs.subaccount_name == 'uk-south' && 'garden-kyma--a896778-external' 
-      || inputs.subaccount_name == 'xp264-000' && 'garden-kyma--c-4d2de7e-external'
-      || inputs.subaccount_name == 'japanese-east' && 'garden-kyma--c-99567a9-external'
-      || inputs.subaccount_name == 'us-east' && 'garden-kyma--ca15e0c-external'
-      || inputs.subaccount_name == 'xp264-001' && 'garden-kyma--c-13f520f-external'
-      }}"
 
 permissions: 
   contents: read
   id-token: write
 
 jobs:
-  deploy-all-namespaces:
+  collect-diagnostic-data:
+  env:
+    IDP: "anuk8cmfw.accounts.ondemand.com"
+    CLUSTER_CONTEXT: |
+        "${{ inputs.subaccount_name == 'uk-xp264' && 'garden-kyma--b84edf3-external'
+        || inputs.subaccount_name == 'uk-south' && 'garden-kyma--a896778-external' 
+        || inputs.subaccount_name == 'xp264-000' && 'garden-kyma--c-4d2de7e-external'
+        || inputs.subaccount_name == 'japanese-east' && 'garden-kyma--c-99567a9-external'
+        || inputs.subaccount_name == 'us-east' && 'garden-kyma--ca15e0c-external'
+        || inputs.subaccount_name == 'xp264-001' && 'garden-kyma--c-13f520f-external'
+        }}"
+
     strategy:
       max-parallel: 4
       matrix:
