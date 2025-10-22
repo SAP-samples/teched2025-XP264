@@ -361,7 +361,7 @@ Good to know:
 <p float="left">
   <img src="../ex1/images/Default-identity-provider.png" width="450" height="600"/>
   <img src="../ex1/images/Default-identity-provider-edit.png" width="450" height="600"/>
-  <img src="../ex1/images/Default-identity-provider-save.png" width="450" height="800"/> 
+  <img src="../ex1/images/Default-identity-provider-save.png" /> 
 </p>
 </a></h1>
 </div>
