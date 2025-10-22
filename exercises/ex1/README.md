@@ -57,10 +57,12 @@ Each Kyma Runtime instance is a separate Kubernetes cluster managed by the KCP. 
 - A well-thought and designed landscape (Day-0/Day-1) would offer some built-in automation.  
 - Both with some CI/CD workflows and Terraform automation
 
-It's a bit like having blind date with SAP Kyma.  You are asked to run a few workflows that the Day-0/Day-1 team has designed and implemented.  
-These worklows act similarly to, for instance, electric probes providing the key information about the state of the runtime environment at a glance.  
-
 Let's have a look at different kyma clusters through the lenses of the ready made automation workflows...  
+
+It's a bit like having blind date with SAP Kyma.  You are asked to run a few workflows that the Day-0/Day-1 team has designed and implemented.  
+These worklows should allow to retrieve the key information about the state of the runtime environment... at a glance.  
+
+Feel free to add any additional information you might like to retrieve...
 
  | Kyma Region |  Console (dashboard) | Admin Worklow | Student Workflow | Data Collection Workflow
  | :---------  | --------- | :--------- | :------- | -----------
@@ -71,9 +73,10 @@ Let's have a look at different kyma clusters through the lenses of the ready mad
  | [uk-xp264]() | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=0FD84322-535C-4047-89CE-47FC775938FC ) | [uk-xp264--admin](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943.yml) | [uk-xp264--xp264](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264.yml) | [k8s-data-context](../../../../actions/workflows/k8s-data-context-student.yml)
 
 
-A hint: for the best experience, please use the right click to open workflow links into a tab or into a new window.  
-The ready made CI/CD workflows are to be manually triggered.  
-For instance:
+Good to know:
+- For the best experience, please use the right click to open workflow links into a tab or into a new window.  
+- The ready made CI/CD workflows are to be manually triggered.  
+  * For instance:
 
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
@@ -117,6 +120,9 @@ For instance:
 Good to know: 
 - The automated workflows leverage the dynamic OIDC credentials with Github acting as the IDP provider. 
 - Thus, there is no need to rely on static credentials or 
+
+Homework:
+- Feel free to add any additional information you might like to retrieve...
 
 ## Exercise 1.3 - Zoom on Kyma CLI
 
