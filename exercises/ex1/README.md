@@ -50,7 +50,7 @@ Each Kyma Runtime instance is a separate Kubernetes cluster managed by the KCP. 
 </table>   
 
 
-## Exercise 1.2 - A blind date. Explore Kyma with the ready made CI/CD workflows
+## Exercise 1.2 - A blind date with SAP Kyma. Explore Kyma environment with the ready made CI/CD workflows
 
 One does always need to climb the mountain of the onboarding documentation?  
 Not necessarily.  
@@ -156,9 +156,6 @@ Please get familiar with the available [commands](https://github.com/kyma-projec
 
   Access SAP Kyma dashboard.  
   You can use the easy navigation landscape dashboard with your allocated student's user name or use one of the kyma dashboard deep links below:
-
-
-
 
 
   * Here goes the table with the links to all btp and k8s resources...  
