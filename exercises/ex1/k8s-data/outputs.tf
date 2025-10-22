@@ -133,9 +133,6 @@ output "kyma_dashboard_url_qrcode_png" {
   value = "terraform output -raw kyma_dashboard_url_qrcode | base64 -d > kyma_dashboard_url_qrcode.png"
 }
 
-output "kyma_dashboard_url_ascii_qrcode" {
-  value = module.k8s_context.kyma_dashboard_url_ascii_qrcode
-}
 
 output "kyma_labels" {
   value = module.k8s_context.kyma_labels
@@ -151,22 +148,27 @@ output "kyma_labels_qrcode_png" {
   value = "terraform output -raw kyma_labels_qrcode | base64 -d > kyma_labels_qrcode.png"
 }
 
+
+/*
+output "kyma_dashboard_url_ascii_qrcode" {
+  value = module.k8s_context.kyma_dashboard_url_ascii_qrcode
+}
+
 output "kyma_labels_ascii_qrcode" {
   description = "ascii qrcode format"
   sensitive = true
   value = module.k8s_context.kyma_labels_ascii_qrcode
 }
+output "kyma_parameters_ascii_qrcode" {
+  sensitive = true
+  value = module.k8s_context.kyma_parameters_ascii_qrcode
+}
+*/
 
 output "kyma_parameters" {
   //sensitive = true
   value = module.k8s_context.kyma_parameters
 }
-
-output "kyma_parameters_ascii_qrcode" {
-  //sensitive = true
-  value = module.k8s_context.kyma_parameters_ascii_qrcode
-}
-
 
 output "kyma_serviceaccount" {
   description = "kyma_serviceaccount: requires kubectl-view_serviceaccount_kubeconfig plugin"
