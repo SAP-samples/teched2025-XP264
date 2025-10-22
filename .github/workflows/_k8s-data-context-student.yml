@@ -146,13 +146,37 @@ env:
         export KUBECONFIG=$TOTO
 
         cp ./all-in-one-kubeconfig.yaml $KUBECONFIG
-        cat $KUBECONFIG
+        #cat $KUBECONFIG
 
         kubectl config get-clusters
         kubectl config get-contexts
 
         kubectl config use-context $CLUSTER_CONTEXT
         kubectl config current-context
+        kubectl config get-contexts
+
+    - "name": "check namespaced permissions"
+      "run": |
+        echo "checking namespace $NAMESPACE permissions..."
+        kubectl auth can-i --list --namespace $NAMESPACE
+        kubectl auth can-i get gateways --namespace $NAMESPACE
+        kubectl auth can-i create apirules --namespace $NAMESPACE
+        echo "can access kyma-system gateway?"
+        kubectl auth can-i get gateways -n kyma-system
+        echo "can access all other gateways in the cluster?"
+        kubectl auth can-i get gateways -A
+        echo "display all gateways in the cluster"
+        kubectl get gateways -A
+        echo "display all pods and secrets in the namespace"
+        kubectl get pod -n $NAMESPACE
+        kubectl get secrets -n $NAMESPACE
+
+    # GitHub Action reference: https://github.com/jupyterhub/action-k8s-namespace-report
+    - name: Kubernetes namespace report
+      uses: jupyterhub/action-k8s-namespace-report@v1
+      if: always()
+      with:
+       namespace: $NAMESPACE
 
     - "name": "install kyma cli"
       uses: kyma-project/setup-kyma-cli@v1
