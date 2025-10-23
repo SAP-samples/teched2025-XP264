@@ -1,4 +1,4 @@
-name: Deploy all namespaces on xp264-001 cluster
+name: Deploy all namespaces on xp264-001 (AWS) cluster
 on:
   workflow_dispatch:
 
