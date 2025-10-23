@@ -37,7 +37,7 @@ Some of the modules are added by default (istio, api-gateway and btp-operator), 
 
 ## Exercise 1.1 - Easy access to your teched landscape with SSO.
 
-  * To assist you with the landscape discovery and ease the navigation you may use the below SAP Workzone dashboard.  
+- This SAP Workzone dashboard is to assist you with the landscape discovery and ease the navigation thorugh the landscape components.
 - Please use your allocated student's credentials to login...
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
