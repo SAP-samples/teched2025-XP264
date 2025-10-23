@@ -13,6 +13,7 @@ on:
           - "us-east"
           - "xp264-000"
           - "xp264-001"
+          - "xp264-045"
           - "uk-xp264"
 
       "NAMESPACE":
@@ -80,6 +81,7 @@ env:
       || inputs.subaccount_name == 'japanese-east' && 'garden-kyma--c-99567a9-external'
       || inputs.subaccount_name == 'us-east' && 'garden-kyma--ca15e0c-external'
       || inputs.subaccount_name == 'xp264-001' && 'garden-kyma--c-13f520f-external'
+      || inputs.subaccount_name == 'xp264-045' && 'garden-kyma--b242c25-external'      
       }}"
 
 
