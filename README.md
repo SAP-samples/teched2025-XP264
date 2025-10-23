@@ -42,7 +42,7 @@ All these clusters are managed by a central Kyma Control Plane (KCP) that orches
 The requirements to follow the exercises in this repository are...
 
   * You need to have a GitHub user. If you don't have one so far, please sign-up on GitHub before going through the exercises
-  * Additional software tools on your SAP TECHED 2025 Client laptop (that should be already pre-installed)
+  * Additional software tools pre-installed on your SAP TECHED 2025 Client laptops  
     
   kubectl plugins | install [jq](https://jqlang.org/download/) | [Kyma CLI for SAP BTP, Kyma Runtime](https://tools.hana.ondemand.com/#cloud) |
   -- | -- | -- |
