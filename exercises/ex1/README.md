@@ -83,6 +83,24 @@ These automations are like fuel to your kubernetes engines and environments
 👉 Pick a region and action of your choice...
 👉 Have fun...
 
+
+<style>
+    .heatMap {
+        width: 70%;
+        text-align: center;
+    }
+    .heatMap th {
+        background: grey;
+        word-wrap: break-word;
+        text-align: center;
+    }
+    .heatMap tr:nth-child(1) { background: red; }
+    .heatMap tr:nth-child(2) { background: orange; }
+    .heatMap tr:nth-child(3) { background: green; }
+</style>
+
+<div class="heatMap">
+
  | Kyma Region (BTP Cockpit) |  Console (dashboard) | Admin Worklow (cluster-wide) | Student Workflow (namespaced)| Data Collection Workflow (namespaced)
  | :---------  | --------- | :--------- | :------- | -----------
  | [uk-south](https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/c1f19148-71f7-4883-9f86-8d5ee7634dec/subaccount/4457fb7f-3296-40cf-b66b-aac3d9d4a2b2) | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=6D0AF763-179E-4F84-8ED0-724B3C0C2C92) | [uk-south--admin](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba.yml) | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)| [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
@@ -91,6 +109,7 @@ These automations are like fuel to your kubernetes engines and environments
  | [xp264-000](https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/c1f19148-71f7-4883-9f86-8d5ee7634dec/subaccount/20b6061c-64aa-4397-bc01-df7348704173) | [<img src="../landscape/xp264-000/kyma_dashboard_url_xp264_000.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=B427F082-0D0C-4657-9D99-56629CC03CF6 ) | [xp264-000--admin](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5.yml) | [xp264-000--xp264](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
  | [uk-xp264]() | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=0FD84322-535C-4047-89CE-47FC775938FC ) | [uk-xp264--admin](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943.yml) | [uk-xp264--xp264](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
 
+</div>
 
 Good to know:
 
@@ -351,6 +370,8 @@ kyma alpha diagnose -f json | jq '.nodes[] | tojson'
 
   * Accessing other diagnostic information with btp and kubernetes terraform providers.
    Run the Data Collection Workflow
+
+
 
  | Kyma Region (BTP Cockpit) |  Console (dashboard) | Admin Worklow (cluster-wide) | Student Workflow (namespaced)| Data Collection Workflow (namespaced)
  | :---------  | --------- | :--------- | :------- | -----------
