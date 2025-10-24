@@ -70,7 +70,7 @@ The requirements to follow the exercises in this repository are...
 
 - Last but not least, you will be able to *play* with a pre-deployed SAP Build multitenant application deployed to one of the kyma clusters.   
 
-- FYI: Additional comamnd line tools (that are pre-installed on your SAP TECHED 2025 Client laptops), namely:  
+- :notebook: FYI: Additional comamnd line tools (that are pre-installed on your SAP TECHED 2025 Client laptops), namely:  
     
   - kubectl plugin list
     ```
