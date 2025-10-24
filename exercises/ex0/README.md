@@ -49,6 +49,14 @@ This step is optional and you can be use instead any existing personal GitHub ac
 
 ## Exercise 0.2 - The rules of the game
 
+- The students can pick and choose any available kyma cluster region from the following list:
+
+| Account Name              | Type        |                                                                                                                                Description |
+| :------------------------ | :---------: | :------------------------------------------------------------------------------------------------------------------------ |
+| us-east               |  US EAST region  | Students runtime context with kyma environment in the us east region         |
+| uk-south                  |  UK SOUTH region | Students runtime contexts with kyma environment in the uk south region         |
+| japan-east                |  JAPAN EAST region | Students runtime contexts with kyma environment in the japan east region         |
+
 
 
 - Access to the landscape via Easy Navigation dashboard:  
@@ -65,16 +73,8 @@ This step is optional and you can be use instead any existing personal GitHub ac
 </tbody>
 </table>  
 
-- The students can pick and choose any available kyma cluster region from the following list:
 
-| Account Name              | Type        |                                                                                                                                Description |
-| :------------------------ | :---------: | :------------------------------------------------------------------------------------------------------------------------ |
-| us-east               |  US EAST region  | Students runtime context with kyma environment in the us east region         |
-| uk-south                  |  UK SOUTH region | Students runtime contexts with kyma environment in the uk south region         |
-| japan-east                |  JAPAN EAST region | Students runtime contexts with kyma environment in the japan east region         |
-
-
- 
+Good to know: 
 - Each cluster has been configured to the same template with dedicated namespaces for each student.
 - As this is an academic exercise, the complete user/namespace isolation has not been enforced.
  
@@ -89,7 +89,26 @@ Furthermore:
 | btp-provider              |  Session Master  | with shared SAP HANA Cloud and Cloud Logging (SAML SSO) services instances.|
 
 
-- Login to [SAP-TechEd25-XP264 Business Technology Platform - Cockpit](https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/c1f19148-71f7-4883-9f86-8d5ee7634dec) with your allocated student's credentials (SSO)
+
+
+## Exercise 0.3 - Solution brief.
+
+Here goes a diagram of the functional architecture of the solution
+
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<h1><a href="https://url.sap/3kf0ol"><img class="aligncenter" src="../ex0/images/functional_architecture.png" alt=""/></a></h1>
+</div>
+</td>
+</tr>
+</tbody>
+</table>   
+
+
+Login to [SAP-TechEd25-XP264 Business Technology Platform - Cockpit](https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/c1f19148-71f7-4883-9f86-8d5ee7634dec) with your allocated student's credentials (SSO)
 
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
@@ -110,25 +129,6 @@ Furthermore:
 - Each BTP subaccount can host a single kyma runtime environment.
 - Each kyma runtim environment maps into a single kuberneters cluster in the Azure or AWS region of your choice.
 - Please note the kyma cluster region may be different from the BTP subaccount region.
-
-
-
-
-## Exercise 0.3 - Solution brief. Funtional architecture
-
-Here goes a diagram of the functional architecture of the solution
-
-<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
-<tbody>
-<tr style="height: 193px;">
-<td style="width: 71.6%; height: 193px;">
-<div>
-<h1><a href="https://url.sap/3kf0ol"><img class="aligncenter" src="../ex0/images/functional_architecture.png" alt=""/></a></h1>
-</div>
-</td>
-</tr>
-</tbody>
-</table>   
 
 
 Each student's runtime context has a preconfigured SAP Cloud Connector attached, for instance:
