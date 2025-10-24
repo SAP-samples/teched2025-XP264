@@ -86,11 +86,13 @@ Do it yourself...
 
 ```mermaid
 sequenceDiagram
-    Kyma Region (BTP Cockpit) ->> Admin Worklow (cluster-wide): cluster-wide automation
+    Kyma Region (BTP Cockpit)-->> Admin Worklow (cluster-wide): cluster-wide automation
     Kyma Region (BTP Cockpit)-->>Student Workflow (namespaced): namespaced auomation
     Kyma Region (BTP Cockpit)--x Data Collection Workflow (namespaced): cluster diagnostic ckeck
     Note left of Kyma Region (BTP Cockpit): Pick a region<br/>and action<br/>of your choice.
     Note left of Admin Worklow (cluster-wide): Choose a workflow<br/>and open it<br/>with the right click.
+    Note left of Student Workflow (namespaced): Choose a workflow<br/>and open it<br/>with the right click.
+    Note left of Data Collection Workflow (namespaced): Choose a workflow<br/>and open it<br/>with the right click.
 
 ```
 
