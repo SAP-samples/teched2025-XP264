@@ -103,6 +103,7 @@ Good to know:
   - ⚙️ Set up your Kubernetes context (kubeconfig)
   - 🚀 Enable you to run kubectl commands in your workflow
   - 🚀 Enable you to run kyma cli commands in your workflow
+ - 🚀 Enable you to run terraform automation in your workflow
 
   **Benefits:**
 
