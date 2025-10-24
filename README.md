@@ -45,10 +45,16 @@ The requirements to follow the exercises in this repository are...
   If you haven't got one yet, please [sign-up](exercises/ex0#exercise-00---sign-up-for-a-new-github-account) on GitHub before the workshop.
 
 - As the session content is delivered exclusively on SAP-Samples github, many excercises have been implemented as Github actions (GHA). 
-- There is no need to provide kubernetes and/or btp credentials when using the github actions with the Github acting as the IDP provider. The short-lived credentials are being fetched and rotated automatically on the behalf of the repository user.
-- You may run the GHA-based exercises directly from a browser from your forked repository on the teched laptop.
+- There is no need to provide kubernetes and/or btp credentials when using the github actions. 
+  - The Github is acting as the IDP provider. 
+  - All the kubernetets environments in the landscape come with the pre-configured Github actions OIDC providers.
+  - SAP Cloud Identity Services acting as a platform IDP on the BTP side og the house has been deferated with the Github actions Identity Provider
+  - As a result, the very short-lived credentials are being fetched and rotated automatically on the behalf of the repository user for either kubernetes and btp platform operations.
+- The good news is you may run the GHA-based exercises directly from a browser from your forked repository on the teched laptop.
+- Feel free to inspect the results of the built-in automations and if you feel like go ahead and create your own variants as well.
+- The recommendation is to go with the flow of the exercises, ask questions and leave the rest for the homework.
 
-- Alternatively, you may use VSCode terminal on your teched laptop and/or other VScode plugins you may be familiar with.
+- For all the exercises which may require a desktop terminal you may use VSCode with is built-in terminal as well.
 
 - As this is a Day-2 operation brief, the entire cloud landscape has been pre-configured with a number of shared components, for instance: 
    - SAP Cloud Identity Services (SAP IAS), 
