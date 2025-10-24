@@ -52,7 +52,9 @@ The requirements to follow the exercises in this repository are...
   installing the oidc-login plugin | |
   install view-serviceaccount-kubeconfig plugin | |
 
-  * Github actions (GHA). You may run the GHA-based exercises direclty from a browser from your forked repository on a teched laptop.
+  * As the session content is delivered exclusively on SAP-Samples github, many excercises have beeen implemented  as Github actions (GHA). 
+
+  You may run the GHA-based exercises direclty from a browser from your forked repository on a teched laptop.
   * Alternatively, you may use VSCode on your teched laptop terminal and other plugins you may be familiar with.
 
   * As this is a Day-2 operation brief, the entire cloud landscape has been pre-configured with a number of shared components, for instance: 
