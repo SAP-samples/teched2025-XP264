@@ -77,7 +77,6 @@ Do it yourself...
 <td style="width: 71.6%; height: 193px;">
 
 <div>
---------
 
 - The pre-configured CI/CD automation workflows are to be manually triggered. 
 - They come as:
@@ -92,8 +91,7 @@ sequenceDiagram
     Kyma Region (BTP Cockpit)--x Data Collection Workflow (namespaced): cluster diagnostic ckeck
     Note left of Kyma Region (BTP Cockpit): Pick a region<br/>and action<br/>of your choice.
     Note left of Admin Worklow (cluster-wide): Choose a workflow<br/>and open it<br/>with the right click.
-    Note left of Student Workflow (namespaced): Choose a workflow<br/>and open it<br/>with the right click.
-    Note left of Data Collection Workflow (namespaced): Choose a workflow<br/>and open it<br/>with the right click.
+
 
 ```
 
@@ -103,7 +101,7 @@ sequenceDiagram
 
 - 👉 For the best experience, open workflow links into a separate tab or into a new window (right click).  
 
-| Kyma Region (BTP Cockpit) |  Console (dashboard) | Admin Worklow (cluster-wide) | Student Workflow (namespaced)| Data Collection Workflow (namespaced)
+| Kyma BTP Region (Cockpit) |  Kyma dashboard | Admin Worklow (cluster-wide) | Student Workflow (namespaced)| Data Collection Workflow (namespaced)
  | :---------  | --------- | :--------- | :------- | -----------
  | [uk-south](https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/c1f19148-71f7-4883-9f86-8d5ee7634dec/subaccount/4457fb7f-3296-40cf-b66b-aac3d9d4a2b2) | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=6D0AF763-179E-4F84-8ED0-724B3C0C2C92) | [uk-south--admin](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba.yml) | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)| [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
  | [japan-east](https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/c1f19148-71f7-4883-9f86-8d5ee7634dec/subaccount/cae18034-657b-478d-89f7-b802b8111cd0) | [<img src="../landscape/japaneast/kyma_dashboard_url_japaneast.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=79EB720B-2C16-4A7E-AA7F-108C4E3B7E98 ) | [japan-east--admin](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932.yml) | [japan-east--xp264](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
