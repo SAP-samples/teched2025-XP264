@@ -59,9 +59,9 @@ Does one always need to climb the mountain of the onboarding documentation? Not 
 A well-thought and designed landscape (Day-0/Day-1) would offer some built-in automation.  
 this landscape features several pre-configured CI/CD github action workflows and Terraform automation.
 
-Explore Kyma runtime environments with the built-in automation flows.  
-Retrieve the key information about the state of the runtime environment... at a glance.  
-Both securely and effortlessly!
+👉 Explore Kyma runtime environments with the built-in automation flows.  
+👉 Retrieve the key information about the state of the runtime environment... at a glance.  
+👉 Both securely and effortlessly!
 
 These automations are like fuel to your kubernetes engines and environments
 
@@ -79,8 +79,9 @@ These automations are like fuel to your kubernetes engines and environments
 
 
 
-Do it out yourself...
-Pick a region and action of your choice...
+👉 Do it out yourself...
+👉 Pick a region and action of your choice...
+👉 Have fun...
 
  | Kyma Region (BTP Cockpit) |  Console (dashboard) | Admin Worklow (cluster-wide) | Student Workflow (namespaced)| Data Collection Workflow (namespaced)
  | :---------  | --------- | :--------- | :------- | -----------
