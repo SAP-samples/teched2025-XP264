@@ -72,11 +72,18 @@ The requirements to follow the exercises in this repository are...
 
 - Additional software tools (that are pre-installed on your SAP TECHED 2025 Client laptops) include:  
     
-  kubectl plugins | jq | Kyma CLI |
+  kubectl plugin list| jq | Kyma CLI |
   -- | :--: | -- |
-  [krew.exe](https://github.com/kubernetes-sigs/krew/releases/download/v0.4.5/krew.exe) | install jq with `winget install jqlang.jq` | download [kyma cli](https://github.com/kyma-project/cli/releases/download/3.2.0/kyma_Windows_x86_64.zip) 
-  oidc-login plugin | |
-  view-serviceaccount-kubeconfig | |
+```
+The following compatible plugins are available:
+
+C:\Software\CLI\Kubernetes\kubectl-convert.exe
+C:\Users\TE-06\.krew\bin\kubectl-krew.exe
+C:\Users\TE-06\.krew\bin\kubectl-oidc_login.exe
+C:\Users\TE-06\.krew\bin\kubectl-resource_capacity.exe
+C:\Users\TE-06\.krew\bin\kubectl-view_serviceaccount_kubeconfig.exe ``` 
+| install jq with `winget install jqlang.jq` | download [kyma cli](https://github.com/kyma-project/cli/releases/download/3.2.0/kyma_Windows_x86_64.zip) 
+
 
 
 ## [Let's get started...](exercises/ex0/)
