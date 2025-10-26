@@ -86,11 +86,10 @@ Let's have a look at the building blocks (steps) of github action workflows:
 
 ```mermaid
 graph TD
-    A[Set up job] --> B
-    Note left of A: Pick a region<br/>and action<br/>of your choice.
-    B[Check out Git repository] --> C
+    A[Set up job] -- checkout repository -.-> B
+    B[Check out Git repository] -.-> C
     C[Install helm] --> D
-    D[Setup Kube Context] --> E
+    D[Setup Kube Context] -- create kubeconfig with dynamic credentials --> E
     E[check permissions] --> F[Other steps]
 ```
 </p>
