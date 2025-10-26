@@ -88,9 +88,9 @@ Let's have a look at the building blocks (steps) of github action workflows:
 graph TD
     A[Set up job] -- checkout repository --> B
     B(Check out Git repository) --> C
-    C[Install helm] --> D
-    D[Setup Kube Context] -- create kubeconfig with dynamic credentials --> E
-    E[check permissions] --> F[Other steps]
+    C[Install helm] -- create kubeconfig with dynamic credentials --> D
+    D(Setup Kube Context) --> E
+    E(check permissions) -- these steps may differe from one worklow to another --> F(Other steps)
 ```
 </p>
 </div>
