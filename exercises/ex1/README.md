@@ -88,7 +88,7 @@ graph TD
     B(Check out Git repository) --> C
     C[Install helm] -- create kubeconfig with dynamic credentials --> D
     D(Setup Kube Context) -- kubeconfig permissions check --> E
-    E(check permissions) -- the below steps may differ from one worklow to another --> F{Other steps}
+    E(check permissions) -- the other steps may differ based on workflow type --> F{Other steps}
     F -->|cluster-wide| G[admin]
     F -->|namespaced| H[student]
     F -->|namespaced| I[Diagnostic]    
