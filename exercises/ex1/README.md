@@ -41,10 +41,12 @@ Some of the modules are added by default (istio, api-gateway and btp-operator), 
 <td style="width: 71.6%; height: 193px;">
 <div style="width: 100%; height: 600px;">
 
- A Mermaid sequence diagram showing the system flow between K8s components to start a container.
+<a Mermaid sequence diagram showing the system flow between K8s components to start a container. />
+
 ```mermaid 
 
 ---
+title: A Mermaid sequence diagram showing the system flow between K8s components to start a container.
 config:
   look: classic
   theme: neutral
