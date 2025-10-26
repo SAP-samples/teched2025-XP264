@@ -29,7 +29,7 @@ Some of the modules are added by default (istio, api-gateway and btp-operator), 
 <div>
 <h1><a href="https://url.sap/3kf0ol"><img class="aligncenter" src="../ex0/images/skr.drawio.svg" alt="" height="600"/></a></h1>
 
-```mermaid {align="center" zoom="false"}
+```mermaid 
 
 ---
 title: A Mermaid sequence diagram showing the system flow between K8s components to start a container.
@@ -38,6 +38,7 @@ config:
   themeVariables:
     primaryColor: "#00ff00"
   securityLevel: "loose"
+  mermaidZoom = false
 ---
 
 sequenceDiagram
