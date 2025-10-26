@@ -25,7 +25,7 @@ All these clusters are managed by a central Kyma Control Plane (KCP) that orches
 <td style="width: 71.6%; height: 193px;">
 <div>
 <p float="left">  
-<h1><a href="https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-environment"><img class="aligncenter" src="exercises/ex0/images/kyma-runtime-stack.drawio.svg" alt="kyma stack" /></a></h1>
+<h1><a href="https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-environment"><img class="aligncenter" src="exercises/ex0/images/kyma-runtime-stack.drawio.svg" alt="kyma stack" height="800"/></a></h1>
 
 ```mermaid
 graph TD
