@@ -80,6 +80,8 @@ They come in three different flavors, namely as:
 <td style="width: 71.6%; height: 193px;">
 <div>
 <p float="left">  
+<h1><a href="https://docs.github.com/en/actions/get-started/understand-github-actions"><img class="aligncenter" src="exercises/ex1/images/engine_fuel.jpg" alt="kyma stack" height="800"/></a></h1>
+
 
 ```mermaid
 graph TD
