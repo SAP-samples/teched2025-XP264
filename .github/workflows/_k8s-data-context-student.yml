@@ -348,7 +348,7 @@ env:
         kyma_parameters=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -json kyma_parameters | jq -R)
         echo "kyma_parameters=$kyma_parameters" >> $GITHUB_OUTPUT
 
-        kymaruntime_kubeconfig=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output kymaruntime_kubeconfig | base64 -d)
+        kymaruntime_kubeconfig=$(terraform -chdir=${{ env.PATH_TO_TFSCRIPT }} output -raw kymaruntime_kubeconfig)
         echo "kymaruntime_kubeconfig=$kymaruntime_kubeconfig" >> $GITHUB_OUTPUT
         echo  -e "$kymaruntime_kubeconfig"   
 
