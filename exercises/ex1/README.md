@@ -267,12 +267,24 @@ Time to do it yourself...
 <p float="left">
 
 ```mermaid
+---
+title: Github automation workflow per category: admin, student, data
+config:
+  theme: classic
+  securityLevel: "loose"
+---
 sequenceDiagram
-    Kyma Region (BTP Cockpit)-->> Admin Worklow (cluster-wide): cluster-wide automation
-    Kyma Region (BTP Cockpit)-->> Student Workflow (namespaced): namespaced auomation
-    Kyma Region (BTP Cockpit)-->> Data Collection Workflow (namespaced): cluster diagnostic ckeck
-    Note left of Kyma Region (BTP Cockpit): Pick a region<br/>and action<br/>of your choice.
-    Note left of Admin Worklow (cluster-wide): Choose a workflow<br/>and open it<br/>with the right click.
+  actor me as me
+  participant btp as Kyma Region (BTP Cockpit)
+  participant admin as Admin Worklow (cluster-wide)
+  participant student as Student Workflow (namespaced)
+  participant data as Data Collection Workflow (namespaced)
+
+  btp -->> admin: cluster-wide automation
+  btp -->> student: namespaced automation
+  btp -->> data: cluster diagnostic ckeck
+  Note left of btp: Pick a region<br/>and action<br/>of your choice.
+  Note left of admin: Choose a workflow<br/>and open it<br/>with the right click.
 ```
 
 </p>
