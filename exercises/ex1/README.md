@@ -140,18 +140,22 @@ config:
 sequenceDiagram
   actor me as student
   participant job as Set up job
+  Note right of job:checkout repository
   participant repo as Check out Git repository
   participant helm as Install helm
   participant kube as Setup Kube Context
+  Note left of kube:create kubeconfig with<br>dynamic credentials
   participant check as permissions check
+  Note left of check:kubeconfig<br>permissions check
   participant other as other
+  Note left of other:the other steps<br>may differ based<br>on workflow types
   autonumber
   me ->> job: job setup
   job ->> repo: repo checkout
   repo ->> helm: install helm
-  helm ->> kube: create kubeconfig with dynamic credentials
-  kube ->> check: kubeconfig permissions check
-  check ->> other: the other steps may differ based on workflow type
+  helm ->> kube: create kubeconfig
+  kube ->> check:  permissions check
+  check ->> other: admin<br>student<br>diagnostics
 ```
 
 </p>
