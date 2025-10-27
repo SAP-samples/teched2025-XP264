@@ -19,6 +19,43 @@ All these clusters are managed by a central Kyma Control Plane (KCP) that orches
  - and the Kyma modules.
 
 
+
+<table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
+<tbody>
+<tr style="height: 193px;">
+<td style="width: 71.6%; height: 193px;">
+<div>
+<p float="left">  
+<h1><a href="https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-environment"></a></h1>
+
+
+```mermaid
+
+flowchart TD
+ subgraph subGraph0["SAP Kyma Runtime"]
+        B["Hyperscaler project"]
+        D["Kyma modules"]
+        C["Gardener Kubernetes cluster"]
+  end
+    B --> C
+    C --> D
+    E["Kyma Control Plane"] <--> subGraph0
+    F["BTP Services"] <--> subGraph0
+
+    style B stroke-width:4px,stroke-dasharray: 0
+
+```
+
+<h1><a href="https://kubernetes.io/docs/concepts/overview/components/"><img class="aligncenter" src="https://kubernetes.io/images/docs/components-of-kubernetes.svg" alt="Kubernetes pod running inside a cluster" height="800"/></a></h1>
+
+</p>
+</div>
+</td>
+</tr>
+</tbody>
+</table> 
+
+
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
 <tr style="height: 193px;">
