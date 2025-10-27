@@ -243,9 +243,17 @@ config:
   look: classic
 ---
 flowchart TD
-    F{"Other steps"} -- "cluster-wide" --> G["admin"]
-    F -- namespaced --> H["student"] & I["Diagnostic"]
-
+ subgraph other["other"]
+        G["admin"]
+        F(("Other steps"))
+        H["student"]
+        I["data"]
+  end
+    F L_F_G_0@-- "cluster-wide" --> G
+    F L_F_H_0@-- namespaced --> H & I
+    L_F_G_0@{ animation: slow } 
+    L_F_H_0@{ animation: slow } 
+    L_F_I_0@{ animation: slow }
 
 ```
 
