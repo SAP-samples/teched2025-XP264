@@ -26,8 +26,6 @@ All these clusters are managed by a central Kyma Control Plane (KCP) that orches
 <td style="width: 71.6%; height: 193px;">
 <div>
 <p float="left">  
-<h1><a href="https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-environment"></a></h1>
-
 
 ```mermaid
 
@@ -43,6 +41,11 @@ flowchart TD
     F["BTP Services"] <--> subGraph0
 
     style B stroke-width:4px,stroke-dasharray: 0
+    style subGraph0 stroke:#616161
+    click D "https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-environment"
+
+
+
 
 ```
 
@@ -62,8 +65,6 @@ flowchart TD
 <td style="width: 71.6%; height: 193px;">
 <div>
 <p float="left">  
-<h1><a href="https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-environment"><img class="aligncenter" src="exercises/ex0/images/kyma-runtime-stack.drawio.svg" alt="kyma stack" height="800"/></a></h1>
-
 <h1><a href="https://kubernetes.io/docs/concepts/overview/components/"><img class="aligncenter" src="https://kubernetes.io/images/docs/components-of-kubernetes.svg" alt="Kubernetes pod running inside a cluster" height="800"/></a></h1>
 
 ```mermaid
@@ -80,6 +81,11 @@ flowchart TD
     F["BTP Services"] <--> subGraph0
 
     style B stroke-width:4px,stroke-dasharray: 0
+    style subGraph0 stroke:#616161
+    click D "https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-environment"
+
+
+
 
 ```
 
