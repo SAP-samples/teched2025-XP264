@@ -105,9 +105,6 @@ data "http" "kymaruntime_bindings" {
       error_message = self.response_body // "operation failed"
     }
   }
-/*
-Error: HTTP request error. Response code: 400,  Error Response body: {"error":{"code":10005,"message":"Environment instance binding operations are not allowed. Feature toggle is disabled","target":"/provisioning/v1/environments/9632DB3B-3E81-4A30-8A3D-7ED5F01C3AB4/bindings","correlationID":"b670d11f-5e85-4b66-465c-aa0b82297e89"}}
-*/
 
   depends_on = [
        data.jq_query.kymaruntime_environment
@@ -116,11 +113,6 @@ Error: HTTP request error. Response code: 400,  Error Response body: {"error":{"
 
 # https://github.com/hashicorp/terraform-provider-http/pull/114#issuecomment-1144999897
 #
-# TODO: add a terraform_data resource with a precondition to avoid failing on the kymaruntime errors, for instance:
-/*
-Error: HTTP request error. Response code: 500,  Error Response body: {"error":{"code":10000,"message":"Cannot invoke \"org.springframework.http.ResponseEntity.getStatusCode()\" because \"response\" is null","target":"/provisioning/v1/environments/0F148437-AEC6-4BA9-BC7C-A1979CA1FE50/bindings","correlationID":"0cecedce-8ee3-4bd7-50a0-f39a11f2cadd"}}
-*/
-
 resource "terraform_data" "kymaruntime_bindings" {
   count    = length(var.kymaruntime_bindings[*])
 

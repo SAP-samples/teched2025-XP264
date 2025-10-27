@@ -33,3 +33,8 @@ variable  "runtime_context_workspace" {
   description = "runtime_context_workspace which maybe different from k8s_context_workspace"
   type        = string  
 }
+
+variable "kymaruntime_bindings" {
+  type    = string
+  default = null //"kymaruntime_bindings" // if null then this variable is optional
+}

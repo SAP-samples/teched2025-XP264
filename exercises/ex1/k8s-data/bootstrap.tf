@@ -6,6 +6,7 @@ module "k8s_context" {
 
   BTP_SUBACCOUNT        = var.BTP_SUBACCOUNT
   POSTGRES_ALLOW_ACCESS = var.POSTGRES_ALLOW_ACCESS
-  
+  kymaruntime_bindings  = var.kymaruntime_bindings  
   runtime_context_workspace = var.runtime_context_workspace
+
 }

@@ -166,8 +166,18 @@ output "kyma_parameters_ascii_qrcode" {
 */
 
 output "kyma_parameters" {
-  //sensitive = true
+  description = "kyma_parameters retrived from the with the BTP TF"
   value = module.k8s_context.kyma_parameters
+}
+
+output "kymaruntime_environment" {
+  description = "kymaruntime_environment retrieved via the provisioning service API"
+  value = module.k8s_context.kymaruntime_environment
+}
+
+output "kymaruntime_kubeconfig" {
+  description = "kymaruntime_kubeconfig retrieved via the provisioning service API"
+  value = module.k8s_context.kymaruntime_kubeconfig
 }
 
 output "kyma_serviceaccount" {
