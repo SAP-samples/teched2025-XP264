@@ -285,18 +285,18 @@ Explanation. What has happened?
 </tbody>
 </table> 
 
-
-Good to know:
-- The security is paramount!  
-- The automated workflows leverage the dynamic OIDC credentials with Github Actions acting as the OIDC token provider in the context of a running job.  
-- Thus, there is no need to rely on static credentials or be compelled to use a vault.  
-- The implemented mechanism ensures the credentials are rotated automatically which makes it suitable for long running pipelines as well.  
-- In a nutshell, the automation workflows: 
-  - 🔐 leverage GitHub's OIDC token for secure authentication
-  - ⚙️ set up your Kubernetes kubeconfig with single or multiple contexts
-  - 🚀 enable you to run kubectl commands in your workflow
-  - 🚀 enable you to run kyma cli commands in your workflow
-  - 🚀 enable you to run terraform automation flows in your workflow
+> [!IMPORTANT]
+> Good to know:
+> - The security is paramount!  
+> - The automated workflows leverage the dynamic OIDC credentials with Github Actions acting as the OIDC token provider in the context of a running job.  
+> - Thus, there is no need to have any static credentials or be compelled to use a vault.  
+> - The implemented mechanism ensures the credentials are rotated automatically which makes it suitable for long running pipelines as well.  
+> - In a nutshell, the automation workflows: 
+>  - 🔐 leverage GitHub's OIDC token for secure authentication
+>  - ⚙️ set up your Kubernetes kubeconfig with single or multiple contexts
+>  - 🚀 enable you to run kubectl commands in your workflow
+>  - 🚀 enable you to run kyma cli commands in your workflow
+>  - 🚀 enable you to run terraform automation flows in your workflow
 
   **Benefits:**
 
@@ -373,7 +373,7 @@ You can initially download the kubeconfig from one of the links below or directl
 
 * Here goes the table with the links to all btp and k8s resources...  
 
-> [!IMPORTANT]
+> [!TIP]
 > | Region (BTP Cockpit) | Kubeconfig (download) | Console (dashboard) | Admin Worklow (cluster-wide) | Student Workflow (namespaced) | Data Collection Workflow (cluster-wide)
 > | :--------- | :---------:  | --------- | :--------- | :------- | -----------
 > | [uk-south](https://emea.cockpit.btp.cloud.sap/cockpit?idp=anuk8cmfw.accounts.ondemand.com#/globalaccount/c1f19148-71f7-4883-9f86-8d5ee7634dec/subaccount/4457fb7f-3296-40cf-b66b-aac3d9d4a2b2) | https://url.sap/q9176k | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="75" />](https://dashboard.kyma.cloud.sap/?kubeconfigID=6D0AF763-179E-4F84-8ED0-724B3C0C2C92) | [uk-south--admin](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba.yml) | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)| [ k8s-data-context](../../../../actions/workflows/k8s-data-context-teched.yml)
