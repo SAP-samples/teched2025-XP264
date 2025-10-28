@@ -50,10 +50,6 @@ flowchart TD
     style B stroke-width:4px,stroke-dasharray: 0
     style subGraph0 stroke:#616161
     click D "https://help.sap.com/docs/btp/sap-business-technology-platform/kyma-environment"
-
-
-
-
 ```
 
 </div>
@@ -87,15 +83,16 @@ The requirements to follow the exercises in this repository are...
 > [!IMPORTANT]
 > The session content is provided *exclusively* on the SAP-Samples github, and many excercises have been implemented as CI/CD [Github Actions worflows](https://docs.github.com/en/actions/get-started/understand-github-actions) (GHA). 
 
-> [!NOTE]
-> Security is paramount. With the Github Action IDP-delegated flow, there is no more need to provide kubernetes and btp credentials when using those [github actions](https://docs.github.com/en/actions/concepts/security/openid-connect#benefits-of-using-oidc). 
+> [!TIP]
+> Security is paramount. With the Github Action IDP-delegated flow, there is no more need to provide kubernetes and btp credentials when using [github actions](https://docs.github.com/en/actions/concepts/security/openid-connect#benefits-of-using-oidc). 
   - ✅ The Github Action workflows acting as the [OIDC provider](https://docs.github.com/en/actions/concepts/security/openid-connect). 
   - ✅ All the kubernetets environments in the landscape are configured to trust GitHub’s token identity provider. They come with the pre-configured OIDC applications leveraging the built-in Gardener OIDC shoot extension.
   - ✅ SAP Cloud Identity Services acting as a platform IDP on the BTP side of the house has been federated with the Github actions OIDC Provider
   - ✅ As a result, the very short-lived [credentials](https://docs.github.com/en/actions/concepts/security/openid-connect#understanding-the-oidc-token) are being fetched and rotated automatically on the behalf of the repository user for both kubernetes and btp platform operations.
 
 - The good news is you may run the **GHA-based exercises** directly, from your forked repository, in a browser on the **provided** teched laptop.
-- Personal devices should not be used for this session.
+> [!WARNING]
+> Personal devices should not be used for this session.
 
 - 👉 Run and take time to inspect the results of the built-in automations. Ask questions. And if you feel like doing, go ahead and create your own variants as well.
 - 👉 The recommendation is, however, to go with the flow of the exercises, inspect the results, ask questions and leave the rest for the homework.
