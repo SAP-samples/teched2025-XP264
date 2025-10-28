@@ -457,7 +457,7 @@ env:
       uses: actions/upload-artifact@v4
       with:
         name: kubeconfig_sa
-        path: ./kubeconfig_sa.yaml
+        path: kubeconfig_sa.yaml
 
 
 #    - name: Convert JSON to HTML Table
