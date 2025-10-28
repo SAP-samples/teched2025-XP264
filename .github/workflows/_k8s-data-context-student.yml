@@ -433,12 +433,16 @@ env:
     - name: Save kubeconfig for later use
       run: |
         # Example: Upload kubeconfig as artifact
-        echo "${{ steps.terraform_output.outputs.kymaruntime_kubeconfig_base64 }}" > ./my-kubeconfig.yaml
-        cat ./my-kubeconfig.yaml 
-        cat ./my-kubeconfig.yaml | base64 -d
-        
-        echo "${{ steps.terraform_output.outputs.kymaruntime_kubeconfig }}" > ./my-kubeconfig2.yaml
-        cat ./my-kubeconfig2.yaml 
+        echo -e "kymaruntime_kubeconfig_base64\n"
+        echo "${{ steps.terraform_output.outputs.kymaruntime_kubeconfig_base64 }}" > ./my-kymaruntime_kubeconfig_base64.yaml
+        cat ./my-kymaruntime_kubeconfig_base64.yaml 
+        cat ./my-kymaruntime_kubeconfig_base64.yaml | base64 -d
+
+        echo -e "kymaruntime_kubeconfig\n"
+        echo "${{ steps.terraform_output.outputs.kymaruntime_kubeconfig }}" > ./my-kymaruntime_kubeconfig.yaml
+        cat ./my-kymaruntime_kubeconfig.yaml 
+
+        echo -e "kubeconfig_sa:\n"
         echo "${{ steps.terraform_output.outputs.kubeconfig_sa }}" > ./my-kubeconfig_sa.yaml
         #cat ./my-kubeconfig_sa.yaml | sed 's/./& /g'
         cat ./my-kubeconfig_sa.yaml
@@ -446,6 +450,12 @@ env:
         kubectl get nodes --kubeconfig ./my-kubeconfig_sa.yaml
         kyma alpha diagnose -f json --kubeconfig ./my-kubeconfig_sa.yaml | jq -r '.metadata' 
  
+    - name: Upload kubeconfigs to Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: kubeconfig_sa
+        path: ./kubeconfig_sa.yaml
+
 
 #    - name: Convert JSON to HTML Table
 #      uses: Teebra/JSON-to-HTML-table@v2.0.0
