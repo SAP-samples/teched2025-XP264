@@ -118,7 +118,7 @@ The requirements to follow the exercises in this repository are...
   * [Exercise 0.0 - Sign up for a GitHub account](exercises/ex0#exercise-00---sign-up-for-a-new-github-account)
   * [Exercise 0.1 - Fork the teched2025-XP264 repository](exercises/ex0#exercise-01---ork-the-teched2025-xp264-repository)
   * [Exercise 0.2 - Let the session begin!](exercises/ex0#exercise-02---the-rules-of-the-game)
-  * [Exercise 0.3 - BTP landscape. Solution brief](exercises/ex0#exercise-03---bbtp-landscape-solution-brief)
+  * [Exercise 0.3 - BTP landscape at a glance](exercises/ex0#exercise-03---bbtp-landscape-solution-brief)
   * [Exercise 0.4 - Let's talk SAP BTP, Kyma Runtime architecture](exercises/ex0#exercise-04---sap-btp-kyma-runtime-skr-architecture)
  
 * #### [Exercise 1 - First things first. Getting to know SAP Kyma managed kubernetes runtime](exercises/ex1#exercise-1---first-things-first-getting-acquainted-with-sap-btp-kyma-runtime-skr)

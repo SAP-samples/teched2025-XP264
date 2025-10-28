@@ -12,7 +12,7 @@ This step is optional and you can be use instead any existing personal GitHub ac
 - Otherwise, you may click on **Continue with Google** to sign up using your Google social login.
 - Follow the prompts to create your personal account.
 
-## Exercise 0.1 - Fork the teched2025-XP264 repository. Activate github actions at the fork
+## Exercise 0.1 - Fork the teched2025-XP264 repository.
 
  - Login to [GitHub](https://github.com/).
  - On the [main page of this repository](https://github.com/SAP-samples/teched2025-XP264), choose **Fork** on the top right.
@@ -44,12 +44,12 @@ This step is optional and you can be use instead any existing personal GitHub ac
 </tbody>
 </table>   
 
- - Choose **Create Fork**. You are now brought to a copy of the repository in your GitHub account.
- - Choose **Activate Github Action**
+ - 👉 Choose **Create Fork**. You are now brought to a copy of the repository in your GitHub account.
+ - 👉 Choose **Activate Github Action**
 
 ## Exercise 0.2 - The rules of the game
 
-Access to the solution landscape via Easy Navigation dashboard:  
+Access to the solution landscape via the Easy Navigation dashboard:  
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
@@ -86,7 +86,7 @@ Furthermore:
 
 
 
-## Exercise 0.3 - BTP landscape. Solution brief.
+## Exercise 0.3 - BTP landscape at a glance.
 
 You've got SSO acces with your student's credentials to parts of the SAP-TechEd25-XP264 landscape.  
 
@@ -223,6 +223,6 @@ Now that you have everything you need to successfully go through this TechEd ses
 - A GitHub account.
 - Your own fork of the session's GitHub repository.
 - Access to the SAP BTP managed kubernetes landscape with the easy navigation site
-- An idea of the functional architecture behind the solution brief
+- An idea of the landscape architecture behind the solution brief
 
-Continue to [First things first. Getting to know SAP managed kubernetes runtime](../ex1/README.md)
+Continue to [First things first. Day-2 with SAP managed kubernetes runtime](../ex1/README.md)
