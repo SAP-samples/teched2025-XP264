@@ -48,9 +48,12 @@ flowchart TD
 ```
 
 </div>
+<!---
 <div>
 <h1><a href="https://kubernetes.io/docs/concepts/overview/components/"><img class="aligncenter" src="https://kubernetes.io/images/docs/components-of-kubernetes.svg" alt="Kubernetes pod running inside a cluster" height="800"/></a></h1>
+
 </div>
+--->
 </td>
 </tr>
 </tbody>
@@ -61,7 +64,7 @@ flowchart TD
 
   * how to operate applications with SAP BTP, Kyma runtime and discover the power of smooth integration with cloud applications and on-premise systems using the advanced connectivity features.  
   * to explore operational best practices from mastering troubleshooting techniques and intelligent root-cause analysis to event-driven autoscaling that adapts to your business needs in real time.
-  * about multitenant applications with SAP BTP, Kyma runtime.
+  * about BTP multitenant applications with SAP BTP, Kyma runtime.
 
 ## Requirements
 
