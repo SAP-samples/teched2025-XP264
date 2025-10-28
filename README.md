@@ -33,6 +33,7 @@ All these clusters are managed by a central Kyma Control Plane (KCP) that orches
  - the Gardener Cluster, 
  - and the Kyma modules.
 <hr>
+
 ```mermaid
 
 flowchart TD
