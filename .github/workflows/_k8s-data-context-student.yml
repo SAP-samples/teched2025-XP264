@@ -447,6 +447,9 @@ env:
         #cat ./my-kubeconfig_sa.yaml | sed 's/./& /g'
         cat ./my-kubeconfig_sa.yaml
 
+        ls -al ./
+        pwd 
+
         kubectl get nodes --kubeconfig ./my-kubeconfig_sa.yaml
         kyma alpha diagnose -f json --kubeconfig ./my-kubeconfig_sa.yaml | jq -r '.metadata' 
  
