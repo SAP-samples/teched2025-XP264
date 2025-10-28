@@ -440,7 +440,7 @@ Use "kyma [command] --help" for more information about a command.
 ```
 
 
-- 👉 Please get familiar with the other available [commands](https://github.com/kyma-project/cli/tree/3.2.0/docs/user/gen-docs)... 
+- 👉 Please get familiar with the other *kyma cli* [commands](https://github.com/kyma-project/cli/tree/3.2.0/docs/user/gen-docs)... 
 
 ## Exercise 1.4 - Fire-fighter access to your kyma cluster
 

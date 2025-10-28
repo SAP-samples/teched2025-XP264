@@ -125,7 +125,7 @@ The requirements to follow the exercises in this repository are...
   * [Exercise 1.0 - Let's talk SAP BTP, Kyma Runtime architecture](exercises/ex1#exercise-10---lets-talk-sap-btp-kyma-runtime-skr-architecture)
   * [Exercise 1.1 - Easy access to your session landscape (with SSO).](exercises/ex1#exercise-11---easy-access-to-your-teched-landscape-with-sso)
   * [Exercise 1.2 - Built-in github automation flows](exercises/ex1#exercise-12---built-in-github-actions-automation-flows)
-  * [Exercise 1.3 - Zoom on Kyma CLI (optional)](exercises/ex1#exercise-13---zoom-on-kyma-cli)
+  * [Exercise 1.3 - Zoom on Kyma CLI (optional)](exercises/ex1#exercise-13---zoom-on-kyma-cli-optional)
   * [Exercise 1.4 - Firefighter access](exercises/ex1#exercise-14---fire-fighter-access-to-your-kyma-cluster)
   * [Exercise 1.5 - Terraforming kyma runtime environment](exercises/ex1#exercise-15---terraforming-kyma-runtime-environment)
   * [Exercise 1.6 - Multitenancy playground](exercises/ex1#exercise-16---subscribe-to-a-kyma-multitenant-application)
