@@ -11,7 +11,7 @@ Thus, you may need a GitHub user.
 If you haven't got one yet, please sign up for a new Github account following the instructions below.
 
 - 👉 Navigate to [GitHub](https://github.com/).
-- 👉 Click **Sign up for GiHhub**.
+- 👉 Click **Sign up for Github**.
 - 👉 Otherwise, you may click on **Continue with Google** to sign up using your Google social login.
 - 👉 Follow all the prompts to create your personal account.
 
