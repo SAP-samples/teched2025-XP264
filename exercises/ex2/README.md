@@ -79,25 +79,25 @@ horizontalpodautoscaler.autoscaling "faas-srv" deleted
 
 > [!NOTE]
 > ~~~rust
-cat <<EOF | kubectl apply -f - --kubeconfig ~/.kube/kubeconfig-b84edf3.yaml
-apiVersion: keda.sh/v1alpha1
-kind: ScaledObject
-metadata:
-  name: faas-srv
-  namespace: xp264-050
-spec:
-  scaleTargetRef:
-    apiVersion:    serverless.kyma-project.io/v1alpha2
-    kind:          Function
-    name:          faas-srv
-  minReplicaCount:  5
-  maxReplicaCount:  10
-  triggers:
-  - type: cpu
-    metricType: Utilization
-    metadata:
-      value: "50"
-EOF
+> cat <<EOF | kubectl apply -f - --kubeconfig ~/.kube/kubeconfig-b84edf3.yaml
+> apiVersion: keda.sh/v1alpha1
+> kind: ScaledObject
+> metadata:
+>  name: faas-srv
+>  namespace: xp264-050
+> spec:
+>  scaleTargetRef:
+>    apiVersion:    serverless.kyma-project.io/v1alpha2
+>    kind:          Function
+>    name:          faas-srv
+>  minReplicaCount:  5
+>  maxReplicaCount:  10
+>  triggers:
+>  - type: cpu
+>    metricType: Utilization
+>    metadata:
+>      value: "50"
+>EOF
 > ~~~
 
 `scaledobject.keda.sh/faas-srv created`
