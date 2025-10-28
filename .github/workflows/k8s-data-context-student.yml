@@ -14,6 +14,7 @@ on:
           - "xp264-000"
           - "xp264-001"
           - "xp264-045"
+          - "xp264-050"
           - "uk-xp264"
 
       "NAMESPACE":
@@ -82,6 +83,7 @@ env:
       || inputs.subaccount_name == 'us-east' && 'garden-kyma--ca15e0c-external'
       || inputs.subaccount_name == 'xp264-001' && 'garden-kyma--c-13f520f-external'
       || inputs.subaccount_name == 'xp264-045' && 'garden-kyma--b242c25-external'      
+      || inputs.subaccount_name == 'xp264-050' && 'garden-kyma--b07e82e-external' 
       }}"
 
 
@@ -102,6 +104,7 @@ jobs:
     - name: CLUSTER_CONTEXT
       id: cluster_context
       run: |
+        echo "${{ inputs.subaccount_name }}"
         echo 'CLUSTER_CONTEXT=$CLUSTER_CONTEXT'  >> "$GITHUB_OUTPUT"
 
 

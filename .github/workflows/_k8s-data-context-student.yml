@@ -178,6 +178,62 @@ env:
         kubectl version
         kubectl config get-clusters
 
+    - "name": "Setup Kube Context - xp264-050"
+      "uses": "azure/k8s-set-context@v4"
+      "with":
+        "kubeconfig": |+
+          "apiVersion": "v1"
+          "clusters":
+          - "cluster":
+              "certificate-authority-data": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUQ1ekNDQWsrZ0F3SUJBZ0lSQU01WE0vSkE4bXdxY1BiUlJyc3Foamt3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBMVVFQXhNQ1kyRXdIaGNOTWpVeE1ERTFNVFEwTlRVd1doY05NelV4TURFMU1UUTBOalV3V2pBTgpNUXN3Q1FZRFZRUURFd0pqWVRDQ0FhSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnR1BBRENDQVlvQ2dnR0JBS3FhCmtXc0JGSE5JbmhMa0k5MUtMOXFWS0h6OEZiVmlUVTJiMktyMnF2UXpkOHlNSENKekczaWRFOS9ac3RNZWpOaDAKdmFPN1NTNmptTkJRYis1ZFFrcVgxMW1CSDJRZzRTSXpEMUttWWRxSStZeGJRdjdVNFJVdGdmdTR0a1ZCdTFUZgpjQnM0VkFOTjFENkJxT2t6VFppVmlrNFVHNlNxSUJNZWJxR05GOHdrdWpsbWpmV05jZGEyN3R5cnorK0ttWFVrClN5bkpXOWI5cnpCVENCK3Nhd3JpVVIwSlVsR3ZrOTFlQ0dSelBJV1FrUUQyYy9JcFlBRE0rcGt3dnBiNHpXK1MKdFY3d0cwbzFXK2crRXBiMFoxcHZyQ05CZDNOSVBkU0VnWXl3UE1SQlJxWUdWS29nZ2l0bnRCcGR3QkoxLzBxTAowa2JqbGRYYysvOFd4K3pwMnkxeDZ6STFURFdoUGRXQlI2TVRKYTBmTWdZQXl3VWhadTZrcFRVQ0dXb3JyMXJwCkJtSURTeWNGRVhPaWowOExVM21jYUQ3MFZob3pidmo5bFJxU0owdlNsNVh5THFiTC9UTWk0UmxzSktDV1M0cU8KNmtpWkhhaFBXZE5FZWc5cjA0Skx6SmV5RXRqTGEvS0d4OVBielplcjZsdmUvM1VRSXJ0R3o5Q3NnYWdrdHdJRApBUUFCbzBJd1FEQU9CZ05WSFE4QkFmOEVCQU1DQWFZd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFCkZnUVUzZzlnUUh4aWZsbFpCRU0vZ1BHVjg2SFhFRGd3RFFZSktvWklodmNOQVFFTEJRQURnZ0dCQUJTUWh3YmgKNUVYeFhXVmd6dEJmWEpCSlBSL0xKTkQxVzFZZFJMN2RabHZDTlR4WDZKTUV6aDhtakdxL1A5RDVJc056eXpIdQpYSzh5RzRyZzBSRWFwRUFvTi9hQllSUkhzelYwejNtNFhqdEdTOUp0MW1ML2JKanpNMEFnUjVtb3lpMFQwcmpWCnN6RWYvK09OR0dvaEVvMlh1VW1zT2FMcFMxL0hWcWUxcWo4RU9JaTJCZFExMnZINnJ1bXBkMWlWWms4alorOTkKYXVZakhEVmcycmdwcUdOL05ib05PN1RKWmwzUDdyQ29rRy9Va1JRQU5lU1BPOEl6U0oyRjhnOXV2VUR4Z3dTOApOTmp3MmhhVXg5Z0JGOVJhYkd0cEhzcTBCYnZhT3QwZGNleXA3UW92Sk45QkVPZjU0dUwxMG1POUluWW9tTFRhCkw3cDJSdTVuYmlkcXppODRZOXVFd2YxYmk1Y05LVE1GRVh1NURvVjZKZWlIenp1YWt5b2dORzBxbHg5QitCYVIKb1huelFSeEkwNCtVNVdQZVpNdlFxMFdBZXpna2tpZkZTWVhOYkE5YWZNeHgzSFk1ZkJpV1FxaTUxbjQ1a2tlZwpoTXNONFMvd2pXbkxlMjlQVU1TOHIzeFpneVlxZitMbkxzY0VUZGtrQUorKytjQWhYR2dPS2VjVmRnPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+              "server": "https://api.b07e82e.kyma.ondemand.com"
+            "name": "garden-kyma--b07e82e-external"
+          "contexts":
+          - "context":
+              "cluster": "garden-kyma--b07e82e-external"
+              "user": "garden-kyma--b07e82e-external"
+            "name": "garden-kyma--b07e82e-external"
+          "current-context": "garden-kyma--b07e82e-external"
+          "kind": "Config"
+          "users":
+          - "name": "garden-kyma--b07e82e-external"
+            "user":
+              "exec":
+                "apiVersion": "client.authentication.k8s.io/v1"
+                "args":
+                - "-c"
+                - |
+                  set -e -o pipefail
+                  OIDC_URL_WITH_AUDIENCE="$ACTIONS_ID_TOKEN_REQUEST_URL&audience=gh-teched-67debbc5-8d77-41ca-acba-7443e0a413ba"
+                  IDTOKEN=$(curl -sS \
+                    -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+                    -H "Accept: application/json; api-version=2.0" \
+                    "$OIDC_URL_WITH_AUDIENCE" | jq -r .value)
+                  # Print decoded token information for debugging purposes
+                  echo ::debug:: JWT content: "$(echo "$IDTOKEN" | jq -c -R 'split(".") | .[1] | @base64d | fromjson')" >&2
+                  EXP_TS=$(echo $IDTOKEN | jq -R 'split(".") | .[1] | @base64d | fromjson | .exp')
+                  EXP_DATE=$(date -d @$EXP_TS --iso-8601=seconds)
+                  # return token back to the credential plugin
+                  cat << EOF
+                  {
+                    "apiVersion": "client.authentication.k8s.io/v1",
+                    "kind": "ExecCredential",
+                    "status": {
+                      "token": "$IDTOKEN",
+                      "expirationTimestamp": "$EXP_DATE"
+                    }
+                  }
+                  EOF
+                "command": "bash"
+                "interactiveMode": "Never"
+
+        "method": "kubeconfig"
+    - "name": "check permissions"
+      "run": |
+        cp $KUBECONFIG ./xp264-050.yaml
+        kubectl version
+        kubectl config get-clusters
+
     - "name": "Setup Kube Context - uk-xp264"
       "uses": "azure/k8s-set-context@v4"
       "with":
@@ -197,7 +253,7 @@ env:
 
         # https://able8.medium.com/how-to-merge-multiple-kubeconfig-files-into-one-36fc987c2e2f
         #
-        export KUBECONFIG=:./uk-xp264.yaml:./xp264-000.yaml:./japanese-east.yaml:./us-east.yaml:./uk-south.yaml:./xp264-001.yaml:./xp264-045.yaml
+        export KUBECONFIG=:./uk-xp264.yaml:./xp264-000.yaml:./japanese-east.yaml:./us-east.yaml:./uk-south.yaml:./xp264-001.yaml:./xp264-045.yaml:./xp264-050.yaml
         kubectl config view --flatten > all-in-one-kubeconfig.yaml
         export KUBECONFIG=$TOTO
 
