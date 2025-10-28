@@ -72,7 +72,7 @@ The requirements to follow the exercises in this repository are...
   If you haven't got one yet, please [sign-up](exercises/ex0#exercise-00---sign-up-for-a-new-github-account) on GitHub before the workshop or at the very beginning of the session.
 
 - The session content is provided *exclusively* on the SAP-Samples github, and many excercises have been implemented as CI/CD [Github Actions worflows](https://docs.github.com/en/actions/get-started/understand-github-actions) (GHA). 
-- With this, there is no more need to provide kubernetes and/or btp credentials when using those [github actions](https://docs.github.com/en/actions/concepts/security/openid-connect#benefits-of-using-oidc). 
+- Security is paramount. With this, there is no more need to provide kubernetes and/or btp credentials when using those [github actions](https://docs.github.com/en/actions/concepts/security/openid-connect#benefits-of-using-oidc). 
   - ✅ The Github Action workflows acting as the [OIDC provider](https://docs.github.com/en/actions/concepts/security/openid-connect). 
   - ✅ All the kubernetets environments in the landscape are configure to trust GitHub’s token identity provider. They come with the pre-configured OIDC applications leveraging the built-in OIDC shoot extension.
   - ✅ SAP Cloud Identity Services acting as a platform IDP on the BTP side of the house has been federated with the Github actions OIDC Provider
