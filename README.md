@@ -96,9 +96,9 @@ The requirements to follow the exercises in this repository are...
   - ✅ As a result, the very short-lived [credentials](https://docs.github.com/en/actions/concepts/security/openid-connect#understanding-the-oidc-token) are being fetched and rotated automatically on the behalf of the repository user for both kubernetes and btp platform operations.
 
 > [!WARNING]
-> Personal devices should not be used for this session.
-
-- However, the good news is you may run the **GHA-based exercises** directly, from your forked repository, in a browser on the **provided** teched laptops.
+> Personal devices ought not to be used for this session.
+>
+> - However, the good news is you may run the **GHA-based exercises** directly, from your forked repository, in a browser on the **provided** teched laptops.
 
 > [!TIP]
 > Session directions.  
@@ -108,17 +108,18 @@ The requirements to follow the exercises in this repository are...
 >
 > - For all other exercises which may require a terminal use, you may use the built-in VSCode terminal window.
 
-- As this is a Day-2 operation brief, the entire cloud landscape has been pre-configured with a number of shared components, for instance:  
-  - 🔗 SAP Cloud Identity Services (SAP IAS)  
-  - 🔗 SAP Cloud Logging  
-  - 🔗 SAP HANA Cloud  
-  - 🔗 ArgoCDaaS  
-  - 🔗 SAP BTP Connectivity services - Destination service, Connectivity service, Cloud Connector, Connectivity Proxy and Transparent Proxy  
-  - 🔗 S4/HANA On-premise (private cloud) with the Cloud Connector in the private network.  
-
-- All of the SAP Kyma environments have been configured to the same template (via terraform automation).  
-
-- Last but not least, you will be able to *play* with a pre-deployed SAP Build multitenant application deployed to one of the kyma clusters.   
+> [!NOTE]
+> - As this is a Day-2 operation brief, the entire cloud landscape has been pre-configured with a number of shared components, for instance:  
+>  - 🔗 SAP Cloud Identity Services (SAP IAS)  
+>  - 🔗 SAP Cloud Logging  
+>  - 🔗 SAP HANA Cloud  
+>  - 🔗 ArgoCDaaS  
+>  - 🔗 SAP BTP Connectivity services - Destination service, Connectivity service, Cloud Connector, Connectivity Proxy and Transparent Proxy  
+>  - 🔗 S4/HANA On-premise (private cloud) with the Cloud Connector in the private network.  
+>
+> - All of the SAP Kyma environments have been configured to the same template (via terraform automation).  
+>
+> - Last but not least, you will be able to *play* with a SAP Build multitenant application pre-deployed to one of the kyma provider clusters.   
 
 - :notebook: FYI: There are several additional command line tools available on your SAP TECHED 2025 Client laptops, for instance:  
     
