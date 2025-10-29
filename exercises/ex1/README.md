@@ -40,12 +40,6 @@ graph TD
         K --> Q[Backups & Restores]
         K --> R[Security Patches & Updates]
     end
-    subgraph FinOps
-        direction LR
-        S[Monitor Cloud Spend] --> T{Cost Optimized?};
-        T -- No --> U[Adjust Resources];
-        T -- Yes --> S;
-    end
 
 ```
 
