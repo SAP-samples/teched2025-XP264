@@ -26,7 +26,7 @@ graph TD
     A[Application Deployed - Day 2 Starts] --> B(Monitor Performance & Health);
     B --> C{Issue Detected?};
     C -- No --> D(Maintain & Optimize);
-    C -- Yes --> E(Alert On-Call Team);
+    C -- Yes --> E(Alert On-Call SRE Team/);
     E --> F(Diagnose & Investigate Incident);
     F --> G{Root Cause Identified?};
     G -- No --> F;
@@ -44,6 +44,9 @@ graph TD
     O --> P(Deploy New Release);
     P --> B;
 ```
+
+With the SAP managed kubernetes the entire kubernetes infrastructure is managed 24/7 by the SAP SRE teams.  
+With this, the customer Day-2 operations can focus on Management, Maintenance, Monitoring, and Optimization of the customer workloads.
 
 </div>
 </td>
