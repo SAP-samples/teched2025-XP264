@@ -722,6 +722,38 @@ Here goes a diagram of the functional architecture of the solution
 <td style="width: 71.6%; height: 193px;">
 <div>
 <h1><a href="https://url.sap/3kf0ol"><img class="aligncenter" src="../ex0/images/functional_architecture.png" alt=""/></a></h1>
+
+
+```mermaid
+graph TD
+    %% Define tenants and applications
+    subgraph "Application Layer"
+        TenantA_User[Tenant A User]
+        TenantB_User[Tenant B User]
+        API_Gateway[API Gateway / Routing]
+    end
+
+    subgraph "Service Layer"
+        Microservice(Microservice A)
+    end
+
+    subgraph "Data Layer"
+        Shared_DB[("Shared Database Instance")]
+        TenantA_Schema[Schema for Tenant A]
+        TenantB_Schema[Schema for Tenant B]
+    end
+
+    %% Define the data flow
+    TenantA_User -->|Request for Tenant A data| API_Gateway
+    TenantB_User -->|Request for Tenant B data| API_Gateway
+    API_Gateway -->|Route request to service| Microservice
+    Microservice -->|Connect to Schema 'A'| TenantA_Schema
+    Microservice -->|Connect to Schema 'B'| TenantB_Schema
+    Shared_DB -- Each tenant has a separate schema (namespace) --> TenantA_Schema
+    Shared_DB -- Improved isolation compared to a shared schema --> TenantB_Schema
+
+```
+
 </div>
 </td>
 </tr>
