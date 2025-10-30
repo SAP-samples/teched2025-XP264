@@ -30,7 +30,7 @@ Once completed, we would navigate to SAP Cloud Logging to explore the three pill
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-discover-logs-0.png" alt="access-cls" height="600"/></a></h1>
+<h1><a href="https://url.sap/rw43o5"><img class="aligncenter" src="./assets/telemetry-cls-discover-logs-0.png" alt="access-cls" height="600"/></a></h1>
 </div>
 </td>
 </tr>
@@ -50,7 +50,7 @@ Once completed, we would navigate to SAP Cloud Logging to explore the three pill
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-rev2/telemetry-cls-discover-logs-1.png" alt="filter" height="600"/></a></h1>
+<h1><a href="https://url.sap/rw43o5"><img class="aligncenter" src="./assets/telemetry-rev2/telemetry-cls-discover-logs-1.png" alt="filter" height="600"/></a></h1>
 </div>
 </td>
 </tr>
@@ -64,7 +64,7 @@ Once completed, we would navigate to SAP Cloud Logging to explore the three pill
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-rev2/telemetry-cls-discover-logs-2.png" alt="log-details" height="600"/></a></h1>
+<h1><a href="https://url.sap/rw43o5"><img class="aligncenter" src="./assets/telemetry-rev2/telemetry-cls-discover-logs-2.png" alt="log-details" height="600"/></a></h1>
 </div>
 </td>
 </tr>
@@ -84,7 +84,7 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-dashboards.png" alt="dashboards" height="600"/></a></h1>
+<h1><a href="https://url.sap/rw43o5"><img class="aligncenter" src="./assets/telemetry-cls-dashboards.png" alt="dashboards" height="600"/></a></h1>
 </div>
 </td>
 </tr>
@@ -97,7 +97,7 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-rev2/telemetry-cls-kyma-overview-0.png" alt="overview" /></a></h1>
+<h1><a href="https://url.sap/rw43o5"><img class="aligncenter" src="./assets/telemetry-rev2/telemetry-cls-kyma-overview-0.png" alt="overview" /></a></h1>
 </div>
 </td>
 </tr>
@@ -111,7 +111,7 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-rev2/telemetry-cls-kyma-overview-0-1.png" alt="overview" /></a></h1>
+<h1><a href="https://url.sap/rw43o5"><img class="aligncenter" src="./assets/telemetry-rev2/telemetry-cls-kyma-overview-0-1.png" alt="overview" /></a></h1>
 </div>
 </td>
 </tr>
@@ -123,7 +123,7 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-rev2/telemetry-cls-kyma-overview-0-2.png" alt="overview" /></a></h1>
+<h1><a href="https://url.sap/rw43o5"><img class="aligncenter" src="./assets/telemetry-rev2/telemetry-cls-kyma-overview-0-2.png" alt="overview" /></a></h1>
 </div>
 </td>
 </tr>
@@ -139,7 +139,7 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-rev2/telemetry-cls-4-golden-signals.png" alt="4-g-s" /></a></h1>
+<h1><a href="https://url.sap/rw43o5"><img class="aligncenter" src="./assets/telemetry-rev2/telemetry-cls-4-golden-signals.png" alt="4-g-s" /></a></h1>
 </div>
 </td>
 </tr>
@@ -153,7 +153,7 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-rev2/telemetry-cls-usage.png" alt="usage" /></a></h1>
+<h1><a href="https://url.sap/rw43o5"><img class="aligncenter" src="./assets/telemetry-rev2/telemetry-cls-usage.png" alt="usage" /></a></h1>
 </div>
 </td>
 </tr>
@@ -171,7 +171,7 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-traces-0.png" alt="traces" /></a></h1>
+<h1><a href="https://url.sap/rw43o5"><img class="aligncenter" src="./assets/telemetry-cls-traces-0.png" alt="traces" /></a></h1>
 </div>
 </td>
 </tr>
@@ -185,7 +185,7 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-traces-1.png" alt="trace-details" /></a></h1>
+<h1><a href="https://url.sap/rw43o5"><img class="aligncenter" src="./assets/telemetry-cls-traces-1.png" alt="trace-details" /></a></h1>
 </div>
 </td>
 </tr>
@@ -199,7 +199,7 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 <tr style="height: 193px;">
 <td style="width: 71.6%; height: 193px;">
 <div>
-<h1><a href=""><img class="aligncenter" src="./assets/telemetry-cls-traces-2.png" alt="trace-flow" /></a></h1>
+<h1><a href="https://url.sap/rw43o5"><img class="aligncenter" src="./assets/telemetry-cls-traces-2.png" alt="trace-flow" /></a></h1>
 </div>
 </td>
 </tr>
