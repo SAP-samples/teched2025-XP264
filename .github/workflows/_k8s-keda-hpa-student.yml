@@ -299,11 +299,17 @@ env:
         kubectl get hpa -n $NAMESPACE || true
         kubectl get hpa faas-srv -n $NAMESPACE || true
 
+    - "name": "Increase the load"
+      "run": |
+        # so that the load generation continues and you can carry on with the rest of the steps
+        kubectl run  -n $NAMESPACE  -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://faas-srv/metrics; done"
+
+
     - "name": "scale-out the faas-srv function to min 5 replicas"
       "run": |
         echo -e "kubectl autoscale function faas-srv in the namespace: $NAMESPACE..."
         #kubectl autoscale function faas-srv -n $NAMESPACE --cpu-percent=50 --min=5 --max=10 || true
-        kubectl autoscale function faas-srv -n $NAMESPACE --cpu='50%' --min=1 --max=1 || true        
+        kubectl autoscale function faas-srv -n $NAMESPACE --cpu='50%' --min=1 --max=10 || true        
         kubectl get hpa faas-srv -n $NAMESPACE || true
         echo "Wait until HPA is ready"
         kubectl wait --for=condition=ScalingActive hpa faas-srv -n $NAMESPACE --timeout=60s
