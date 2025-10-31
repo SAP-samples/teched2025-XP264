@@ -108,6 +108,8 @@ env:
         kubectl get hpa -n $NAMESPACE || true
         echo "show KEDA-HPA"
         kubectl get hpa keda-hpa-faas-srv -n $NAMESPACE || true
+        kubectl delete hpa faas-srv -n $NAMESPACE --ignore-not-found || true
+        kubectl wait --for=delete hpa/faas-srv --timeout=90s
 
     - "name": "scale-out the faas-srv function to min 5 replicas"
       "run": |
