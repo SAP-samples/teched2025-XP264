@@ -309,7 +309,8 @@ env:
         kubectl wait --for=condition=ScalingActive hpa faas-srv -n $NAMESPACE --timeout=60s
         kubectl get hpa faas-srv -n $NAMESPACE || true
 
-        kubectl wait --for=condition=Running function faas-srv -n $NAMESPACE --timeout=60s 
+        echo "wait for function deployment rollout complete"
+        kubectl rollout status deployment faas-srv -n $NAMESPACE --timeout=90s
 
 #    - "name": "Increase the load"
 #      "run": |
