@@ -133,13 +133,13 @@ env:
         EOF
 
         echo "enumerate all the resource in the namespace"
-        kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found  -n $NAMESPACE
+        kubectl api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -l app=faas-srv -n $NAMESPACE
         echo "Wait until KEDA ScaleObject is ready"
-        kubectl get ScaleObject faas-srv -n $NAMESPACE || true
-        kubectl get ScaleObject faas-srv -n $NAMESPACE -o jsonpath="{.status.conditions[0]}" | jq        
+        kubectl get scaledobject faas-srv -n $NAMESPACE || true
+        kubectl get scaledobject faas-srv -n $NAMESPACE -o jsonpath="{.status.conditions[0]}" | jq        
         kubectl wait --for=jsonpath="{.status.conditions[0].status}"=True ScaleObject faas-srv -n $NAMESPACE --timeout=90s
         echo "show KEDA ScaleObject"
-        kubectl get ScaleObject faas-srv -n $NAMESPACE || true
+        kubectl get scaledobject faas-srv -n $NAMESPACE || true
         
         echo "Wait until KEDA-HPA is ready"
         kubectl get hpa keda-faas-srv -n $NAMESPACE || true
