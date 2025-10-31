@@ -309,6 +309,8 @@ env:
         kubectl wait --for=condition=ScalingActive hpa faas-srv -n $NAMESPACE --timeout=60s
         kubectl get hpa faas-srv -n $NAMESPACE || true
 
+        kubectl wait --for=condition=Running function faas-srv -n $NAMESPACE --timeout=60s 
+
 #    - "name": "Increase the load"
 #      "run": |
 #        kubectl delete pod/load-generator -n $NAMESPACE --ignore-not-found
