@@ -1,0 +1,115 @@
+name: k8s-keda-cron-student
+on:
+  workflow_dispatch:
+    inputs:
+      subaccount_name:
+        description: "k8s region prefix"
+        required: true
+        default: "xp264-045"
+        type: "choice"
+        options:
+          - "xp264-045"
+
+      "NAMESPACE":
+        "default": "xp264-050"
+        "description": "student's namespace"
+        "options":
+        - "xp264-001"
+        - "xp264-002"
+        - "xp264-003"
+        - "xp264-004"
+        - "xp264-005"
+        - "xp264-006"
+        - "xp264-007"
+        - "xp264-008"
+        - "xp264-009"
+        - "xp264-010"
+        - "xp264-011"
+        - "xp264-012"
+        - "xp264-013"
+        - "xp264-014"
+        - "xp264-015"
+        - "xp264-016"
+        - "xp264-017"
+        - "xp264-018"
+        - "xp264-019"
+        - "xp264-020"
+        - "xp264-021"
+        - "xp264-022"
+        - "xp264-023"
+        - "xp264-024"
+        - "xp264-025"
+        - "xp264-026"
+        - "xp264-027"
+        - "xp264-028"
+        - "xp264-029"
+        - "xp264-030"
+        - "xp264-031"
+        - "xp264-032"
+        - "xp264-033"
+        - "xp264-034"
+        - "xp264-035"
+        - "xp264-036"
+        - "xp264-037"
+        - "xp264-038"
+        - "xp264-039"
+        - "xp264-040"
+        - "xp264-041"
+        - "xp264-042"
+        - "xp264-043"
+        - "xp264-044"
+        - "xp264-045"
+        - "xp264-046"
+        - "xp264-047"
+        - "xp264-048"
+        - "xp264-049"
+        - "xp264-050"
+        "required": true
+        "type": "choice"
+
+env:
+  CLUSTER_CONTEXT: |
+      "${{ inputs.subaccount_name == 'uk-xp264' && 'garden-kyma--b84edf3-external'
+      || inputs.subaccount_name == 'uk-south' && 'garden-kyma--a896778-external' 
+      || inputs.subaccount_name == 'xp264-000' && 'garden-kyma--c-4d2de7e-external'
+      || inputs.subaccount_name == 'japanese-east' && 'garden-kyma--c-99567a9-external'
+      || inputs.subaccount_name == 'us-east' && 'garden-kyma--ca15e0c-external'
+      || inputs.subaccount_name == 'xp264-001' && 'garden-kyma--c-13f520f-external'
+      || inputs.subaccount_name == 'xp264-045' && 'garden-kyma--b242c25-external'      
+      || inputs.subaccount_name == 'xp264-050' && 'garden-kyma--b07e82e-external' 
+      }}"
+
+
+permissions: 
+  contents: read
+  id-token: write
+
+
+jobs:
+  cluster-context:
+    "runs-on":
+    - "ubuntu-latest"    
+
+    outputs:
+      CLUSTER_CONTEXT: ${{ env.CLUSTER_CONTEXT }}
+
+    steps:
+    - name: CLUSTER_CONTEXT
+      id: cluster_context
+      run: |
+        echo "kyma btp region: ${{ inputs.subaccount_name }}"
+        echo 'CLUSTER_CONTEXT=$CLUSTER_CONTEXT'  >> "$GITHUB_OUTPUT"
+
+
+  collect-diagnostic-data:
+    needs: cluster-context
+    strategy:
+      max-parallel: 4
+      matrix:
+        namespace: [ "${{ github.event.inputs.NAMESPACE }}" ]
+
+    uses: ./.github/workflows/_k8s-keda-cron-student.yml
+    with:
+      NAMESPACE: ${{ matrix.namespace }}
+      CLUSTER_CONTEXT: ${{ fromJSON(needs.cluster-context.outputs.CLUSTER_CONTEXT) }}
+      IDP: "anuk8cmfw.accounts.ondemand.com"
