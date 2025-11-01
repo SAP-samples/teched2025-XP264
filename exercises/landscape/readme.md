@@ -658,16 +658,16 @@ flowchart LR
 
 Core Day 2 Operations Areas:
 
-Monitoring & Observability: Metrics, logs, traces, and dashboards for system health
-Incident Management: Alerting, on-call rotations, incident response, and post-mortems
-Capacity Management: Planning, auto-scaling, rightsizing, and quota management
-Backup & Recovery: Automated backups, replication, DR testing, and restore procedures
-Security Operations: Vulnerability scanning, patch management, audits, and certificate management
-Configuration Management: Drift detection, GitOps, secret rotation, and version control
-Performance Optimization: Tuning, caching, database optimization, and load testing
-Cost Management: Monitoring, optimization, reserved capacity, and chargeback
-Change Management: Change requests, deployments, rollbacks, and tracking
-Continuous Improvement: SLO reviews, retrospectives, automation, and documentation
+Monitoring & Observability: Metrics, logs, traces, and dashboards for system health  
+Incident Management: Alerting, on-call rotations, incident response, and post-mortems  
+Capacity Management: Planning, auto-scaling, rightsizing, and quota management  
+Backup & Recovery: Automated backups, replication, DR testing, and restore procedures  
+Security Operations: Vulnerability scanning, patch management, audits, and certificate management  
+Configuration Management: Drift detection, GitOps, secret rotation, and version control  
+Performance Optimization: Tuning, caching, database optimization, and load testing  
+Cost Management: Monitoring, optimization, reserved capacity, and chargeback  
+Change Management: Change requests, deployments, rollbacks, and tracking  
+Continuous Improvement: SLO reviews, retrospectives, automation, and documentation  
 
 The diagram also shows how different teams (SRE, DevOps, Support, Development, Security) interact with these operations and how supporting systems (ticketing, ChatOps, knowledge bases, CI/CD) enable Day 2 activities.
 
