@@ -15,4 +15,4 @@ jobs:
       - uses: yanovation/delete-old-actions@v1
         with:
           token: ${{ secrets.CICD_TOKEN_FOR_TF_MODULES }}
-          days-ago: 3
+          days-ago: 2
