@@ -677,14 +677,14 @@ sequenceDiagram
 title: Deployment Architecture
 ---
 graph TB   
-    subgraph "Production Provider"
-        PROD[Production Space]
+    subgraph "Production Provider Subaccount"
+        PROD[Production k8s cluster]
         PRODAPP[Provider Application]
         SAASREG[SaaS Registry]
         APPREGISTRY[Application Registry]
     end
     
-    subgraph "Production Consumer Subaccounts"
+    subgraph "Production Consumer Tenants"
         subgraph "Tenant A"
             TENA[Tenant A Instance]
             DBA[Database A]
