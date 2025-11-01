@@ -148,3 +148,406 @@ mindmap
       ArgoCDaaS
       Git Repository
 ```
+
+### High-Level Architecture Chart
+
+```mermaid
+graph TB
+    subgraph "SAP BTP Platform"
+        subgraph "Provider Subaccount"
+            PA[Provider Application]
+            PS[Provider Services]
+            SAAS[SaaS Registry]
+            XSUAA[XSUAA Service]
+        end
+        
+        subgraph "Consumer Subaccount 1"
+            CS1[Consumer App Instance]
+            XS1[XSUAA Instance]
+            DB1[Database Instance]
+        end
+        
+        subgraph "Consumer Subaccount 2"
+            CS2[Consumer App Instance]
+            XS2[XSUAA Instance]
+            DB2[Database Instance]
+        end
+    end
+    
+    subgraph "External Systems"
+        S4[SAP S/4HANA]
+        SF[SuccessFactors]
+        EXT[External APIs]
+    end
+    
+    PA --> SAAS
+    PA --> XSUAA
+    SAAS --> CS1
+    SAAS --> CS2
+    
+    CS1 --> XS1
+    CS1 --> DB1
+    CS2 --> XS2
+    CS2 --> DB2
+    
+    PA --> S4
+    PA --> SF
+    PA --> EXT
+    
+    CS1 --> S4
+    CS2 --> SF
+    
+    %% Styling
+    classDef provider fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    classDef consumer fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef external fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef service fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    
+    class PA,PS,SAAS provider
+    class CS1,CS2 consumer
+    class S4,SF,EXT external
+    class XSUAA,XS1,XS2,DB1,DB2 service
+```
+
+### Subscription Flow Chart
+
+```mermaid
+---
+title: Subscription Flow Chart
+---
+sequenceDiagram
+    participant T as Tenant Admin
+    participant BTP as SAP BTP Cockpit
+    participant SR as SaaS Registry
+    participant PA as Provider App
+    participant XSUAA as XSUAA Service
+    participant DB as Database
+    
+    T->>BTP: Access BTP Cockpit
+    T->>BTP: Navigate to Service Marketplace
+    T->>BTP: Subscribe to Multitenant App
+    BTP->>SR: Create Subscription
+    SR->>PA: Trigger onSubscription callback
+    
+    PA->>XSUAA: Create tenant-specific OAuth client
+    XSUAA-->>PA: OAuth client created
+    
+    PA->>DB: Create tenant schema/container
+    DB-->>PA: Schema created
+    
+    PA->>PA: Initialize tenant data
+    PA-->>SR: Subscription successful
+    SR-->>BTP: Subscription confirmed
+    BTP-->>T: Subscription complete
+    
+    Note over T,DB: Tenant can now access the application
+```
+
+
+### Tenant Isolation Architecture
+
+```mermaid
+graph TD
+    subgraph "Application Layer"
+        APP[Multitenant Application]
+        AUTH[Authentication Layer]
+        TENANT[Tenant Context Manager]
+    end
+    
+    subgraph "Data Layer Isolation"
+        subgraph "Schema-based Isolation"
+            DB[(Database)]
+            T1S[Tenant 1 Schema]
+            T2S[Tenant 2 Schema]
+            T3S[Tenant 3 Schema]
+        end
+        
+        subgraph "Container-based Isolation"
+            HDI[HDI Container Service]
+            T1C[Tenant 1 Container]
+            T2C[Tenant 2 Container]
+            T3C[Tenant 3 Container]
+        end
+    end
+    
+    subgraph "Service Layer"
+        DEST[Destination Service]
+        CONN[Connectivity Service]
+        XSUAA2[XSUAA Service]
+    end
+    
+    APP --> AUTH
+    AUTH --> TENANT
+    TENANT --> DB
+    TENANT --> HDI
+    
+    DB --> T1S
+    DB --> T2S
+    DB --> T3S
+    
+    HDI --> T1C
+    HDI --> T2C
+    HDI --> T3C
+    
+    APP --> DEST
+    APP --> CONN
+    AUTH --> XSUAA2
+    
+    %% Styling
+    classDef app fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef data fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef service fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef tenant fill:#fff8e1,stroke:#ef6c00,stroke-width:2px
+    
+    class APP,AUTH,TENANT app
+    class DB,HDI data
+    class DEST,CONN,XSUAA2 service
+    class T1S,T2S,T3S,T1C,T2C,T3C tenant
+```
+
+
+### Request Flow Chart
+
+```mermaid
+---
+title: Request Flow Chart
+---
+flowchart LR
+    User[End User] --> LB[Load Balancer]
+    LB --> APP[Application Router]
+    APP --> AUTH{Authentication}
+    
+    AUTH -->|Not Authenticated| LOGIN[Login Page]
+    LOGIN --> IDP[Identity Provider]
+    IDP --> XSUAA[XSUAA Service]
+    XSUAA --> JWT[JWT Token]
+    
+    AUTH -->|Authenticated| TENANT[Tenant Resolution]
+    JWT --> TENANT
+    
+    TENANT --> CTX[Set Tenant Context]
+    CTX --> BL[Business Logic]
+    
+    BL --> DATA{Data Access}
+    DATA --> SCHEMA[Tenant Schema]
+    DATA --> CONTAINER[HDI Container]
+    
+    SCHEMA --> RESPONSE[Generate Response]
+    CONTAINER --> RESPONSE
+    RESPONSE --> User
+    
+    %% Styling
+    classDef user fill:#ffcdd2,stroke:#d32f2f
+    classDef auth fill:#c8e6c9,stroke:#388e3c
+    classDef app fill:#fff3e0,stroke:#f57c00
+    classDef data fill:#e1f5fe,stroke:#01579b
+    
+    class User user
+    class LOGIN,IDP,XSUAA,JWT,AUTH auth
+    class LB,APP,TENANT,CTX,BL,RESPONSE app
+    class DATA,SCHEMA,CONTAINER data
+```
+
+
+
+
+
+
+### Deployment Architecture
+
+```mermaid
+---
+title: Deployment Architecture
+---
+graph TB   
+    subgraph "Production Provider"
+        PROD[Production Space]
+        PRODAPP[Provider Application]
+        SAASREG[SaaS Registry]
+        APPREGISTRY[Application Registry]
+    end
+    
+    subgraph "Production Consumer Subaccounts"
+        subgraph "Tenant A"
+            TENA[Tenant A Instance]
+            DBA[Database A]
+        end
+        
+        subgraph "Tenant B"
+            TENB[Tenant B Instance]
+            DBB[Database B]
+        end
+    end    
+    
+    PRODAPP --> SAASREG
+    SAASREG --> TENA
+    SAASREG --> TENB
+    
+    TENA --> DBA
+    TENB --> DBB
+    
+    %% Styling
+    classDef prod fill:#ffebee,stroke:#c62828
+    classDef tenant fill:#e3f2fd,stroke:#1976d2   
+    class PROD,PRODAPP,SAASREG,APPREGISTRY prod
+    class TENA,TENB,DBA,DBB tenant
+
+```
+
+
+
+### Tenant Lifecycle Management
+
+```mermaid
+---
+title: Tenant Lifecycle Management
+---
+stateDiagram-v2
+    [*] --> Available: App Published to Marketplace
+    Available --> Subscribing: Tenant Subscribes
+    Subscribing --> Provisioning: Trigger Callbacks
+    Provisioning --> Active: Provisioning Complete
+    Active --> Updating: Update Subscription
+    Updating --> Active: Update Complete
+    Active --> Suspending: Suspend Tenant
+    Suspending --> Suspended: Suspension Complete
+    Suspended --> Active: Reactivate Tenant
+    Active --> Unsubscribing: Tenant Unsubscribes
+    Suspended --> Unsubscribing: Force Unsubscribe
+    Unsubscribing --> Deprovisioning: Trigger Cleanup
+    Deprovisioning --> [*]: Cleanup Complete
+    
+    Provisioning --> Failed: Provisioning Error
+    Failed --> Available: Retry/Fix Issues
+    Updating --> Failed: Update Error
+    Failed --> Active: Rollback/Fix
+```
+
+
+---------
+## Day 2 Operations Mermaid Chart Code
+
+```mermaid
+---
+title: Day 2 Operations
+---
+graph TD
+    A[Day 2 Operations] --> B[Monitoring & Observability]
+    A --> C[Security & Compliance]
+    A --> D[Performance Optimization]
+    A --> E[Backup & Disaster Recovery]
+    A --> F[Scaling & Capacity Planning]
+    A --> G[Maintenance & Updates]
+    A --> H[Incident Response]
+    A --> I[Cost Optimization]
+
+    B --> B1[Application Monitoring]
+    B --> B2[Infrastructure Monitoring]
+    B --> B3[Log Management]
+    B --> B4[Metrics & Alerting]
+    B --> B5[Distributed Tracing]
+
+    C --> C1[Security Patches]
+    C --> C2[Vulnerability Scanning]
+    C --> C3[Compliance Auditing]
+    C --> C4[Access Control]
+    C --> C5[Security Incidents]
+
+    D --> D1[Resource Optimization]
+    D --> D2[Query Tuning]
+    D --> D3[Caching Strategies]
+    D --> D4[Load Balancing]
+    D --> D5[Performance Testing]
+
+    E --> E1[Regular Backups]
+    E --> E2[Backup Verification]
+    E --> E3[DR Testing]
+    E --> E4[RTO/RPO Planning]
+    E --> E5[Data Retention]
+
+    F --> F1[Auto-scaling]
+    F --> F2[Capacity Forecasting]
+    F --> F3[Resource Provisioning]
+    F --> F4[Performance Benchmarks]
+    F --> F5[Growth Planning]
+
+    G --> G1[Software Updates]
+    G --> G2[Configuration Management]
+    G --> G3[Database Maintenance]
+    G --> G4[Certificate Renewal]
+    G --> G5[Dependency Updates]
+
+    H --> H1[Alert Management]
+    H --> H2[Incident Escalation]
+    H --> H3[Root Cause Analysis]
+    H --> H4[Post-mortem Reviews]
+    H --> H5[Process Improvement]
+
+    I --> I1[Resource Optimization]
+    I --> I2[Usage Analysis]
+    I --> I3[Cost Monitoring]
+    I --> I4[Budget Planning]
+    I --> I5[Waste Elimination]
+
+    %% Feedback loops
+    B4 --> H1
+    H5 --> B4
+    D1 --> I1
+    F2 --> I2
+    C2 --> C1
+    E3 --> E4
+
+    %% Styling
+    classDef mainNode fill:#e1f5fe,stroke:#01579b,stroke-width:3px
+    classDef categoryNode fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef activityNode fill:#e8f5e8,stroke:#1b5e20,stroke-width:1px
+
+    class A mainNode
+    class B,C,D,E,F,G,H,I categoryNode
+    class B1,B2,B3,B4,B5,C1,C2,C3,C4,C5,D1,D2,D3,D4,D5,E1,E2,E3,E4,E5,F1,F2,F3,F4,F5,G1,G2,G3,G4,G5,H1,H2,H3,H4,H5,I1,I2,I3,I4,I5 activityNode
+```
+
+### Day 2 Operations - Alternative flow chart version
+
+```mermaid
+---
+title: Day 2 Operations - Alternative flow chart version
+---
+flowchart LR
+    Start([Day 2 Operations Start]) --> Monitor{Monitoring}
+    Monitor --> Alert[Alert Triggered?]
+    Alert -->|Yes| Incident[Incident Response]
+    Alert -->|No| Optimize[Performance Optimization]
+    
+    Incident --> Analyze[Root Cause Analysis]
+    Analyze --> Fix[Implement Fix]
+    Fix --> Test[Test Solution]
+    Test --> Deploy[Deploy Fix]
+    Deploy --> PostMortem[Post-mortem Review]
+    PostMortem --> Improve[Process Improvement]
+    
+    Optimize --> Scale{Scaling Needed?}
+    Scale -->|Yes| Provision[Provision Resources]
+    Scale -->|No| Maintain[Maintenance Tasks]
+    
+    Provision --> Update[Update Capacity Plans]
+    Update --> Maintain
+    
+    Maintain --> Security[Security Updates]
+    Security --> Backup[Backup Operations]
+    Backup --> Cost[Cost Optimization]
+    Cost --> Monitor
+    
+    Improve --> Monitor
+    
+    %% Styling
+    classDef startEnd fill:#ffcdd2,stroke:#d32f2f
+    classDef process fill:#c8e6c9,stroke:#388e3c
+    classDef decision fill:#fff3e0,stroke:#f57c00
+    
+    class Start,PostMortem startEnd
+    class Monitor,Incident,Analyze,Fix,Test,Deploy,Optimize,Provision,Update,Maintain,Security,Backup,Cost,Improve process
+    class Alert,Scale decision
+```
+
+
