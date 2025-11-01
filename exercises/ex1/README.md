@@ -366,9 +366,6 @@ Explanation. What has happened?
 
 
 
-Principal excercise takeaways:
-- The automation workflows provide ease of use with the emphasis on both security and on lowering the cost of the run with the Day-2 operations
-- The Day-1 auto-generated automation workflows templates facilitate the Day-2 operations and allow for targeted extensions of the built-in flows.
 
 ## Exercise 1.3 - Zoom on Kyma CLI (optional)
 
@@ -485,7 +482,7 @@ kyma alpha kubeconfig generate --serviceaccount kyma-cli-sa --clusterrole cluste
 apiVersion: v1
 clusters:
 - cluster:
-    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUQ1ekNDQWsrZ0F3SUJBZ0lSQUt3bWpnd1VwQTQ5Rkw2Mkp3Zm56Y2d3RFFZSktvWklodmNOQVFFTEJRQXcKRFRFTE1Ba0dBM2ovNzZqWjdXei9BQU9PT2pjUzZVUnRRY0tSellIckRlZlVGdVJXUEVxWkRXTmxBPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUQ1ekNDQWsrZ0F3SUJBZ0lSQUt3bWpnd1VwQTQ5Rkw2Mkp3Zm56Y2d3R****lGSUNBVEUtLS0tLQo=
     server: https://api.a896778.kyma.ondemand.com
   name: garden-kyma--a896778-external
 contexts:
@@ -892,6 +889,9 @@ Good to know:
 </table> 
 
 ## Summary
+
+- The automation workflows provide ease of use with the emphasis on both security and on lowering the cost of the run with the Day-2 operations
+- The Day-1 self-generated automation workflows templates facilitate the Day-2 operations and allow for targeted extensions of the built-in flows.
 
 
 Continue to - [Exercise 2 - Use External Scalers. Keda](../ex2/README.md)
