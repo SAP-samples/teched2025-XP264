@@ -108,4 +108,43 @@ Requirement already satisfied: typing-extensions>=4.0.0 in /usr/local/lib/python
 [notice] To update, run: pip install --upgrade pip
   
 ```
+## SAP BTP Multitenant App - Service Dependencies Chart
 
+
+```mermaid
+---
+title: Service Dependencies Chart
+---
+mindmap
+  root((SAP BTP Multitenant App))
+    Platform Services
+      SAP BTP Kyma, Runtime
+      Application Router
+      SaaS Provisioning Service
+      Service Manager
+    Security Services
+      XSUAA (Authorization)
+      Identity Authentication
+      Credential Store
+      Audit Log Service
+    Persistancy Services
+      SAP HANA Cloud
+      HDI Container Service
+      PostgreSQL
+      Redis Cache with Cloud Manager module
+    Integration Services
+      Destination Service
+      Connectivity Service
+      Transparent Proxy Kyma module
+      API Management
+      Event Mesh
+    Monitoring Services
+      Application Logging
+      Application Performance Monitoring
+      Alert Notification
+      Cloud Logging
+    Development Services
+      VSCode
+      ArgoCDaaS
+      Git Repository
+```
