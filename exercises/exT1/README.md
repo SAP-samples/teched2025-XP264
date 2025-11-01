@@ -42,7 +42,7 @@ If interested or simply out of curiosity, you may further expolore the _sap-tran
 
 You've now <b>enabled</b> Transparent Proxy as Kyma Module. It's lifecycle management is governed by a special module operator, ensuring the target and actual state of the module do not differ and the module is healthy and available for the side workloads runing in the Kyma instance.
 
-Continue to - [Exercise T2 - Configure Transparent Proxy Kyma Module ](../exT2/README.md)
+Continue to - [Exercise 5 - Configure Transparent Proxy Kyma Module ](../ex5/README.md)
 
 ## References
 * [Kyma Environment - Overview](https://help.sap.com/docs/BTP/65de2977205c403bbc107264b8eccf4b/468c2f3c3ca24c2c8497ef9f83154c44.html)

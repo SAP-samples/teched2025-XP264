@@ -218,4 +218,4 @@ There are some pre-defined dashboards available in SAP Cloud Logging. Let's expl
 
 ## Summary
 
-Continue to - [Exercise exT2 - Configure Transparent Proxy Kyma Module](../exT2/README.md)
+Continue to - [Exercise 4 - Explore SAP BTP Connectivity Capabilities in Kyma](../ex4/README.md)

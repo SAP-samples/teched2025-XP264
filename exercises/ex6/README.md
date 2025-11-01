@@ -1,10 +1,10 @@
-# Exercise T3 - Use Transparent Proxy Kyma Module
+# Exercise 6 - Use Transparent Proxy Kyma Module
 
 In this exercise, you will _consume_ remote systems defined as destinations (managed centrally in SAP BTP Destination service) in a _simple_, _unified_ and _virtually transparent_ way. This is enabled by Transparent Proxy module, which is seamlessly integrated with other modules and services of SAP BTP Connectivity.
 
 For simplicity and illustration purposeses, in this exercise, you will start a [cURL Pod](https://hub.docker.com/r/curlimages/curl-base), open a terminal to the Pod and use the well-known [cURL](https://curl.se/) tool to execute HTTP requests to the target systems.
 
-## Exercise T3.1 Run a cURL Pod Included in the Istio Service Mesh
+## Exercise 6.1 Run a cURL Pod Included in the Istio Service Mesh
 
 Using a single command, you will run a Kubernetes Pod hosting a preconfigured environment allowing direct usage of cURL. To be able to access remote systems securely exposed via Transparent Proxy, the Kuberenetes Pod must be included in the Istio Service Mesh.
 
@@ -38,7 +38,7 @@ Executing busybox-1.37.0-r19.trigger
 OK: 18 MiB in 39 packages
 ```
 
-## Exercise T3.2 Connect to remote systems defined as destinations using the dynamic "gateway" Destination CR
+## Exercise 6.2 Connect to remote systems defined as destinations using the dynamic "gateway" Destination CR
 
 This ```gateway``` Destination CR can be used to invoke any of the available destinations in the context of the BTP subaccount. For example, let's use the ```cis-httpbin``` destination which targets ```httpbin.org``` system hosted in Internet - a simple HTTP Request & Response Service.
 
@@ -55,7 +55,7 @@ Response:
 
 If you'd like to explore the raw JSON output, re-execute the commant ommiting the suffux ```| jq .headers.Host```.
 
-## Exercise T3.3 Connect to a remote system defined as destination using the dedicated (static) "s4any" Destination CR
+## Exercise 6.3 Connect to a remote system defined as destination using the dedicated (static) "s4any" Destination CR
 
 This ```s4any``` Destination CR points to ```s4-anywhere``` destination which targets an SAP S/4HANA system hosted in the premise and securely exposed to BTP applications via Cloud Connector and SAP Connectivity service. In this example, we will use the [Business Partner (A2X)
 ](https://api.sap.com/api/API_BUSINESS_PARTNER/overview) OData API and more specifically [GET /A_BusinessPartner](https://api.sap.com/api/API_BUSINESS_PARTNER/resource/get_A_BusinessPartner)
@@ -97,8 +97,6 @@ Response:
 You've now consumed remote systems defined as destinations in Destination service in the context of the account in use by Transparent Proxy based on the applied configuration.
 
 You see how simple is to connect to arbirtary system defined as a destination in Destination service. You practically use the Destination CR as locally accessible hostname and do not do anything more but passing the mandatory API specific parameters. The complex parts are handled automatically by the Transparent Proxy and Destination service. If the target system is hosted on-premise, then the additional complexity is again handled automatically, this time with the automated usage of Connectivity Proxy module and Connectivity service.
-
-Continue to - [Exercise N - Excercise N ](../exN/README.md)
 
 ## References
 * [Connectivity in the Kyma Environment](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/7501fbc9aebd4e3180eddec977ca288d.html)

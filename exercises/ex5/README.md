@@ -1,8 +1,8 @@
-# Exercise T2 - Configure Transparent Proxy Kyma Module
+# Exercise 5 - Configure Transparent Proxy Kyma Module
 
 In this exercise, you will _configure_ Transparent Proxy as module in Kyma. This will allow you to _locally_ consume destinations (managed centrally in SAP BTP Destination service) from within the Kyma instance, and technically connect to any remote system in a _simple_, _unified_ and _virtually transparent_ way.
 
-## Exercise T2.1 Navigate to your working Namespace in Kyma Dashboard
+## Exercise 5.1 Navigate to your working Namespace in Kyma Dashboard
 
 In the home page of Kyma Dashboard, navigate to your working Namespace.
 
@@ -15,7 +15,7 @@ In the home page of Kyma Dashboard, navigate to your working Namespace.
 3. You see an overview of your Namespace
 <br>![](/exercises/exT2/images/T2_01_03.png)
 
-## Exercise T2.2 Create a _dynamic_ Destination Custom Resource
+## Exercise 5.2 Create a _dynamic_ Destination Custom Resource
 
 In the home page of the Namespace of your choice, you can see Connectivity section, and under it you find Destination CR. Latter are used to formally expose and reference the destinations - either statically via dedicated or _static_ CRs or dynamically via _dynamic_ (gateway) CR.
 
@@ -29,7 +29,7 @@ In the home page of the Namespace of your choice, you can see Connectivity secti
 <br>![](/exercises/exT2/images/T2_02_03.png)
 <br>![](/exercises/exT2/images/T2_02_04.png)
 
-## Exercise T2.3 Create a _static_ Destination Custom Resource
+## Exercise 5.3 Create a _static_ Destination Custom Resource
 
 In the home page of the Namespace of your choice, you can see Connectivity section, and under it you find Destination CR. Latter are used to formally expose and reference the destinations - either statically via dedicated or _static_ CRs or dynamically via _dynamic_ (gateway) CR.
 
@@ -43,7 +43,7 @@ In the home page of the Namespace of your choice, you can see Connectivity secti
 <br>![](/exercises/exT2/images/T2_03_03.png)
 <br>![](/exercises/exT2/images/T2_03_04.png)
 
-## Exercise T2.4 Explore the results of the creation of the Destination CRs via Kubectl
+## Exercise 5.4 Explore the results of the creation of the Destination CRs via Kubectl
 
 1. Explore Destination CRs via Terminal and Kubectl Command Line Tool
 ```
@@ -64,7 +64,7 @@ s4any     ExternalName   <none>       s4any-5cmhg.sap-transp-proxy-system.svc.cl
 
 You've now <b>configured</b> the Transparent Proxy via dynamic (gateway) Destination CR, and <b>enabled</b> local workloads to technically connect to any remote system defined as a destination in Destination service in the context of the account in use by Transparent Proxy based on the applied configuration.
 
-Continue to - [Exercise T3 - Use Transparent Proxy Kyma Module ](../exT3/README.md)
+Continue to - [Exercise 6 - Use Transparent Proxy Kyma Module ](../ex6/README.md)
 
 ## References
 * [Connectivity in the Kyma Environment](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/7501fbc9aebd4e3180eddec977ca288d.html)
