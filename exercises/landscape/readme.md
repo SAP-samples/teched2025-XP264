@@ -654,4 +654,197 @@ flowchart LR
     class Alert,Scale decision
 ```
 
+### Day 2 Operations activities
 
+Core Day 2 Operations Areas:
+
+Monitoring & Observability: Metrics, logs, traces, and dashboards for system health
+Incident Management: Alerting, on-call rotations, incident response, and post-mortems
+Capacity Management: Planning, auto-scaling, rightsizing, and quota management
+Backup & Recovery: Automated backups, replication, DR testing, and restore procedures
+Security Operations: Vulnerability scanning, patch management, audits, and certificate management
+Configuration Management: Drift detection, GitOps, secret rotation, and version control
+Performance Optimization: Tuning, caching, database optimization, and load testing
+Cost Management: Monitoring, optimization, reserved capacity, and chargeback
+Change Management: Change requests, deployments, rollbacks, and tracking
+Continuous Improvement: SLO reviews, retrospectives, automation, and documentation
+
+The diagram also shows how different teams (SRE, DevOps, Support, Development, Security) interact with these operations and how supporting systems (ticketing, ChatOps, knowledge bases, CI/CD) enable Day 2 activities.
+
+```mermaid
+---
+title: Day 2 Operations - Alternative flow chart version
+---
+graph TB
+    subgraph "Day 2 Operations"
+        subgraph "Monitoring & Observability"
+            METRICS[Metrics Collection<br/>CPU, Memory, Disk, Network]
+            LOGS[Log Aggregation<br/>Application & System Logs]
+            TRACES[Distributed Tracing<br/>Request Flows]
+            APM[Application Performance<br/>Monitoring]
+            DASH[Dashboards<br/>Grafana, Kibana]
+        end
+
+        subgraph "Incident Management"
+            ALERT[Alerting & Notifications<br/>PagerDuty, Slack, Email]
+            ONCALL[On-Call Management<br/>Rotation Schedules]
+            INCIDENT[Incident Response<br/>Triage & Resolution]
+            POSTMORTEM[Post-Mortem Analysis<br/>Root Cause Analysis]
+            RUNBOOK[Runbooks & Playbooks<br/>Response Procedures]
+        end
+
+        subgraph "Capacity Management"
+            CAPACITY_PLAN[Capacity Planning<br/>Resource Forecasting]
+            SCALING[Auto-Scaling<br/>Horizontal & Vertical]
+            RIGHTSIZING[Resource Rightsizing<br/>Cost Optimization]
+            QUOTA[Quota Management<br/>Limits & Throttling]
+        end
+
+        subgraph "Backup & Recovery"
+            BACKUP[Automated Backups<br/>Scheduled & On-Demand]
+            REPLICATION[Data Replication<br/>Cross-Region/Zone]
+            DR_TEST[DR Testing<br/>Failover Drills]
+            RESTORE[Recovery Procedures<br/>RTO/RPO Management]
+        end
+
+        subgraph "Security Operations"
+            VULN_SCAN[Vulnerability Scanning<br/>CVE Management]
+            PATCH_MGMT[Patch Management<br/>Security Updates]
+            SEC_AUDIT[Security Audits<br/>Compliance Checks]
+            ACCESS_REVIEW[Access Reviews<br/>IAM Governance]
+            CERT_MGMT[Certificate Management<br/>Rotation & Renewal]
+        end
+
+        subgraph "Configuration Management"
+            CONFIG_DRIFT[Configuration Drift<br/>Detection & Remediation]
+            GITOPS[GitOps Workflows<br/>IaC Version Control]
+            SECRET_ROTATE[Secret Rotation<br/>Credential Management]
+            VERSION_MGMT[Version Management<br/>Dependencies & Updates]
+        end
+
+        subgraph "Performance Optimization"
+            PERF_TUNE[Performance Tuning<br/>Query & Code Optimization]
+            CACHE_OPT[Cache Optimization<br/>CDN & Memory Cache]
+            DB_TUNE[Database Tuning<br/>Index & Query Plans]
+            LOAD_TEST[Load Testing<br/>Stress & Capacity Tests]
+        end
+
+        subgraph "Cost Management"
+            COST_MONITOR[Cost Monitoring<br/>Budget Tracking]
+            RESOURCE_OPT[Resource Optimization<br/>Idle Resource Cleanup]
+            RESERVED_CAP[Reserved Capacity<br/>Commitment Planning]
+            CHARGEBACK[Chargeback/Showback<br/>Cost Allocation]
+        end
+
+        subgraph "Change Management"
+            CHANGE_REQ[Change Requests<br/>CAB Approval]
+            DEPLOY[Deployments<br/>Blue-Green, Canary]
+            ROLLBACK[Rollback Procedures<br/>Quick Recovery]
+            CHANGE_TRACK[Change Tracking<br/>Audit Trail]
+        end
+
+        subgraph "Continuous Improvement"
+            SLO_REVIEW[SLO/SLA Review<br/>Target Assessment]
+            RETRO[Retrospectives<br/>Team Learning]
+            AUTOMATION[Automation Initiatives<br/>Toil Reduction]
+            DOC_UPDATE[Documentation Updates<br/>Knowledge Base]
+        end
+    end
+
+    subgraph "Supporting Systems"
+        TICKETING[Ticketing System<br/>Jira, ServiceNow]
+        CHAT[ChatOps<br/>Slack, Teams]
+        WIKI[Knowledge Base<br/>Confluence, Notion]
+        CICD[CI/CD Pipeline<br/>Jenkins, GitLab]
+    end
+
+    subgraph "Teams & Stakeholders"
+        SRE[SRE Team]
+        DEVOPS[DevOps Team]
+        SUPPORT[Support Team]
+        DEV[Development Team]
+        SECURITY[Security Team]
+        BUSINESS[Business Owners]
+    end
+
+    %% Monitoring flows
+    METRICS --> DASH
+    LOGS --> DASH
+    TRACES --> APM
+    DASH --> ALERT
+
+    %% Incident Management flows
+    ALERT --> ONCALL
+    ONCALL --> INCIDENT
+    INCIDENT --> RUNBOOK
+    INCIDENT --> POSTMORTEM
+    POSTMORTEM --> DOC_UPDATE
+
+    %% Capacity Management
+    METRICS --> CAPACITY_PLAN
+    CAPACITY_PLAN --> SCALING
+    CAPACITY_PLAN --> RIGHTSIZING
+
+    %% Security flows
+    VULN_SCAN --> PATCH_MGMT
+    SEC_AUDIT --> ACCESS_REVIEW
+    CERT_MGMT --> SECRET_ROTATE
+
+    %% Configuration flows
+    GITOPS --> CONFIG_DRIFT
+    CONFIG_DRIFT --> AUTOMATION
+    VERSION_MGMT --> CHANGE_REQ
+
+    %% Performance flows
+    APM --> PERF_TUNE
+    PERF_TUNE --> LOAD_TEST
+    LOAD_TEST --> CAPACITY_PLAN
+
+    %% Cost flows
+    METRICS --> COST_MONITOR
+    COST_MONITOR --> RESOURCE_OPT
+    RESOURCE_OPT --> RIGHTSIZING
+
+    %% Change Management flows
+    CHANGE_REQ --> DEPLOY
+    DEPLOY --> CHANGE_TRACK
+    DEPLOY -.->|If needed| ROLLBACK
+
+    %% Backup flows
+    BACKUP --> REPLICATION
+    DR_TEST --> RESTORE
+
+    %% Continuous Improvement
+    POSTMORTEM --> RETRO
+    RETRO --> AUTOMATION
+    SLO_REVIEW --> CAPACITY_PLAN
+
+    %% System integrations
+    INCIDENT --> TICKETING
+    ALERT --> CHAT
+    RUNBOOK --> WIKI
+    DEPLOY --> CICD
+    DOC_UPDATE --> WIKI
+
+    %% Team interactions
+    SRE --> MONITORING & Observability
+    SRE --> INCIDENT
+    SRE --> AUTOMATION
+    DEVOPS --> CICD
+    DEVOPS --> CONFIG_DRIFT
+    SUPPORT --> TICKETING
+    DEV --> DEPLOY
+    SECURITY --> VULN_SCAN
+    BUSINESS --> SLO_REVIEW
+    BUSINESS --> COST_MONITOR
+
+    %% Styling
+    style ALERT fill:#e74c3c
+    style INCIDENT fill:#e67e22
+    style BACKUP fill:#27ae60
+    style VULN_SCAN fill:#c0392b
+    style COST_MONITOR fill:#f39c12
+    style AUTOMATION fill:#3498db
+    style SLO_REVIEW fill:#9b59b6
+    style DEPLOY fill:#16a085
+```
