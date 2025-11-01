@@ -14,5 +14,5 @@ jobs:
       - uses: actions/checkout@v4 
       - uses: yanovation/delete-old-actions@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.CICD_TOKEN_FOR_TF_MODULES }}
           days-ago: 7
