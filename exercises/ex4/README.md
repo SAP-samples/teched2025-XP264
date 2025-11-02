@@ -95,7 +95,7 @@ As you know, it's not a matter of **_if_** the issue will occur but **_when_** i
 - [Transparent Proxy - Troubleshooting](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/fce292aeb9e24b7abd47c0b38f6fe8a9.html)
 
 > [!NOTE]
-> Standard troubleshooting approaches for Kyma and Kubernetes workloads apply to the SAP BTP Connectivity modules. See [Exercise 3 - Explore Kyma Telemetry Features with SAP Cloud Logging](../ex3#exercise-3---exploring-kyma-telemetry-with-sap-cloud-logging)
+> Standard troubleshooting approaches for Kyma and Kubernetes workloads apply to the SAP BTP Connectivity modules. See [Exercise 3 - Explore Kyma Telemetry Features with SAP Cloud Logging](../ex3#exercise-3---exploring-kyma-telemetry-with-sap-cloud-logging).
 
 ## Don't forget about the private environment
 

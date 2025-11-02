@@ -2,6 +2,9 @@
 
 In this exercise, you will _enable_ Transparent Proxy as module in Kyma. This will allow you to further _configure_ it and expose destinations (managed centrally in SAP BTP Destination service) for _local_, _unified_ and _virtually transparent_ consumption within the Kyma instance.
 
+> [!NOTE]
+> The _enablement_ of the module is relevant for both Day-1 and Day-2 Operations. Usually, modules are expected to be _enabled_ during Day-1 Operations. However, this can be done also in later point in time during Day-2 Operations, for example, you already have up-and-running Kyma instance and productive application workload, but you're performing troubleshooting activities as showcased in [Exercise 6 - Use Transparent Proxy Kyma Module](../ex6#exercise-6---use-transparent-proxy-kyma-module).
+
 ## Exercise 7.1 Navigate To The Kyma Dashboard
 
 Once working with BTP cockpit and navigated to the account overview page, you can switch the working context to the Kyma Dashboard

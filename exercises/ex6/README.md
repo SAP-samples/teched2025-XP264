@@ -19,7 +19,6 @@ Output:
 All commands and output from this session will be recorded in container logs, including credentials and sensitive information passed through the command prompt.
 If you don't see a command prompt, try pressing enter.
 /home/curl_user #
-
 ```
 
 2. Install _jq_ tool for being able to easily parse the JSON response from the target system
@@ -96,6 +95,8 @@ Response:
 You've now consumed remote systems defined as destinations in Destination service in the context of the account in use by Transparent Proxy based on the applied configuration.
 
 You see how simple is to connect to arbirtary system defined as a destination in Destination service. You practically use the Destination CR as locally accessible hostname and do not do anything more but passing the mandatory API specific parameters. The complex parts are handled automatically by the Transparent Proxy and Destination service. If the target system is hosted on-premise, then the additional complexity is again handled automatically, this time with the automated usage of Connectivity Proxy module and Connectivity service.
+
+In addition, **especially relevant for Day-2 Operations** is the fact that with the help ofsimple and well-known tools like ```cuRL```, you could easily perform even advanced tests on the technical connectivity to remote systems without touching / affecting the application code or process in any way. And more importantly, focusing on the business logic but not infra or utility logic which in this case is handed over to the [**Connectivity Proxy**](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/8dd1690aa475477ab44624626f45524b.html) and [**Transparent Proxy**](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/1700cfe070704d2e80aa76de1033a6c4.html) modules, and [SAP BTP Connectivity](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e54cc8fbbb571014beb5caaf6aa31280.html) services.
 
 ## References
 * [Connectivity in the Kyma Environment](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/7501fbc9aebd4e3180eddec977ca288d.html)
