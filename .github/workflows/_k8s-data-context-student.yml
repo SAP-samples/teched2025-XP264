@@ -422,7 +422,6 @@ env:
         echo 'EOF' >> $GITHUB_OUTPUT
 
         ls -al $CONFIG_DIRECTORY
-        #cat $CONFIG_DIRECTORY/cis-secret.json
 
       env:
         RUNTIME_CONTEXT_WORKSPACE: "runtime-context-${{ inputs.subaccount_name }}-${{steps.cluster_info.outputs.GLOBALACCOUNT}}"

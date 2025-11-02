@@ -309,12 +309,18 @@ env:
         kyma alpha kubeconfig generate --serviceaccount $NAMESPACE-sa --clusterrole cluster-admin --namespace $NAMESPACE --time 1h  
 
         echo -e "*********** Time-boxed, cluster-wide access ********************\n"
-        kyma alpha kubeconfig generate --serviceaccount $NAMESPACE-sa --clusterrole cluster-admin --namespace $NAMESPACE --cluster-wide --time 2h > $NAMESPACE-sa.yaml
+        kyma alpha kubeconfig generate --serviceaccount $NAMESPACE-sa --clusterrole cluster-admin --namespace $NAMESPACE --cluster-wide --time 1h > $NAMESPACE-sa.yaml
 
 
         echo -e "\nList of pods with: $NAMESPACE-sa.yaml\n"
-        #cat ./$NAMESPACE-sa.yaml
         kubectl get pods -n $NAMESPACE --kubeconfig ./$NAMESPACE-sa.yaml
+
+
+        echo "kubeconfig as string"
+        timeboxed_kubeconfig=$(cat ./$NAMESPACE-sa.yaml)
+        echo 'timeboxed_kubeconfig<<EOF' >> $GITHUB_OUTPUT
+        echo "$timeboxed_kubeconfig" >> $GITHUB_OUTPUT
+        echo 'EOF' >> $GITHUB_OUTPUT
 
     - "name": "Fire-fighter Read-only access"
       "run": |
@@ -325,12 +331,18 @@ env:
         kyma alpha kubeconfig generate --serviceaccount $NAMESPACE-sa-view-time --clusterrole view --namespace $NAMESPACE --time 1h  
 
         echo -e "*********** Time-boxed, cluster-wide read-only access ********************\n"
-        kyma alpha kubeconfig generate --serviceaccount $NAMESPACE-sa-view-all --clusterrole view --namespace $NAMESPACE --cluster-wide --time 2h > $NAMESPACE-sa-view-all.yaml
+        kyma alpha kubeconfig generate --serviceaccount $NAMESPACE-sa-view-all --clusterrole view --namespace $NAMESPACE --cluster-wide --time 1h > $NAMESPACE-sa-view-all.yaml
 
 
         echo -e "\nList of pods with: $NAMESPACE-sa-view-all.yaml\n"
         #cat ./$NAMESPACE-sa-view-all.yaml
         kubectl get pods -n $NAMESPACE --kubeconfig ./$NAMESPACE-sa-view-all.yaml
+
+    - name: Upload kubeconfigs to Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: timeboxed_kubeconfigs
+        path: ./*.yaml
 
 
     - "name": "btp runtime context access."
