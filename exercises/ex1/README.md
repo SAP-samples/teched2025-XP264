@@ -553,7 +553,8 @@ sequenceDiagram
 Optional practice (requires VSCode terminal):  
 
 - 👉 reuse a downloaded time-boxed service account based kubeconfig from the previous exercise
-- 👉 optionally, re-run the namespaced Data Collection Workflow one more time against the same kyma cluster region and your namespace
+- 👉 you must have run the Data Collection Workflow against the same kyma cluster region as the downloaded kubeconfig and your namespace.
+- 👉 if it weren't the case, rerun the Data Collection Workflow accordingly
 
  |  Data Collection Workflow (namespaced)
  | :---------  |
@@ -609,7 +610,7 @@ Then, in the terminal:
 
 ## Exercise 1.6 - Subscribe to a kyma multitenant application
 
-Here goes a diagram of the functional architecture of the solution
+### The functional architecture of the pre-deployed solution
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
@@ -702,8 +703,8 @@ graph TB
 </table>   
 
 
-
-👉 In order to subscribe or to retrieve an existing subscription for your session user (xp264-0xx) run the following github action: 
+Optional practice:  
+- 👉 In order to subscribe or to retrieve an existing subscription for your session user (xp264-0xx) run the following github action: 
 
 | Run Subscription workflow |
 | -------- | 
