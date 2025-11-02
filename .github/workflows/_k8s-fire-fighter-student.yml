@@ -342,7 +342,7 @@ env:
       uses: actions/upload-artifact@v4
       with:
         name: timeboxed_kubeconfigs
-        path: ./$NAMESPACE-sa?*.yaml
+        path: ./${{ inputs.NAMESPACE }}-sa?*.yaml
 
 
     - "name": "btp runtime context access."
