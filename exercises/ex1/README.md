@@ -234,9 +234,9 @@ flowchart TD
 </tbody>
 </table> 
 
-Practice:   
+Practice:  
 - 👉 Pick a region and action of your choice...
-- 👉 Trigger the workflow...(hint: you may run them all at once in parallel)
+- 👉 Trigger the workflow...admin, student and data collection
 - 👉 Inspect the steps of each workflow...
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
@@ -305,7 +305,7 @@ Explanation. What has happened?
   * kubectl provider
 
 Practice:  
-👉 Inspect the steps of each of the worklow you have run, for instance:
+- 👉 Inspect the steps of each of the worklow you have run, for instance:
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
@@ -412,21 +412,22 @@ In a nutshell, Kyma CLI extends the capabilities of the ubiquitous kubectl CLI a
 > Use "kyma [command] --help" for more information about a command.
 > ~~~
 
-Practice:
+Practice:  
+- 👉 Let's leverage the kyma cli to get simple metadata from a kyma cluster...  
+- 👉 run `kyma alpha diagnose -f json | jq '.metadata'`
 
 > [!NOTE]
-> - 👉 Let's leverage the kyma cli to get simple metadata from a kyma cluster...  
-> - 👉 run `kyma alpha diagnose -f json | jq '.metadata'`
 >
 > ~~~rust
 > {
->  "globalAccountID": "4c526f8b-cca9-4837-8b43-87824e3a4d10",
->  "subaccountID": "5524c764-8893-4530-8eb8-feb9e6110f16",
+>  "globalAccountID": "4c526f8b-cca9-4837-8b43-******",
+>  "subaccountID": "5524c764-8893-4530-8eb8-******",
 > ............
 > }
 > ~~~
-> Practice:
-> - 👉 run and explore `kyma alpha diagnose -f json | jq '.nodes[] | tojson'`
+
+Practice:  
+- 👉 run and explore `kyma alpha diagnose -f json | jq '.nodes[] | tojson'`
 
 > [!TIP]
 >  * Let's use the above information to build the deep link to the BTP subaccount with the kyma runtime environment.  
