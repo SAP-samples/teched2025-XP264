@@ -10,41 +10,41 @@ In this exercise, you will _configure_ Transparent Proxy as module in Kyma. This
 In the home page of Kyma Dashboard, navigate to your working Namespace.
 
 1. Navigate to the Namespaces Overview
-<br>![](/exercises/exT2/images/T2_01_01.png)
+<br>![](/exercises/ex5/images/T2_01_01.png)
 
 2. Select your working Namespace:
-<br>![](/exercises/exT2/images/T2_01_02.png)
+<br>![](/exercises/ex5/images/T2_01_02.png)
 
 3. You see an overview of your Namespace
-<br>![](/exercises/exT2/images/T2_01_03.png)
+<br>![](/exercises/ex5/images/T2_01_03.png)
 
 ## Exercise 5.2 Create a _dynamic_ Destination Custom Resource
 
 In the home page of the Namespace of your choice, you can see Connectivity section, and under it you find Destination CR. Latter are used to formally expose and reference the destinations - either statically via dedicated or _static_ CRs or dynamically via _dynamic_ (gateway) CR.
 
 1. Click here to create a new dynamic Destination CR
-<br>![](/exercises/exT2/images/T2_02_01.png)
+<br>![](/exercises/ex5/images/T2_02_01.png)
 
 2. The actual Destination CR creation. In this example, the Destination CR is a _dynamic_ one used to reference any destination that is accessible in the context of the account in use by Transparent Proxy based on the applied configuration.
 <br>![](/exercises/exT2/images/T2_02_02.png)
 
 3. Overview of the available Destination CRs
-<br>![](/exercises/exT2/images/T2_02_03.png)
-<br>![](/exercises/exT2/images/T2_02_04.png)
+<br>![](/exercises/ex5/images/T2_02_03.png)
+<br>![](/exercises/ex5/images/T2_02_04.png)
 
 ## Exercise 5.3 Create a _static_ Destination Custom Resource
 
 In the home page of the Namespace of your choice, you can see Connectivity section, and under it you find Destination CR. Latter are used to formally expose and reference the destinations - either statically via dedicated or _static_ CRs or dynamically via _dynamic_ (gateway) CR.
 
 1. Click here to create a new _static_ Destination CR
-<br>![](/exercises/exT2/images/T2_03_01.png)
+<br>![](/exercises/ex5/images/T2_03_01.png)
 
 2. The actual Destination CR creation. In this example, the Destination CR is a _static_ one used to reference a specific destination that is accessible in the context of the account in use by Transparent Proxy based on the applied configuration.
-<br>![](/exercises/exT2/images/T2_03_02.png)
+<br>![](/exercises/ex5/images/T2_03_02.png)
 
 3. Overview of the available Destination CRs
-<br>![](/exercises/exT2/images/T2_03_03.png)
-<br>![](/exercises/exT2/images/T2_03_04.png)
+<br>![](/exercises/ex5/images/T2_03_03.png)
+<br>![](/exercises/ex5/images/T2_03_04.png)
 
 ## Exercise 5.4 Explore the results of the creation of the Destination CRs via Kubectl
 
