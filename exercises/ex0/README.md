@@ -77,7 +77,7 @@ Access to the solution landscape is provided via the Easy Navigation dashboard.
 </table>  
 
 
-The students can pick and choose any available kyma cluster region the following list:
+- :notebook: FYI: The students can pick and choose any available kyma cluster region the following list:
 
 | BTP region              | Kyma region        |                                                                                                                                Description |
 | :------------------------ | :---------: | :------------------------------------------------------------------------------------------------------------------------ |
@@ -102,7 +102,7 @@ The students can pick and choose any available kyma cluster region the following
 
 ## Exercise 0.3 - BTP landscape at a glance.
 
-You've got SSO acces with your student's credentials to parts of the SAP-TechEd25-XP264 landscape.  
+All students have their SSO acces with the student's credentials to parts of the SAP-TechEd25-XP264 landscape.  
 
 You may login to [SAP-TechEd25-XP264 Business Technology Platform - Cockpit](https://url.sap/yogrmc) 
 

@@ -528,8 +528,8 @@ Practice:
 
 ### Accessing other diagnostic information with btp and kubernetes terraform providers....  
 
-Practice:  
-- 👉 run the namespaced Data Collection Workflow against the same kyma cluster region as done in the previous exercise (for instance, xp264-050) and your namespace  
+Optional practice:  
+- 👉 run the namespaced Data Collection Workflow against the same kyma cluster region as done in the previous [Fire-fighter exercise](exercises/ex1#exercise-14---fire-fighter-access-to-your-kyma-cluster) (for instance, using xp264-050 region) and your namespace  
 
  |  Data Collection Workflow (namespaced)
  | :---------  |
