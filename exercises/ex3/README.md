@@ -23,9 +23,9 @@ Lets make some HTTP requests to the Httpbin application previously deployed in t
 
 ## Exercise 3.1 - Access SAP Cloud Logging
 
-- Access the SAP Cloud Logging from the Link provided
+- Access the SAP Cloud Logging from the Link provided behind the picture below and open it with a new tab or window
 
-- Navigate to `Discover` to acess the logs
+- Navigate to `Discover` to acess the logs (if prompted for a "tenant", select the `Global` tenant)
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
 <tbody>
