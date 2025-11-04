@@ -52,8 +52,10 @@ In the home page of the Namespace of your choice, you can see Connectivity secti
 ## Exercise 5.4 Explore the results of the creation of the Destination CRs via Kubectl
 
 <details>
-<summary>If you prefer using web interface instead of command line, expand here and follow</summary>
+<summary>💡 <b>If you prefer using web interface</b>, expand here and follow</summary>
+<br></br>
 In Kyma Dashboard, within your target namespace:
+
 1. Navigate to ```Connectivity``` &rarr; ```Destination CRs``` and select the items and explore the status and details
 2. Navigate to ```Discovery and Network``` &rarr; ```Services```. You'd see ```Kubernetes Service``` items for each of the available Destination CRs.
 </details>
@@ -65,8 +67,26 @@ In Kyma Dashboard, within your target namespace:
 > The execution of this exercise requires you to have previosly perforem 
 [Exercise 1.4 - Fire-fighter access to your kyma cluster](../ex1#exercise-14---fire-fighter-access-to-your-kyma-cluster). Once done, ```kubeconfig``` YAML file should be already available in the ```Downloads``` folder, e.g. ```C:\Users\<pc-specific-user-here>\Downloads\kubeconfig.yaml```
 
+1. Explore Destination CRs via Terminal and Kubectl Command Line Tool
+```
+kubectl get destinations -n quovadis-btp
+NAME      AGE     DESTINATIONREF   FRAGMENTREF   DESTINATIONSERVICEINSTANCENAME   SERVICEPORT   ACCESSCONTROLSCOPE   STATUS                    CHAINREF
+gateway   4d4h    *                                                                                                  ConfigurationSuccessful   
+s4any     6m39s   s4-anywhere                                                                                        ConfigurationSuccessful   
+```
+2. Explore available Kubernetes Services via Terminal and Kubectl Command Line Tool
+```
+kubectl get services -n quovadis-btp
+NAME      TYPE           CLUSTER-IP   EXTERNAL-IP                                               PORT(S)   AGE
+gateway   ExternalName   <none>       gateway-x4rf8.sap-transp-proxy-system.svc.cluster.local   <none>    4d4h
+s4any     ExternalName   <none>       s4any-5cmhg.sap-transp-proxy-system.svc.cluster.local     <none>    7m11s
+```
+<br></br>
+> [!IMPORTANT]
+> For each ```Kuberenetes Service``` associated with a BTP ```destination```, the Transparent Proxy will invisibly but securely handle the traffic sent to the ```Service``` and hide the relevant technical complexity via automating technical connectivity flows and enchancing the requests with needed artefacts. You'd further try it yourself in the next exercise.
+
 <details>
-<summary>💡 In case of problems with command line environment, expand here and follow</summary>
+<summary>💡 <b>In case of problems</b> with command line environment, expand here and follow</summary>
 <br></br>
 You need to download the ```kubeconfig``` YAML file and configure ```kubectl``` to use it, so that you could execute commands against your target Kyma instance.
 
@@ -128,23 +148,8 @@ Install ```kubelogin``` plugin for the ```kubectl``` tool. This is needed for en
 ```
 kubectl krew install oidc-login
 ```
-**Now you can continue with the exercise.**
 </details>
 
-1. Explore Destination CRs via Terminal and Kubectl Command Line Tool
-```
-kubectl get destinations -n quovadis-btp
-NAME      AGE     DESTINATIONREF   FRAGMENTREF   DESTINATIONSERVICEINSTANCENAME   SERVICEPORT   ACCESSCONTROLSCOPE   STATUS                    CHAINREF
-gateway   4d4h    *                                                                                                  ConfigurationSuccessful   
-s4any     6m39s   s4-anywhere                                                                                        ConfigurationSuccessful   
-```
-2. Explore available Kubernetes Services via Terminal and Kubectl Command Line Tool
-```
-kubectl get services -n quovadis-btp
-NAME      TYPE           CLUSTER-IP   EXTERNAL-IP                                               PORT(S)   AGE
-gateway   ExternalName   <none>       gateway-x4rf8.sap-transp-proxy-system.svc.cluster.local   <none>    4d4h
-s4any     ExternalName   <none>       s4any-5cmhg.sap-transp-proxy-system.svc.cluster.local     <none>    7m11s
-```
 
 ## Summary
 
