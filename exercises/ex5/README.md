@@ -9,6 +9,9 @@ In this exercise, you will _configure_ Transparent Proxy as module in Kyma. This
 
 In the home page of Kyma Dashboard, navigate to your working Namespace.
 
+> [!NOTE]
+> Use your student-specific namespace, for example, ```xp264-001```. ```quovadis-btp``` namespace is used in the screenshots and command samples for reference reasons only.
+
 1. Navigate to the Namespaces Overview
 <br>![](/exercises/ex5/images/T2_01_01.png)
 
@@ -48,15 +51,22 @@ In the home page of the Namespace of your choice, you can see Connectivity secti
 
 ## Exercise 5.4 Explore the results of the creation of the Destination CRs via Kubectl
 
-> [!IMPORTANT]
-> The execution of this exercise requires you to have previosly perforem 
-[Exercise 1.4 - Fire-fighter access to your kyma cluster](../ex1#exercise-14---fire-fighter-access-to-your-kyma-cluster). Once done, ```kubeconfig``` YAML file should be already available in the ```Downloads``` folder, e.g. ```C:\Users\<pc-specific-user-here>\Downloads\kubeconfig.yaml```
+<details>
+<summary>If you prefer using web interface instead of command line, expand here and follow</summary>
+In Kyma Dashboard, within your target namespace:
+1. Navigate to ```Connectivity``` &rarr; ```Destination CRs``` and select the items and explore the status and details
+2. Navigate to ```Discovery and Network``` &rarr; ```Services```. You'd see ```Kubernetes Service``` items for each of the available Destination CRs.
+</details>
 
 > [!TIP]
 > On your Windows based student laptop, you can use wither ```Windows PowerShell``` or ```Viual Studio Code``` to get access to the terminal.
 
+> [!IMPORTANT]
+> The execution of this exercise requires you to have previosly perforem 
+[Exercise 1.4 - Fire-fighter access to your kyma cluster](../ex1#exercise-14---fire-fighter-access-to-your-kyma-cluster). Once done, ```kubeconfig``` YAML file should be already available in the ```Downloads``` folder, e.g. ```C:\Users\<pc-specific-user-here>\Downloads\kubeconfig.yaml```
+
 <details>
-<summary>💡 Prepare the command line environment</summary>
+<summary>💡 In case of problems with command line environment, expand here and follow</summary>
 <br></br>
 You need to download the ```kubeconfig``` YAML file and configure ```kubectl``` to use it, so that you could execute commands against your target Kyma instance.
 
@@ -138,7 +148,9 @@ s4any     ExternalName   <none>       s4any-5cmhg.sap-transp-proxy-system.svc.cl
 
 ## Summary
 
-You've now <b>configured</b> the Transparent Proxy via dynamic (gateway) Destination CR, and <b>enabled</b> local workloads to technically connect to any remote system defined as a destination in Destination service in the context of the account in use by Transparent Proxy based on the applied configuration.
+You've now <b>configured</b> the Transparent Proxy via dynamic (gateway) Destination CR. It is simple and straightforward. As result, remote systems defined as destinations are made locally accessible via leveraging Kuberenetes Service resources and the associated technical complexity is handled transparently by the Transparent Proxy.
+
+Practically, you've <b>enabled</b> local workloads to technically connect to any remote system defined as a destination in Destination service in a unified, virtually transparent way. Or course, for security reasons, the usage of destinations is scoped in the context of the account in use by Transparent Proxy based on the applied module configuration
 
 Continue to - [Exercise 6 - Use Transparent Proxy Kyma Module ](../ex6/README.md)
 

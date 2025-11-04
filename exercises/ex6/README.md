@@ -4,6 +4,9 @@ In this exercise, you will _consume_ remote systems defined as destinations (man
 
 For simplicity and illustration purposeses, in this exercise, you will start a [cURL Pod](https://hub.docker.com/r/curlimages/curl-base), open a terminal to the Pod and use the well-known [cURL](https://curl.se/) tool to execute HTTP requests to the target systems.
 
+> [!NOTE]
+> Use your student-specific namespace, for example, ```xp264-001```. ```quovadis-btp``` namespace is used in the screenshots and command samples for reference reasons only.
+
 ## Exercise 6.1 Run a cURL Pod Included in the Istio Service Mesh
 
 Using a single command, you will run a Kubernetes Pod hosting a preconfigured environment allowing direct usage of cURL. To be able to access remote systems securely exposed via Transparent Proxy, the Kuberenetes Pod must be included in the Istio Service Mesh.

@@ -2,6 +2,9 @@
 
 In this exercise, you will _explore_ the technical connectivity capabilities in Kyma. This will give you context on what's generally possible and what's relevant to Day-2 operations as in Kyma there are several Kyma Modules which can be enabled, configured and used to facilitate your needs in the realm of hybrid technical connectivity. You're focus more on those being integral part of SAP BTP Connectivity capability.
 
+> [!NOTE]
+> Use your student-specific BTP account and Kyma namespace, for example, ```xp264-001```. ```quovadis-btp``` namespace is used in the screenshots and command samples for reference reasons only.
+
 ## Exercise 4.1 - Overview of the Kyma Modules
 
 1. Navigate To The Kyma Dashboard
