@@ -36,5 +36,5 @@ variable  "runtime_context_workspace" {
 
 variable "kymaruntime_bindings" {
   type    = string
-  default = "kymaruntime_bindings" // if null then this variable is optional
+  default = null //"kymaruntime_bindings" // if null then this variable is optional
 }
