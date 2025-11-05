@@ -282,17 +282,8 @@ sequenceDiagram
 
 👉 For the best experience, open workflow links into a separate tab or into a new window (right click).  
 
+
 <!-- 
-| Kyma BTP Region (Cockpit) |  Kyma dashboard | Admin Worklow (cluster-wide) | Student Workflow (namespaced)| Data Collection Workflow (namespaced)
-| :---------  | --------- | :--------- | :------- | -----------
-| [uk-south](https://url.sap/0dd8pm) | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="35" />](https://url.sap/x2ygbf) | [uk-south--admin](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba.yml) | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)| [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
-| [japan-east](https://url.sap/u66itn) | [<img src="../landscape/japaneast/kyma_dashboard_url_japaneast.png" width="35" />](https://url.sap/0ysrs1 ) | [japan-east--admin](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932.yml) | [japan-east--xp264](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
-| [us-east](https://url.sap/b24wtp) | [<img src="../landscape/useast/kyma_dashboard_url_useast.png" width="35" />](https://url.sap/ui217f) | [us-east--admin](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e.yml) | [us-east--xp264](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
-| [xp264-000](https://url.sap/v2dn5g) | [<img src="../landscape/xp264-000/kyma_dashboard_url_xp264_000.png" width="35" />](https://url.sap/9waari ) | [xp264-000--admin](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5.yml) | [xp264-000--xp264](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
-| [uk-xp264](https://url.sap/ovbfn6) | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="35" />](https://url.sap/3wchu2 ) | [uk-xp264--admin](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943.yml) | [uk-xp264--xp264](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
- -->
-
-
 |  Kyma dashboard | Admin Worklow (cluster-wide) | Student Workflow (namespaced)| Data Collection Workflow (namespaced) | Kyma BTP Region (Cockpit) 
 | :---------  | --------- | :--------- | :------- | -----------
 | [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="35" />](https://url.sap/x2ygbf) | [uk-south--admin](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba.yml) | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)| [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml) | [uk-south](https://url.sap/0dd8pm) 
@@ -300,6 +291,16 @@ sequenceDiagram
 | [<img src="../landscape/useast/kyma_dashboard_url_useast.png" width="35" />](https://url.sap/ui217f) | [us-east--admin](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e.yml) | [us-east--xp264](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml) | [us-east](https://url.sap/b24wtp) 
 | [<img src="../landscape/xp264-000/kyma_dashboard_url_xp264_000.png" width="35" />](https://url.sap/9waari ) | [xp264-000--admin](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5.yml) | [xp264-000--xp264](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml) | [xp264-000](https://url.sap/v2dn5g) 
 | [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="35" />](https://url.sap/3wchu2 ) | [uk-xp264--admin](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943.yml) | [uk-xp264--xp264](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml) | [uk-xp264](https://url.sap/ovbfn6) 
+ -->
+
+
+|  Kyma dashboard | Admin Worklow (cluster-wide) | Student Workflow (namespaced)| Data Collection Workflow (namespaced) 
+| :---------  | --------- | :--------- | :------- | -----------
+| [<img src="../landscape/uksouth/kyma-dashboard_url_uksouth.png" width="35" />](https://url.sap/x2ygbf) | [uk-south--admin](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba.yml) | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)| [ k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml) 
+| [<img src="../landscape/japaneast/kyma_dashboard_url_japaneast.png" width="35" />](https://url.sap/0ysrs1 ) | [japan-east--admin](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932.yml) | [japan-east--xp264](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)  
+| [<img src="../landscape/useast/kyma_dashboard_url_useast.png" width="35" />](https://url.sap/ui217f) | [us-east--admin](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e.yml) | [us-east--xp264](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)
+| [<img src="../landscape/xp264-000/kyma_dashboard_url_xp264_000.png" width="35" />](https://url.sap/9waari ) | [xp264-000--admin](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5.yml) | [xp264-000--xp264](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml) 
+| [<img src="../landscape/uk-xp264/kyma_dashboard_url_uk_xp264.png" width="35" />](https://url.sap/3wchu2 ) | [uk-xp264--admin](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943.yml) | [uk-xp264--xp264](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264.yml) | [k8s-data-context-student](../../../../actions/workflows/k8s-data-context-student.yml)  
 
 
 
