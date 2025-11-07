@@ -58,11 +58,16 @@ You must have a personal github account for this session.
   <a href="https://github.com/SAP-samples/teched2025-XP264">
   <img src="../ex0/images/fork_details.png" width="500" alt="fork_details" />
   </a>
+</p>
+
+</div>
+
+<div>
+<p float="left">
   <a href="https://github.com/SAP-samples/teched2025-XP264">
   <img src="../ex0/images/activate-gha-workflows.png" width="600" alt="activate-gha-workflows" />
   </a>
-</p>
-
+</p>    
 </div>
 </td>
 </tr>
