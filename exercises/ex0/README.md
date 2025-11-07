@@ -165,7 +165,7 @@ graph TB
             RT7_EU --> KYMA_UK5
         end
 
-        subgraph REGION_EU2["☁️ Europe (uk-central)"]
+        subgraph REGION_EU2["☁️ Europe (eu-central)"]
             RT8_EU[RT8: Sandbox]
             KYMA_EU2[Kyma Runtime<br/>xp264-001]
             RT8_EU --> KYMA_EU2
