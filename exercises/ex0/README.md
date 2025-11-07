@@ -19,7 +19,10 @@ You must have a personal github account for this session.
 
 ## Exercise 0.1 - Fork the teched2025-XP264 repository.
 
-This is **mandatory** step to be able to run the session exercises which are implemented as github actions.
+> [!IMPORTANT]
+>
+> This is **mandatory** step to be able to run the session exercises which are implemented as github actions.
+>
 
  - 👉 Login to [GitHub](https://github.com/).
  - 👉 On the [main page of this repository](https://github.com/SAP-samples/teched2025-XP264), choose **Fork** on the top right.
@@ -36,7 +39,7 @@ This is **mandatory** step to be able to run the session exercises which are imp
 </tbody>
 </table>   
 
- - 👉 Make sure that the **Owner** matches the GitHub account that you want to use for this session. All the other information can remain the same.
+ - 👉 Make sure that the **Owner** matches the GitHub account that you want to use for this session. All the other information may remain the same.
 
 
 <table style="width: 100%; border-collapse: collapse; background-color: #f5f5f5;" border="1">
@@ -60,7 +63,7 @@ This is **mandatory** step to be able to run the session exercises which are imp
 
 ## Exercise 0.2 - The rules of the game
 
-Access to the solution landscape is provided via the Easy Navigation dashboard.  
+Access to the solution landscape is provided via the [Easy Navigation dashboard](https://url.sap/3kf0ol).  
 > [!TIP]
 > 👉 For the best experience, use the rgit click to open the dashboard into a separate tab or into a new window
 
