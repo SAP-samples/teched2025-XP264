@@ -584,7 +584,8 @@ Optional practice (requires VSCode terminal):
 - 👉 open VScode explorer to `~/Documents/GitHub/teched2025-XP264/exercises/ex1/k8s-data`
 - 👉 open: VSCode terminal window  
 
-Then, in the terminal:
+Then, in the terminal window:
+
 - 👉 run (MacOS): `export KUBE_CONFIG_PATH=~/Downloads/timeboxed_kubeconfigs/xp264-050-sa.yaml`
 - 👉 run (Windows): `$env:KUBE_CONFIG_PATH="C:\Users\<username>\Downloads\timeboxed_kubeconfigs\xp264-050-sa.yaml`
 
