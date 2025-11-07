@@ -11,15 +11,6 @@ Lets make some HTTP requests to the Httpbin application previously deployed in t
 > [!TIP]
 > 👉 For the best experience, open workflow links into a separate tab or into a new window (right click).  
 
-|<!--  Student Workflow (namespaced) to generate some load
- | :---------  
- | [uk-south--xp264](../../../../actions/workflows/uk-south-teched-7a69075f-7faf-4604-a62e-806648791dba-xp264.yml)
- | [japan-east--xp264](../../../../actions/workflows/japan-east-teched-2a6fe480-ac84-4751-ad37-56ec2a493932-xp264.yml) 
- | [us-east--xp264](../../../../actions/workflows/btp-runtime-teched-dbe7346b-88da-430a-8777-4f6aa3e22b5e-xp264.yml) 
- | [xp264-000--xp264](../../../../actions/workflows/xp264-000-teched-622af3fe-a2f5-4fdd-a05f-73e343aec2a5-xp264.yml)
- | [uk-xp264--xp264](../../../../actions/workflows/uk-xp264-teched-76f46b5b-d9ab-486f-8e4f-12e1163af943-xp264.yml)
- -->
-
 
 | Student Workflow to generate some load...
 | :---------  
