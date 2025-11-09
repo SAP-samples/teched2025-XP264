@@ -12,7 +12,7 @@
 
 <p float="left">
   <a href="https://url.sap/xuntr9">
-  <img src="exercises/ex0/images/TechEd_2025.jpg" width="500" height="500" alt="TechEd_2025" />
+  <img src="exercises/ex0/images/TechEd_2025.jpg" width="600" height="600" alt="TechEd_2025" />
   </a>
 </p>  
 
