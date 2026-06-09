@@ -106,7 +106,24 @@ Requirement already satisfied: typing-extensions>=4.0.0 in /usr/local/lib/python
 
 [notice] A new release of pip is available: 25.0.1 -> 25.2
 [notice] To update, run: pip install --upgrade pip
-  
+
+
+
+$ pip install pandas
+Defaulting to user installation because normal site-packages is not writeable
+Collecting pandas
+  Downloading pandas-3.0.0-cp312-cp312-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl.metadata (79 kB)
+Requirement already satisfied: numpy>=1.26.0 in ./.local/lib/python3.12/site-packages (from pandas) (2.4.1)
+Requirement already satisfied: python-dateutil>=2.8.2 in /usr/local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
+Downloading pandas-3.0.0-cp312-cp312-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl (10.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 15.2 MB/s eta 0:00:00
+Installing collected packages: pandas
+Successfully installed pandas-3.0.0
+
+[notice] A new release of pip is available: 25.0.1 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+$   
 ```
 ## SAP BTP Multitenant App - Service Dependencies Chart
 
